@@ -1,0 +1,183 @@
+<?php
+header('Content-type:text/html;charset=utf-8');
+//   http://www.ds.com/Admin/OtherInfo/getOther.html?user_id=32&ta_user_id=29
+/**
+ * Created by PhpStorm.
+ * User: win10
+ * Date: 2016-03-22
+ * Time: 15:14
+ */
+import('@.Service.ForumService');
+import('@.Service.PlanBookService');
+import('@.Service.RedisService');
+class OtherInfoAction extends Action{
+//    显示信息
+//    这里写的是根据get来接收数据的，应该不是发送ajax来获取的，因为是点击用户的个人信息头像或者用户名来跳转的；
+    public function getOther(){
+        if ($this->isPost()) {
+            //返回数据
+            $page=$this->_post('page');
+            $ta_user_id=$this->_post('ta_user_id');
+            $user_id=$this->_post('user_id');
+            if( $ta_user_id!=0){
+//        实例化用户信息表；
+                $userInfo = M('UserInfo');
+//        获取当前用户的信息；
+
+//        获取其他用户的个人信息；
+                $otherData=$userInfo->where("user_id='$ta_user_id'")->find();
+                $otherData['avatar']=OSS_AVATAR.$otherData['avatar'];
+                $note=M('Note');
+//        将其他用户笔记的信息获取出来；
+//            这里限制每页写两列数据，页数显示为$page；
+                $note_start=10*($page-1);
+                if($page){
+                    $noteData=$note->field('id,title,content,digg_count,comment_count,create_time,img_str')->limit($note_start,10)->where("user_id='$ta_user_id'")->select();
+                }else{
+                    $noteData=$note->field('id,title,content,digg_count,comment_count,create_time,img_str')->limit(0,10)->where("user_id='$ta_user_id'")->select();
+                }
+//        实例化用户评论表；
+            $comment=M("NoteComment");
+
+//        实例化用户点赞表
+            $digg=M("NoteDigg");
+//        获取用户是否可以收藏；
+                if(!empty($noteData)){
+                    foreach($noteData as  $key=>$value ){
+                        $id=$value['id'];
+
+//                        将图片地址转换成数组；
+                        if(!empty($noteData[$key]['img_str'])){
+                            $noteData[$key]['img_str']=explode(',',$noteData[$key]['img_str']);
+                            foreach($noteData[$key]['img_str'] as $k=>$v){
+                                $noteData[$key]['img_str'][$k]=OSS_COVER.$noteData[$key]['img_str'][$k];
+                            }
+                        }
+//                        $noteData[$key]['img_str']=OSS_COVER.$noteData[$key]['img_str'];
+
+//                判断用户是否收藏笔记。
+                        $is_comment=$comment->where("send_user='$user_id' and note_id='$id' and comment_type=0")->find();
+                        if(!empty($is_comment)){
+                            $noteData[$key]['is_comment']=1;
+                        }else{
+                            $noteData[$key]['is_comment']=0;
+                        }
+//                判断用户是否点赞
+                        $is_digg=$digg->where("digg_user=$user_id and note_id=$id")->find();
+                        if(!empty($is_digg)){
+                            $noteData[$key]['is_digg']=1;
+                        }else{
+                            $noteData[$key]['is_digg']=0;
+                        }
+                    }
+                }
+                $info['other_data']=$otherData;
+                $info['note_data']=$noteData? $noteData: array();
+                
+                $info['page']="1";
+                $info['code']="200";
+                $info['msg']="success";
+
+                $this->ajaxReturn($info,'json');
+            }else{
+                $info['code']=0;
+                $info['msg']="用户id未得到。";
+                $this->ajaxReturn($info,'json');
+            }
+            exit;
+        }
+        $this->display();
+        exit;
+    }
+
+//    点赞取消赞
+    public function digOther(){
+        if($this->isPost()){
+//            这里接受一个参数，判断是点赞还是取消点赞；
+            $is_digg=$this->_post('is_digg');
+            $user_id=$this->_post('user_id');
+            $other_id=$this->_post('ta_user_id');
+            $note_id=$this->_post('id');
+            if(!$is_digg){
+//                点赞
+
+                M('Note')->where("id='$note_id'")->setInc("digg_count");
+
+//                实例化点赞模型；
+                $nd=new NoteDiggModel();
+                $data['note_id']=$note_id;
+                $data['digg_user']=$user_id;
+                $res=$nd->addDigg($data);
+
+                //发送评论消息
+                $redis = new RedisService();
+                $redis->groupRankMsg($other_id,'digg');
+
+                if($res){
+                    $return['code']="200";
+                    $this->ajaxReturn($return,'json');
+                }else{
+                    $return['code']="404";
+                    $this->ajaxReturn($return,'json');
+                }
+
+            }else{
+
+//                取消赞；
+                M('Note')->where("id='$note_id'")->setDec("digg_count");
+
+//                实例化点赞模型；
+                $nd=new NoteDiggModel();
+                $res=$nd->where("note_id='$note_id' and digg_user='$user_id'")->delete();
+
+                //发送评论消息
+                $redis = new RedisService();
+                $redis->groupRankMsg($other_id,'undigg');
+
+                if($res){
+                    $return['code']="200";
+                    $this->ajaxReturn($return,'json');
+                }else{
+                    $return['code']="404";
+                    $this->ajaxReturn($return,'json');
+                }
+            }
+
+        }
+
+    }
+
+//    评论
+    public function discuss(){
+        if($this->isPost()){
+
+            $note_id=$this->_post('note_id');
+            $user_id=$this->_post('user_id');
+            $other_id=$this->_post('other_id');
+            $content=$this->_post('content');
+
+
+//            评论后会在note表内的评论字段内评论数添加
+            M('Note')->where("id='$note_id'")->setInc("comment_count");
+
+            $comment_type=0;
+
+            $comment=new CommonModel();
+
+            $commentData = $comment->addComment($note_id, $content, $user_id, $other_id,$comment_type,0);
+//            实例化用户评论表，件供用户评论内容存储
+
+            //发送评论消息
+            $redis = new RedisService();
+            $redis->groupRankMsg($user_id,'comment');
+
+        $returnData['code']="200";
+        $this->ajaxReturn($returnData,'json');
+    }
+
+
+        $this->display();
+
+    }
+
+}

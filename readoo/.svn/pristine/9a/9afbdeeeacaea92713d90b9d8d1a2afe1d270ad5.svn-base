@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>readoo后台管理</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="__PUBLIC__/css/bootstrap.min.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="__PUBLIC__/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="__PUBLIC__/css/sb-admin-2.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/style.css" rel="stylesheet">
+
+    <!-- Amaze CSS -->
+    <link href="/public/amazeui/assets/css/amazeui.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="__PUBLIC__/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/uploadify/uploadify.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="__PUBLIC__/js/html5shiv.js"></script>
+    <script src="__PUBLIC__/js/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+<include file='Public:header'/>
+<include file='Public:sidebar'/>
+    <div id="wrapper">
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">首页通知</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            添加首页通知
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                            	<form action="" method="post" enctype="multipart/form-data">
+                                <div class="form-group" id="isbn" style="margin-left: 30px;width: 200px;">
+                                    <label for="disabledSelect">类型</label>
+                                    <select id="disabledSelect" class="form-control" name="action_type" required="required">
+                                         <option value="alert">强弹窗</option>
+                                         <option value="act_topic" class="note_id">话题讨论</option>
+                                         <option value="act_note">写笔记</option>
+                                         <option value="banner">广告</option>
+                                    </select>
+                                </div>
+                                <div class="form-group" id="bookname" style="margin-left: 30px;">
+                                    <label>话题id:</label>
+                                    <input id="bookVal" type="text" class="text small" name='note_id' value='0'/>（类型为话题讨论时,话题id必填）
+                                </div>
+                                <div class="form-group" id="bookname" style="margin-left: 30px;">
+                                    <label>标题:</label>
+                                    <input id="bookVal" type="text" class="text small" name='title' value=''/>
+                                </div>
+                                <div class="form-group" id="bookname" style="margin-left: 30px;">
+                                    <label>按钮:</label>
+                                    <input id="bookVal" type="text" class="text small" name='button' value=''/>
+                                </div>
+                                <div class="form-group" style="margin-left: 30px;">
+                                    <label>图书封面:</label>（图片类型png、jpg、jpeg）
+                                    <input type="file" name="photo" id="" />
+                                    
+                              </div><br />
+                                <div class="form-group" style="margin-left: 30px;">
+                                    <label>链接地址:</label>
+                                    <input id="bookId" type="text" class="text" name='href' value='' style="width: 700px;"/>
+                                </div>
+            
+                                <div class="form-group" style="margin-left: 30px;" id="startTime">
+                                    <label class="control-label">开始时间:</label>
+                                    <div class="control-group">
+                                        <div class="controls input-append date form_date" data-date="" data-date-format="yyyy-mm-dd" data-link-field="dtp_input_start" data-link-format="yyyy-mm-dd">
+                                            <input name="start_time" type="start" size="16" type="text" value="" readonly>
+                                            <span class="add-on"><i class="icon-remove"></i></span>
+                                            <span class="add-on"><i class="icon-th"></i></span>
+                                        </div>
+                                        <input type="hidden" id="dtp_input_start" value="" /><br/>
+                                    </div>
+                                </div>
+                                <div class="form-group" style="margin-left: 30px;" id="startTime">
+                                    <label class="control-label">结束时间:</label>
+                                    <div class="control-group">
+                                        <div class="controls input-append date form_date" data-date="" data-date-format="yyyy-mm-dd" data-link-field="dtp_input_end" data-link-format="yyyy-mm-dd">
+                                            <input name="end_time" type="start" size="16" type="text" value="" readonly>
+                                            <span class="add-on"><i class="icon-remove"></i></span>
+                                            <span class="add-on"><i class="icon-th"></i></span>
+                                        </div>
+                                        <input type="hidden" id="dtp_input_end" value="" /><br/>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <button type="submit" id="addToList" class="am-btn am-btn-primary am-btn-xs" style="float: left">添加到共读书单</button>
+                                </div>
+                                </form>
+                                <!-- /.col-lg-6 (nested) -->
+                            </div>
+                            <!-- /.row (nested) -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery Version 1.11.0 -->
+    <script src="__PUBLIC__/js/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="__PUBLIC__/js/bootstrap.min.js"></script>
+    <script src="__PUBLIC__/js/bootstrap-datetimepicker.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="__PUBLIC__/js/plugins/metisMenu/metisMenu.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="__PUBLIC__/js/sb-admin-2.js"></script>
+    <script type="text/javascript" src="__LAYER__/layer.js"></script>
+    <script src="__PUBLIC__/uploadify/jquery.uploadify.min.js"></script>
+
+
+</body>
+<script type="text/javascript">
+    $('.form_date').datetimepicker({
+        format: 'yyyy-mm-dd',
+        minView: "month",
+        maxView: "decade"
+    });
+    
+    
+</script>
+
+
+</html>
+
+
+
+
+
+
+

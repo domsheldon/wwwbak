@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="__PUBLIC__/amazeui/assets/css/amazeui.min.css">
+    <title>成就</title>
+</head>
+<body class="bgcolor" >
+    <!--全局-->
+    <style>
+        p{
+            margin:0;
+        }
+        .fontgreen{
+            color:#45a975;
+        }
+        .bgcolor {
+            background-color:#ebebf1;
+        }
+    </style>
+     <!--顶部-->
+    <style>
+        #team_info div{
+            border: #eeeeff 1px solid;
+        }
+        #top p{
+            text-align: center;
+        }
+        #top .p_info{
+            font-size:12px;
+        }
+        #team_info .number{
+            font-size:25px;
+        }
+    </style>
+    <div id="top_bgimg" style="position:absolute;z-index:0;width: 100%;height: 151px;background: url({$data.user_info.avatar});background-size:100% auto;background-repeat: no-repeat;filter:alpha(Opacity=35);-moz-opacity:0.35;opacity: 0.35;">
+    </div>
+    <div id="top" style="z-index:1;" >
+        <div style="padding: 10px 10px 10px 10px;">
+            <div style="float: left;">
+                <img src="{$data.user_info.avatar}" style="float: left;overflow:hidden;width:70px;height:70px;border-radius:50%;border: white 2px solid;">
+                <div style="float: left;padding-top: 10px;padding-left: 10px;">
+                    <p style="float:left;">{$data.user_info.name}</p><br/>
+                    <p><span id="team_score" class="fontgreen">{$data.group_name}</span></p>
+                </div>
+            </div>
+
+            <br style="clear: both">
+        </div>
+
+        <div class="am-g" id="team_info">
+        	<div class="am-u-sm-3">
+                <p class="number">{$data.count.note_sum|default=0}</p>
+                <p class="p_info">随笔</p>
+            </div>
+            <div class="am-u-sm-3">
+                <p class="number">{$data['count']['check_sum']|default=0}</p>
+                <p class="p_info">签到</p>
+            </div>
+            <div class="am-u-sm-3">
+                <p class="number">{$data.count.comment_sum|default=0}</p>
+                <p class="p_info">评论</p>
+            </div>
+            <div class="am-u-sm-3">
+                <p class="number">{$data.count.digg_sum|default=0}</p>
+                <p class="p_info">积赞</p>
+            </div>
+        </div>
+    </div>
+
+    <!--内容部分-->
+     <style>
+
+     </style>
+    <div class="am-g am-cf" style="width:95%;padding-top: 8px;">
+        <div class="am-u-sm-6">
+            <button type="button" class="am-btn am-btn-success am-center"
+                    data-am-modal="{target: '#my-alert'}">邀请书友助阵</button>
+        </div>
+        <div class="am-u-sm-6">
+            <button type="button" class="am-btn am-btn-success am-center"
+                    data-am-modal="{target: '#my-rule'}">对抗规则说明</button>
+        </div>
+    </div>
+
+    <div class="am-modal am-modal-no-btn" tabindex="-1" id="my-alert" style="top:15%">
+        <div class="am-modal-dialog">
+            <div class="am-modal-bd" style="background-color: grey">
+                <img src="__PUBLIC__/images/sharehelp.png" width="100%">
+            </div>
+        </div>
+    </div>
+
+    <div class="am-modal am-modal-no-btn" tabindex="-1" id="my-rule">
+        <div class="am-modal-dialog">
+            <div class="am-modal-bd">
+                <h1 class="am-text-center">对抗赛得分规则</h1>
+                <table class="am-table am-table-bordered am-table-radius am-table-striped am-text-center">
+                    <thead>
+                    <tr>
+                        <th class="am-text-center">规定动作</th>
+                        <th class="am-text-center">得分</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>签到</td>
+                        <td>5分/次</td>
+                    </tr>
+                    <tr>
+                        <td>获得赞</td>
+                        <td>1分/个</td>
+                    </tr>
+                    <tr>
+                        <td>发布随笔</td>
+                        <td>8分/条</td>
+                    </tr>
+                    <tr>
+                        <td>回复消息</td>
+                        <td>2分/次</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+     <div style="padding:12px;" >
+
+        <div style="background-color: white;padding:15px 10px 15px 10px;">
+            <div style="float:left;"><strong>个人排名</strong></div>
+            <a href='/userpai?user_id={$data.user_info.user_id}&id={$data.group_id}'><div style="float: right;" class="fontgreen">详情></div></a>
+            <br style="clear: both">
+        </div>
+        <hr style="background-color: darkgray;margin: 0;">
+         <div style="background-color: white;padding:10px 10px 10px 10px;">
+             <div style="float:left;font-size:36px;"  class="fontgreen">{$data.me_score|default=0}</div>
+             <div style="float: right;font-size:36px;"  class="fontgreen">{$data.me_pai|default=0}</div>
+             <br style="clear: both">
+             <div style="float:left;font-size:1.6rem;color: grey;">得分</div>
+             <p style="text-align:right;color: grey;"> 排名</p>
+         </div>
+     </div>
+     <div style="padding:0 12px 12px 12px;" >
+         <div style="background-color: white;padding:10px 10px 10px 10px;">
+             <div style="float:left;"><strong>群组排名</strong></div>
+             <a href='/groupai?id={$data.group_id}'><div style="float: right;" class="fontgreen">详情></div></a>
+             <br style="clear: both">
+         </div>
+         <hr style="background-color: darkgray;margin: 0;">
+         <div style="background-color: white;padding:15px 10px 15px 10px;">
+             <div style="float:left;font-size:36px;"  class="fontgreen">{$data.group_score|default=0}</div>
+             <div style="float: right;font-size:36px;"  class="fontgreen">{$data.group_pai}</div>
+             <br style="clear: both">
+             <div style="float:left;font-size:1.6rem;color: grey;">得分</div>
+             <p style="text-align:right;color: grey;"> 排名</p>
+         </div>
+     </div>
+    <!--底部部分-->
+    <style>
+
+    </style>
+
+
+    <br/>
+    <script src="__PUBLIC__/amazeui/assets/js/jquery.min.js"></script>
+    <script src="__PUBLIC__/amazeui/assets/js/amazeui.min.js"></script>
+
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script>
+        var user_id = '<?php echo $data["user_info"]["user_id"];?>';
+        wx.config({
+            debug: false,
+            appId: '<?php echo $signPackage["appId"];?>',
+            timestamp: <?php echo $signPackage["timestamp"];?>,
+        nonceStr: '<?php echo $signPackage["nonceStr"];?>',
+                signature: '<?php echo $signPackage["signature"];?>',
+                jsApiList: [
+            // 所有要调用的 API 都要加到这个列表中
+            'checkJsApi',
+            'onMenuShareTimeline',
+            'onMenuShareAppMessage'
+        ]
+        });
+        wx.ready(function () {
+            var shareData = {
+                title: '有书共读群组对抗赛正在火热进行中',
+                desc: '欢迎加入有书对抗赛，组队对抗惰性',
+                link: 'http://readooapi.youshu.cc/chengjiu?user_id='+user_id,
+                imgUrl: 'http://readooapi.youshu.cc/public/images/youshu.png',
+            };
+            //wx.menuItem:share:appMessage(shareData);
+            wx.onMenuShareAppMessage(shareData);
+            wx.onMenuShareTimeline(shareData);
+
+
+            function decryptCode(code, callback) {
+                $.getJSON('/jssdk/decrypt_code.php?code=' + encodeURI(code), function (res) {
+                    if (res.errcode == 0) {
+                        codes.push(res.code);
+                    }
+                });
+            }
+        });
+
+        wx.error(function (res) {
+//            alert('wx.error: '+JSON.stringify(res));
+        });
+
+    </script>
+    <script src="__PUBLIC__/js/zepto.min.js"></script>
+</body>
+</html>

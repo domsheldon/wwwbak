@@ -1,0 +1,215 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>有书共读--发布随笔</title>
+
+  <!-- Set render engine for 360 browser -->
+  <meta name="renderer" content="webkit">
+
+  <!-- No Baidu Siteapp-->
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+  <link href="../amazeui/assets/css/amazeui.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../amazeui/assets/css/app.css">
+
+  <script type='text/javascript' src='../Admin/localUpload/jquery-2.0.3.min.js'></script>
+  <script type='text/javascript' src='../Admin/localUpload/LocalResizeIMG.js'></script>
+  <script type='text/javascript' src='../Admin/localUpload/mobileBUGFix.mini.js'></script>
+</head>
+<body style="border-top: 3px;margin-top: 3px;padding-top: 8px;">
+<form class="am-form" action="/wechatdiscuss/addforum" method="post" data-am-validator>
+  <!--<input id="book_id" name="book_id" style="display: none">-->
+  <fieldset>
+    <div class="am-form-group">
+      <input type="text" style="border-top: 0px;border-left: 0px;border-right: 0px;" id="note_title" name="note_title"
+             placeholder="标题，3-50个字" minlength="5" maxlength="50" required/>
+    </div>
+    <div class="am-g am-cf" style="padding-top: 1px;">
+      <textarea class="" style="width: 100%;resize : none;border:0; "
+                id="note_content" name="note_content"
+                placeholder="正文,10-2000个字" minlength="10" maxlength="2000"></textarea>
+    </div>
+
+    <div class="am-g" style='margin-top:15px;'>
+      <div class="am-u-sm-7 am-form-group" style="padding-top: 5px;padding-left:0;">
+        <select id="book_id" name="book_id" placeholder="选择书籍">
+
+        </select>
+      </div>
+      <div class="am-u-sm-3" style="padding-top: 8px;padding-right: 0px;">
+        <input type="file" id="uploadphoto" name="uploadfile" value="请点击上传图片"   style="display:none;" />
+        <a href="#" onclick="uploadphoto.click()"><i class="am-success am-icon-file-image-o am-icon-md"></i></a>
+      </div>
+      <div class="am-u-sm-2" style="padding-top: 5px;padding-right:0;">
+        <button type="submit" id="btn_submit" class="am-btn am-btn-success am-fr">提交</button>
+      </div>
+    </div>
+
+    <div class="am-g" id="uploadList-one">
+      <ul class="am-avg-sm-4 am-thumbnails">
+      </ul>
+    </div>
+  </fieldset>
+</form>
+
+
+
+<!--在这里编写你的代码-->
+
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="../amazeui/assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="../amazeui/assets/js/amazeui.min.js"></script>
+
+<script type="text/javascript">
+  var img_counts = 0;
+  $(document).ready(function(e) {
+    $('#uploadphoto').localResizeIMG({
+      width: 500,
+      quality: 0.9,
+      success: function (result) {
+        if(img_counts >= 6){
+          alert('最多上传6张图片');
+          return;
+        }
+        var submitData={
+          base64_string:result.clearBase64,
+        };
+        $.ajax({
+          type: "POST",
+          url: "/WeChatDiscuss/upload",
+          data: submitData,
+          dataType:"json",
+          success: function(data){
+            if (0 == data.status) {
+              alert(data.content);
+              return false;
+            }else{
+              var li="<li class='am-thumbnail'><a href='javascript:;' class='am-btn am-btn-danger am-btn-xs del-img'>删除</a>" +
+                      "<img class='am-thumbnail' src='/"+data.url+"'/><input type='hidden' name='img[]' value='"+data.url+"'/></li>";
+              $("#uploadList-one ul").prepend(li);
+              img_counts++;
+              return false;
+            }
+          },
+          complete :function(XMLHttpRequest, textStatus){
+          },
+          error:function(XMLHttpRequest, textStatus, errorThrown){ //上传失败
+            alert(XMLHttpRequest.status);
+            alert(XMLHttpRequest.readyState);
+            alert(textStatus);
+          }
+        });
+      }
+    });
+
+    $(document).on('click','.del-img',function(){
+      img_counts--;
+      $(this).parent().remove();
+    })
+  });
+</script>
+<script type="text/javascript">
+  function UrlDecode(zipStr){
+    if(zipStr==null){
+      return '';
+    }
+    var uzipStr="";
+    for(var i=0;i<zipStr.length;i++){
+      var chr = zipStr.charAt(i);
+      if(chr == "+"){
+        uzipStr+=" ";
+      }else if(chr=="%"){
+        var asc = zipStr.substring(i+1,i+3);
+        if(parseInt("0x"+asc)>0x7f){
+          uzipStr+=decodeURI("%"+asc.toString()+zipStr.substring(i+3,i+9).toString());
+          i+=8;
+        }else{
+          uzipStr+=AsciiToString(parseInt("0x"+asc));
+          i+=2;
+        }
+      }else{
+        uzipStr+= chr;
+      }
+    }
+    return uzipStr;
+  }
+
+  function StringToAscii(str){
+    return str.charCodeAt(0).toString(16);
+  }
+  function AsciiToString(asccode){
+    return String.fromCharCode(asccode);
+  }
+
+  $("#btn_submit").change(function(){
+    var book_name = $("#book_id").find("option:selected").text();
+    var title = $('#note_title').val();
+    $('#note_title').val(title + ' @《' + book_name + '》');
+  });
+
+  $.extend({
+    getUrlVars: function(){
+      var vars = [], hash;
+      var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+      for(var i = 0; i < hashes.length; i++)
+      {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+      }
+      return vars;
+    },
+    getUrlVar: function(name){
+      return $.getUrlVars()[name];
+    }
+  });
+
+
+  $(document).ready(function() {
+    total = document.documentElement.clientHeight;
+    h_1 = total -160;
+    $("#note_content").attr("style","height:" + h_1 + "px;width:100%;");
+    $("#book_id").val($.getUrlVar('book_id'));
+    if($.getUrlVar('content') != null){
+      $("#note_content").val(UrlDecode($.getUrlVar('content')) + '\n');
+    }
+
+    $.ajax({
+      type : 'get',
+      url : '/wechatdiscuss/getBookList',
+      success : function(ret) {
+        var data =  $.parseJSON(ret);
+        $("#book_id").append("<option value=''>请选择图书</option>");
+        for(i=0;i<data.length;i++){
+          $("#book_id").append("<option value='" + data[i]['book_id'] + "'>" + data[i]['book_title'] +"</option>");
+        }
+      },
+      error :function(e){
+      }
+    });
+
+    //避免重复提交
+//    $('form').submit(function() {
+//      if(typeof jQuery.data(this, "disabledOnSubmit") == 'undefined') {
+//        jQuery.data(this, "disabledOnSubmit", { submited: true });
+//        $('input[type=submit], input[type=button]', this).each(function() {
+//          $(this).attr("disabled", "disabled");
+//        });
+//        return true;
+//      }
+//      else
+//      {
+//        return false;
+//      }
+//    });
+  });
+</script>
+</body>
+</html>

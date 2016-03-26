@@ -1,0 +1,374 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>有书圈</title>
+
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+    <link href="__PUBLIC__/amazeui/assets/css/amazeui.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="__PUBLIC__/amazeui/assets/css/app.css">
+
+    <!--<script src="__PUBLIC__/public/js/youshu.js"></script>-->
+</head>
+<body>
+
+
+<div class="am-g" style="text-align: center;padding-top: 6px;">
+    <div class="am-u-sm-8 am-u-sm-centered">
+        <div class="am-btn-group">
+            <if condition="$is_top eq 1">
+                <a href="/wechatdiscuss/discusslist" type="button" class="am-btn am-btn-default am-btn-xs">所  有</a>
+                <a href="/wechatdiscuss/discusslist?is_top=1" type="button" class="am-btn am-btn-success am-btn-xs">精  华</a>
+                <a href="/topic/list" type="button" class="am-btn am-btn-default am-btn-xs">热门话题</a>
+                <elseif condition="$is_top eq 2"/>
+                <a href="/wechatdiscuss/discusslist" type="button" class="am-btn am-btn-default am-btn-xs">所  有</a>
+                <a href="/wechatdiscuss/discusslist?is_top=1" type="button" class="am-btn am-btn-default am-btn-xs">精  华</a>
+                <a href="/topic/list" type="button" class="am-btn am-btn-success am-btn-xs">热门话题</a>
+                <else/>
+                <a href="/wechatdiscuss/discusslist" type="button" class="am-btn am-btn-success am-btn-xs">所  有</a>
+                <a href="/wechatdiscuss/discusslist?is_top=1" type="button" class="am-btn am-btn-default am-btn-xs">精  华</a>
+                <a href="/topic/list" type="button" class="am-btn am-btn-default am-btn-xs">热门话题</a>
+            </if>
+        </div>
+    </div>
+</div>
+
+<div data-am-widget="list_news" class="am-list-news am-list-news-default">
+    <!--列表标题-->
+    <div class="am-list-news-hd am-cf" style="border-top: 0px;margin-top: 0px;padding-top: 0px;">
+        <ul class="am-list">
+            <!--缩略图在标题上方-->
+            <li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-top">
+                <div class="am-list-thumb am-u-sm-12">
+                    <img src="{$topic_detail.img}"/>
+                </div>
+
+                <div class=" am-list-main">
+                    <h3 class="am-list-item-hd"><a href="#" class="">#{$topic_detail.topic_title}#</a></h3>
+                    <div class="am-list-item-text">{$topic_detail.topic_content}</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="am-list-news-bd">
+        <ul class="am-list" id="forum">
+            <include file="WeChatDiscuss:displayforum"/>
+        </ul>
+    </div>
+</div>
+<br/>
+
+<div data-am-widget="navbar" class="am-navbar am-cf am-navbar-default "
+     id="">
+    <ul class="am-navbar-nav am-cf am-avg-sm-4">
+        <li >
+            <a href="/public/discuss/addforum.html?content=#{$topic_detail.topic_title}#" class="">
+                <span class="am-icon-sign-in"></span>
+                <span class="am-navbar-label">参与话题讨论</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<div class="am-modal am-modal-confirm" tabindex="-1" id="my-confirm">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd"></div>
+        <div class="am-modal-bd">
+            确定要删除这条问题吗？
+        </div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn" data-am-modal-cancel>取消</span>
+            <span class="am-modal-btn" data-am-modal-confirm>确定</span>
+        </div>
+    </div>
+</div>
+
+<!--在这里编写你的代码-->
+<!--发送评论的弹出框-->
+<div class="am-modal am-modal-prompt" tabindex="-1" id="msg_comment">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd recv-user">@楼主</div>
+        <div class="am-modal-bd" style="padding: 0;border: 0;margin:0;">
+            <input id="note_id" name="note_id" style="display: none">
+            <input id="receive_user" name="receive_user" style="display: none">
+            <div class="am-g am-cf" style="padding-left: 3px;padding-right: 3px;">
+                <textarea class="am-modal-prompt-input" rows="5" style="width: 100%;" id="commContent" name="commContent"
+                          placeholder="评论回复，5-100字" minlength="3" maxlength="200"></textarea>
+            </div>
+        </div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn" data-am-modal-cancel>取消</span>
+            <span class="am-modal-btn" data-am-modal-confirm>提交</span>
+        </div>
+    </div>
+</div>
+
+<!--BEGIN toast-->
+<div id="toast" style="display: none;">
+    <div class="weui_mask_transparent"></div>
+    <div class="weui_toast">
+        <i class="weui_icon_toast"></i>
+        <p class="weui_toast_content">发送成功</p>
+    </div>
+</div>
+<!--end toast-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="__PUBLIC__/amazeui/assets/js/jquery.min.js"></script>
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<!--<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>-->
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="__PUBLIC__/amazeui/assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="__PUBLIC__/amazeui/assets/js/amazeui.min.js"></script>
+
+<script type="application/javascript">
+    var book_id ="<?php echo $book_id ?>";
+    //是否获取精华帖
+    var is_top = "<?php echo $is_top ?>";
+    var topic = "<?php echo $topic ?>";
+
+    function send_note(){
+        var send_url = '/public/discuss/addforum.html?book_id='+book_id;
+        window.location.href = send_url;
+    }
+
+    /**
+     * 删除评论
+     */
+    function del_forum(){
+        var note_id = $(this).attr('value');
+        $('#my-confirm').modal({
+            relatedTarget: this,
+            onConfirm: function(options) {
+                $.ajax({
+                    type : 'post',
+                    url : '/wechatdiscuss/deleteforum',
+                    data : {'note_id':note_id},
+                    success : function() {
+                        window.location.href='/wechatdiscuss/discusslist';
+                    },
+                    error :function(e){
+                        alert("评论失败");
+                    }
+                });
+            },
+            // closeOnConfirm: false,
+            onCancel: function() {
+            }
+        });
+    }
+
+    /**
+     * 发表评论
+     */
+    function comment_forum(){
+        var note_id = $(this).attr('value');
+        var receive_user = $(this).attr('receive_user');
+        $('#note_id').val(note_id);
+        $('#receive_user').val(receive_user);
+
+        $('#msg_comment').modal({
+            relatedTarget: this,
+            onConfirm: function(e) {
+                var id = $('#note_id').val();
+                var reply_id = $('#receive_user').val();
+                $.ajax({
+                    type : 'post',
+                    url : '/wechatdiscuss/comment',
+                    data : {'noteId':id,'receive_user':reply_id,'comment_type':0,'commContent': e.data,'flag':'ajax'},
+                    success : function() {
+                        var count = $('#comment_'+id).html()
+                        $('#comment_'+id).html(++count)
+                    },
+                    error :function(e){
+                    }
+                });
+                $('.am-modal-prompt-input').val('');
+            },
+            onCancel: function(e) {
+                $('.am-modal-prompt-input').val('');
+            }
+        });
+    }
+
+    /**
+     * 点赞或者取消赞
+     */
+    function digg_forum(){
+        var note_id = $(this).children("i").attr('value');
+        var digg_flag = $('#digg_'+note_id).attr('digg_flag');
+        var digg_count =  $('#digg_'+note_id).attr('digg_count');
+        if(digg_flag == 0){
+            $(this).children("i").removeClass('am-icon-thumbs-o-up');
+            $(this).children("i").addClass('am-icon-thumbs-up');
+            //赞
+            $.ajax({
+                type : 'post',
+                url : '/wechatdiscuss/digg',
+                data : {'note_id':note_id},
+                success : function() {
+                    $('#digg_'+note_id).attr('digg_flag','1');
+                    $('#digg_'+note_id).html('' + ++digg_count);
+                    $('#digg_'+note_id).attr('digg_count',digg_count);
+                },
+                error :function(e){
+                    alert("点赞失败");
+                }
+            });
+            return;
+        }
+
+        if(digg_flag == 1){
+            //取消赞
+            $(this).children("i").removeClass('am-icon-thumbs-up');
+            $(this).children("i").addClass('am-icon-thumbs-o-up');
+            $.ajax({
+                type : 'post',
+                url : '/wechatdiscuss/undigg',
+                data : {'note_id':note_id},
+                success : function() {
+                    $('#digg_'+note_id).attr('digg_flag','0');
+                    $('#digg_'+note_id).html('' + --digg_count);
+                    $('#digg_'+note_id).attr('digg_count',digg_count);
+                },
+                error :function(e){
+                    alert("取消赞失败");
+                }
+            });
+
+        }
+    }
+
+    /**
+     * 置顶或者取消置顶某个讨论问题forum
+     */
+    function top_forum(){
+        var note_id = $(this).attr('value');
+        var top_flag = $(this).attr('top_flag');
+        if(top_flag == 0){
+            $(this).children("i").removeClass('am-icon-star-o');
+            $(this).children("i").addClass('am-icon-star');
+            $(this).attr('top_flag',1);
+            //赞
+            $.ajax({
+                type : 'post',
+                url : '/wechatdiscuss/dotop',
+                data : {'note_id':note_id,'top_flag':1},
+                success : function() {
+                },
+                error :function(e){
+                }
+            });
+            return;
+        }
+
+        if(top_flag == 1){
+            $(this).children("i").removeClass();
+            $(this).children("i").addClass('am-icon-star-o');
+            $(this).attr('top_flag',0);
+            $.ajax({
+                type : 'post',
+                url : '/wechatdiscuss/dotop',
+                data : {'note_id':note_id,'top_flag':0},
+                success : function() {
+                },
+                error :function(e){
+                }
+            });
+
+        }
+    }
+
+    $(document).ready(function(){
+        //绑定删除按钮对应的事件
+        $('#forum').on('click','.forum-delete',del_forum);
+        $('#forum').on('click','.comm_forum',comment_forum);
+        $('#forum').on('click','.digg_forum',digg_forum);
+        $('#forum').on('click','.top_forum',top_forum);
+    });
+</script>
+</body>
+
+<script src="__PUBLIC__/dropload/dist/dropload.min.js"></script>
+<script>
+    $(function(){
+        var curPage = 0;
+
+        // dropload
+        var dropload = $(document.body).dropload({
+            scrollArea : window,
+            domUp : {
+                domClass   : 'dropload-up',
+                domRefresh : '<div class="am-g dropload-refresh"><p class="am-text-center">↓下拉刷新</p></div>',
+                domUpdate  : '<div class="am-g dropload-update"><p class="am-text-center">↑释放更新</p></div>',
+                domLoad    : '<div class="am-g dropload-load"><p class="am-text-center"><span class="loading"></span>加载中...</p></div>'
+            },
+            domDown : {
+                domClass   : 'dropload-down',
+                domRefresh : '<div class="am-g dropload-refresh"><p class="am-text-center">↑上拉加载更多容</p></div>',
+                domLoad    : '<div class="am-g dropload-load"><p class="am-text-center"><span class="loading"></span>加载中...</p></div>',
+                domNoData  : '<div class="am-g dropload-noData"><p class="am-text-center">暂无数据</p></div>'
+            },
+            loadUpFn : function(me){
+                $.ajax({
+                    type : 'post',
+                    url : '/wechatdiscuss/displayforum',
+                    data : {'page':1,'book_id':book_id,'is_top':is_top,'topic':topic},
+                    dataType : "html",
+                    success: function(data){
+                        if(data.trim()!=''){
+                            $('#forum').html(data);
+                            // 锁定
+                            dropload.unlock();
+                            $('.dropload-down').show();
+                        }
+                        curPage = 1;
+                        me.resetload();
+                    },
+                    error: function(xhr, type){
+                        alert('Ajax error!');
+                        // 即使加载出错，也得重置
+                        me.resetload();
+                    }
+                });
+            },
+            loadDownFn : function(me){
+                $.ajax({
+                    type : 'post',
+                    url : '/wechatdiscuss/displayforum',
+                    data : {'page':curPage+1,'book_id':book_id,'is_top':is_top,'topic':topic},
+                    dataType : "html",
+                    success: function(data){
+                        if(data.trim()==''){
+                            dropload.lock();
+                            $('.dropload-down').hide();
+                        }else{
+                            curPage++;
+                            $('#forum').append(data);
+                        }
+                        me.resetload();
+                    },
+                    error: function(xhr, type){
+                        alert('Ajax error!');
+                        // 即使加载出错，也得重置
+                        me.resetload();
+                    }
+                });
+            },
+            threshold : 50
+        });
+    });
+</script>
+</html>

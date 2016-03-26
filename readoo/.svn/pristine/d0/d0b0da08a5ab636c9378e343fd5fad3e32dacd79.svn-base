@@ -1,0 +1,172 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>参加有书共读，组队对抗惰性</title>
+  <!-- Set render engine for 360 browser -->
+  <meta name="renderer" content="webkit">
+
+  <!-- No Baidu Siteapp-->
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <link rel="icon" type="image/png" href="__PUBLIC__/amazeui/assets/i/favicon.png">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" sizes="192x192" href="__PUBLIC__/amazeui/assets/i/app-icon72x72@2x.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+  <link rel="apple-touch-icon-precomposed" href="__PUBLIC__/amazeui/assets/i/app-icon72x72@2x.png">
+
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="__PUBLIC__/amazeui/assets/i/app-icon72x72@2x.png">
+  <meta name="msapplication-TileColor" content="#0e90d2">
+
+  <link rel="stylesheet" href="__PUBLIC__/amazeui/assets/css/amazeui.min.css">
+  <link rel="stylesheet" href="__PUBLIC__/amazeui/assets/css/app.css">
+  <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+</head>
+<body onselectstart="return false">
+
+<div class="am-g" id="top_div"></div>
+<div class="am-g" id="fir_div">
+  <p class="am-text-center" style="font-size:16px;color: #ff9000;margin-bottom: 2px;">{$info}已有10000+人参加本次活动</p>
+</div>
+<div class="am-g" id="middle_div">
+  <div class="am-u-sm-8  am-u-sm-centered">
+    <p class="am-text-center" style="margin-bottom: 2px;"><img class="am-circle" src="{$avatar}" height="50px" width="50px"/></p>
+  </div>
+  <div class="am-u-sm-12  am-u-sm-centered" style="padding-top: 0px;padding-bottom: 0px;height: 30px;">
+    <ul class="am-avg-sm-3" style="padding-top: 0px;padding-bottom: 0px;height: 30px;">
+      <li style="padding-top: 0px;padding-bottom: 0px;height: 30px;">
+        <p class="am-text-center"><strong>打卡次数</strong></p>
+      </li>
+      <li style="padding-top: 0px;padding-bottom: 0px;height: 30px;">
+        <p class="am-text-center"><strong>阅读书籍数</strong></p>
+      </li>
+      <li style="padding-top: 0px;padding-bottom: 0px;height: 30px;">
+        <p class="am-text-center"><strong>领先全国</strong></p>
+      </li>
+    </ul>
+
+  </div>
+  <div class="am-u-sm-12  am-u-sm-centered">
+    <ul class="am-avg-sm-3" >
+      <li>
+        <p class="am-text-center am-text-xl"><strong>{$user_stat.digg_sum}次</strong></p>
+      </li>
+      <li>
+        <p class="am-text-center am-text-xl"><strong>{$user_stat.book_num}本</strong></p>
+      </li>
+      <li>
+        <p class="am-text-center am-text-xl"><strong>{$user_stat.rate}%</strong></p>
+      </li>
+    </ul>
+  </div>
+</div>
+<input id="share_text" type="hidden"
+       value="加入有书共读，组队对抗惰性，我已签到{$user_stat.digg_sum}次，领先全国{$user_stat.rate}%的用户"/>
+<div class="am-g am-topbar-fixed-bottom" >
+  <img src="__PUBLIC__/images/qr_code.png" width="100%" id="bottom_div">
+</div>
+
+<!--在这里编写你的代码-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="__PUBLIC__/amazeui/assets/js/jquery.min.js"></script>
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="__PUBLIC__/amazeui/assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="__PUBLIC__/amazeui/assets/js/amazeui.min.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+            total = document.documentElement.clientWidth;
+            //如果尺寸小于图片原始尺寸
+            if(total <= 750){
+              $(document.body).css("background","url(__PUBLIC__/images/gongdu.jpg) no-repeat");
+              $(document.body).css("background-position","center top");
+
+              h3 = document.documentElement.clientHeight;
+              var height = 1206 * total / 750;
+              $(document.body).css("background-size","100% " + height + "px");
+              h_1 = 210 * total / 750;
+              h_2 = h3 - h_1 - 50;
+              h_3 = 330 * total / 750;
+              $("#top_div").attr("style","height:" + h_1 + "px;");
+//              $("#bottom_div").attr("style","height:" + h_3 + "px;");
+            }else{
+              console.log(total);
+              $(document.body).css("background","url(__PUBLIC__/images/gongdu.jpg) no-repeat");
+              $(document.body).css("background-position","left top");
+              $(document.body).css("background-size","750px");
+              $(document.body).css("width","750px");
+              $("#bottom_div").attr("width","750px");
+
+              h3 = 1206;
+              h_1 = 280;
+              h_2 = 800;
+              h_3 = 330;
+              $("#top_div").attr("style","height:" + h_1 + "px;");
+              $("#middle_div").attr("style","height:" + h_2 + "px;");
+//              $("#bottom_div").attr("style","height:" + h_3 + "px;");
+            }
+          }
+  );
+</script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+  var user_id = '<?php echo $user_id;?>';
+  wx.config({
+    debug: false,
+    appId: '<?php echo $signPackage["appId"];?>',
+    timestamp: <?php echo $signPackage["timestamp"];?>,
+  nonceStr: '<?php echo $signPackage["nonceStr"];?>',
+          signature: '<?php echo $signPackage["signature"];?>',
+          jsApiList: [
+    // 所有要调用的 API 都要加到这个列表中
+    'checkJsApi',
+    'onMenuShareTimeline',
+    'onMenuShareAppMessage'
+  ]
+  });
+  wx.ready(function () {
+    var shareData = {
+      title: '我的有书共读签到成就',
+      desc: $("#share_text").val(),
+      link: 'http://readooapi.youshu.cc/wechat/sharecj/'+user_id,
+      imgUrl: 'http://readooapi.youshu.cc/public/images/youshu.png',
+
+    };
+    //wx.menuItem:share:appMessage(shareData);
+    wx.onMenuShareAppMessage(shareData);
+    wx.onMenuShareTimeline(shareData);
+
+
+    function decryptCode(code, callback) {
+      $.getJSON('/jssdk/decrypt_code.php?code=' + encodeURI(code), function (res) {
+        if (res.errcode == 0) {
+          codes.push(res.code);
+        }
+      });
+    }
+  });
+
+  wx.error(function (res) {
+    alert('wx.error: '+JSON.stringify(res));
+  });
+</script>
+<script src="__PUBLIC__/js/zepto.min.js"></script>
+</body>
+</html>

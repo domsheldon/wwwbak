@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>readoo后台管理</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="__PUBLIC__/css/bootstrap.min.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="__PUBLIC__/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="__PUBLIC__/css/sb-admin-2.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/style.css" rel="stylesheet">
+
+    <!-- Amaze CSS -->
+    <link href="/public/amazeui/assets/css/amazeui.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="__PUBLIC__/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="__PUBLIC__/js/html5shiv.js"></script>
+    <script src="__PUBLIC__/js/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+<include file='Public:header'/>
+<include file='Public:sidebar'/>
+<div id="wrapper">
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">编辑微信菜单</h1>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        编辑微信菜单
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="form-group" style="margin-left: 30px; width: 200px">
+                                <label>菜单父ID:</label>
+                                <select class="form-control" id="pid">
+                                    <if condition="($editInfo[0]['pid'] eq null)">
+                                        <option value=""></option>
+                                        <else />
+                                        <volist name="pidInfo" id="vo">
+                                            <if condition="($editInfo[0]['pid'] eq $vo['id'])">
+                                                <option value="{$vo.id}">{$vo.name}</option>
+                                            </if>
+                                        </volist>
+                                        <option value=""></option>
+                                    </if>
+                                    <volist name="pidInfo" id="vo">
+                                        <if condition="($editInfo[0]['pid'] neq $vo['id'])">
+                                            <option value="{$vo.id}">{$vo.name}</option>
+                                        </if>
+                                    </volist>
+                                </select>
+                            </div>
+                            <div class="form-group" style="margin-left: 30px;width: 200px">
+                                <label>菜单类型:</label>
+                                <select class="form-control" id="type">
+                                    <if condition="($editInfo[0]['type'] eq null)">
+                                        <option value=""></option>
+                                        <option value="click">click</option>
+                                        <option value="view">view</option>
+                                        <else />
+                                        <option value="{$editInfo[0].type}">{$editInfo[0].type}</option>
+                                    </if>
+                                    <if condition="($editInfo[0]['type'] eq click)">
+                                        <option value="view">view</option>
+                                        <option></option>
+                                    </if>
+                                    <if condition="($editInfo[0]['type'] eq view)">
+                                        <option value="click">click</option>
+                                        <option></option>
+                                    </if>
+                                </select>
+                            </div>
+                            <div class="form-group" style="margin-left: 30px;">
+                                <label>菜单ID号:</label>
+                                <input id="menuId" type="text" class="text small" name='menuId' value='{$editInfo[0].id}' style="height: 30px" readonly/>
+                            </div>
+                            <div class="form-group" style="margin-left: 30px;">
+                                <label>菜单名称:</label>
+                                <input id="menuName" type="text" class="text small" name='menuName' value='{$editInfo[0].name}' style="height: 30px"/>
+                            </div>
+                            <div class="form-group" style="margin-left: 30px;">
+                                <label>菜单操作:</label>
+                                <input id="menuCode" type="text" class="text small" name='menuCode' value='{$editInfo[0].code}' style="width: 600px;height: 30px"/>
+                            </div>
+                            <div class="col-lg-12">
+                                <button id="saveWechatMenu" class="am-btn am-btn-primary am-btn-xs" style="float: left">保存</button>
+                            </div>
+                            <!-- /.col-lg-6 (nested) -->
+                        </div>
+                        <!-- /.row (nested) -->
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+                <!-- /.panel -->
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /#page-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
+<!-- jQuery Version 1.11.0 -->
+<script src="__PUBLIC__/js/jquery-1.11.0.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="__PUBLIC__/js/bootstrap.min.js"></script>
+<script src="__PUBLIC__/js/bootstrap-datetimepicker.js"></script>
+
+<!-- Metis Menu Plugin JavaScript -->
+<script src="__PUBLIC__/js/plugins/metisMenu/metisMenu.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="__PUBLIC__/js/sb-admin-2.js"></script>
+<script type="text/javascript" src="__LAYER__/layer.js"></script>
+<script src="__PUBLIC__/js/jquery.upload.v2.js"></script>
+
+</body>
+<script type="text/javascript">
+    var add_wechat_menu = document.getElementById('add_wechat_menu');
+    add_wechat_menu.setAttribute("class", "active");
+
+    //保存
+    $('#saveWechatMenu').click(function(){
+        var pidOptions=$("#pid option:selected");
+        var typeOptions=$("#type option:selected");
+        var pid = pidOptions.val();
+        var pidName = pidOptions.text();
+        var type = typeOptions.val();
+        var typeName = typeOptions.text();
+        var menuId = $('#menuId').val();
+        var menuName = $('#menuName').val();
+        var menuCode = $('#menuCode').val();
+
+        if(menuId.length == 0){
+            alert("请填写菜单id");
+            return false;
+        }
+
+        if(menuName.length == 0){
+            alert("请填写菜单名称");
+            return false;
+        }
+
+
+        $.ajax({
+            type : 'post',
+            url : '/Admin/WechatMenu/doEditMenu',
+            data : {'pid':pid,'menuId':menuId,'menuName':menuName,'typeName':typeName,'menuCode':menuCode},
+            dataType : 'json',
+            success : function(msg) {
+                if(msg.code == 0){
+                    layer.msg('保存微信菜单失败', {
+                        time: 2000 //2秒关闭（如果不配置，默认是3秒）
+                    }, function(){
+                        //do something
+                    });
+                }else{
+                    layer.msg('保存微信菜单成功', {
+                        time: 2000 //2秒关闭（如果不配置，默认是3秒）
+                    }, function(){
+                        window.location.reload();
+                    });
+                }
+            },
+            error :function(e){
+                alert("保存微信菜单错误");
+            }
+        });
+
+    });
+</script>
+</html>

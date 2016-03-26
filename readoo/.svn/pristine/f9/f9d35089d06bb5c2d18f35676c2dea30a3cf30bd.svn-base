@@ -1,0 +1,327 @@
+ .content-main {
+    padding: 0 10px 74px
+}
+
+.mod-project-card {
+    background: #fff;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+    border-radius: 2px;
+    margin-bottom: 15px;
+    position: relative
+}
+
+.mod-project-card a {
+    color: #333
+}
+
+.mod-project-card_header {
+    color: #666;
+    position: relative;
+    padding: 14px 0;
+    margin: 0 10px 10px;
+    border-bottom: 1px solid rgba(0,0,0,0.1)
+}
+
+.mod-project-card_header .mod-project-card_header__avatar {
+    float: left;
+    margin-right: 10px
+}
+
+.mod-project-card_header .mod-project-card_header__avatar img {
+    width: 50px;
+    height: 50px;
+    border-radius: 2px
+}
+
+.mod-project-card_header .mod-project-card_header__user {
+    float: left;
+    word-break: break-all;
+    word-wrap: break-word
+}
+
+.mod-project-card_header .mod-project-card_header__user a {
+    color: #666;
+    text-decoration: none;
+    display: block
+}
+
+.mod-project-card_header .mod-project-card_header__user a span {
+    font-size: 28px;
+    display: inline-block;
+    height: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    vertical-align: middle;
+    margin-bottom: 2px
+}
+
+@media (max-width:414px) {
+    .mod-project-card_header .mod-project-card_header__user a span {
+        max-width: 180px;
+        text-overflow: ellipsis
+    }
+}
+
+.mod-project-card_header .mod-project-card_header__user a .icon-vip {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 1px
+}
+
+.mod-project-card_header .mod-project-card_header__user .mod-project-card_header__time {
+    color: #999;
+    margin-bottom: 0;
+.mine
+    font-size: 18px
+.r254
+}
+
+.mod-project-card_header .mod-project-card_header__time_fin {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #999;
+    font-size: 12px;
+    padding: 23px 0 20px;
+    display: block
+}
+
+.mod-project-card_header .mod-project-card_header__manage {
+    position: absolute;
+    top: 0;
+    right: 0
+}
+
+.mod-project-card_header .mod-project-card_header__manage>a {
+    color: #58C3E0;
+    text-decoration: none;
+    padding: 23px 0 20px;
+    display: block
+}
+
+.mod-project-card_header .mod-project-card_header__manage>a .icon-edit {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle
+}
+
+.mod-project-card_header .mod-project-card_header__manage>a span {
+    vertical-align: middle
+}
+
+.mod-project-card_header .project-template {
+    position: absolute;
+    top: 27px;
+    right: 0
+}
+
+.mod-project-card_header .project-template .icon-template {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 2px
+}
+
+.mod-project-card_header .project-template span {
+    color: #58C3E0;
+    font-size: 12px;
+    line-height: 1.6;
+    vertical-align: middle
+}
+
+.mod-project-card_content>a {
+    display: block;
+    text-decoration: none;
+    color: #333
+}
+
+
+.mod-project-card_content .praise{
+	margin:0 auto;
+	width:150px;
+	height:150px;
+	position:relative;
+}
+
+.mod-project-card_content .praise img{
+	width:150px;
+	height:150px;
+}
+
+.mod-project-card_content .praise .zan{
+	margin: 0 auto;
+    width: 60px;
+    height: 60px;
+    margin-left: -30px;
+    margin-top: -60px;
+    left: 50%;
+    top: 50%;
+    position: absolute;
+}
+
+.mod-project-card_content .praise .zan img{
+	width:60px;
+	height:60px;
+}
+
+
+.mod-project-card_content .praise span{
+	position:absolute;
+	color:#ff3b30;
+	font-size:30px;
+	display:block;
+	width:150px;
+	height:30px;
+	line-height:30px;
+	text-align:center;
+	left:0;
+	top:88px;
+}
+
+/*      End       */
+.bottom_Download{
+    width: 100%;
+	position:fixed;
+	bottom:0;
+	background-color:#242424;
+	color:#fff;
+	padding: 5px 10px;
+    margin: 0;
+}
+
+.bottom_Download .logo{
+	float: left;
+    margin-right: 10px
+}
+
+.bottom_Download .logo img{
+	width: 50px;
+    height: 50px;
+}
+
+.bottom_Download .B{
+	font-size:18px;
+	font-family: Arial, Helvetica, sans-serif;
+	float: left;
+    word-break: break-all;
+    word-wrap: break-word										 
+}
+
+.bottom_Download .B p{
+	font-family: Arial, Helvetica, sans-serif;
+	color: #ffffff;
+    margin-bottom: 0;
+    font-size: 14px
+}
+
+
+.bottom_Download .Download a{
+	line-height:50px;
+	height:50px;
+	font-size:18px;
+	color:#ff9000;
+	margin-right:10px;
+	float:right;
+	text-decoration:none;
+}
+
+
+
+.mod-project-card_content .mod-project-card_content__header {
+    position: relative;
+    left: 0;
+    margin-bottom: 5px;
+    padding: 0 10px
+}
+
+.mod-project-card_content .mod-project-card_content__header .timeline{
+	color:#2a99e4;
+	font-size:24px;
+	line-height:31px;
+	margin-bottom:25px;
+	vertical-align: middle;
+    position: relative;
+    word-wrap: break-word;
+    word-break: break-all
+}
+
+.mod-project-card_content .mod-project-card_content__header .times{
+	text-align:right;
+	color:#989898;
+.mine
+	font-size:14px;
+.r254
+	line-height:31px;
+	margin-bottom:2px;
+	vertical-align: middle;
+    position: relative;
+    word-wrap: break-word;
+    word-break: break-all;
+	float:right;
+}
+
+
+.mod-project-card_content .mod-project-card_content__detail {
+    padding: 0 10px 10px 10px
+}
+
+.mod-project-card_content .mod-project-card_content__detail>.description {
+    display: block;
+    overflow: hidden;
+    word-wrap: break-word;
+    word-break: break-all;
+.mine
+    font-size: 17px;
+    color: #646464
+    font-size: 13pt;
+    color: #666;
+.r254
+}
+
+.mod-project-card_content .mod-project-card_content__detail .mod-project-card_content__img img {
+    margin: 0 2px 5px 0;
+    max-width: 100px
+}
+
+.mod-project-card_content .mod-project-card_content__detail .mod-project-card_content__img img:last-child {
+    margin: 0 0 5px 0
+}
+
+.mod-project-card_content__status {
+    padding: 10px 5px 10px 10px;
+    border-top: 1px solid rgba(0,0,0,0.03);
+    background: #fafafa;
+    font-size: 13px;
+    color: #999;
+    display: block;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    width: 100%
+}
+
+.mod-project-card_content__status span {
+    display: inline-block;
+    width: 32%;
+    text-align: left
+}
+
+.mod-project-card_content__status span strong {
+    font-weight: normal;
+    color: #666;
+    margin: 0 2px
+}
+
+.funding .labels {
+    background-color: #58C3E0;
+    border-color: #58C3E0
+}
+
+.blue{
+	color:#2a99e4;
+}
+
+

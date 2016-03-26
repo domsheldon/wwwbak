@@ -1,0 +1,67 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>热门话题</title>
+
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+    <link href="__PUBLIC__/amazeui/assets/css/amazeui.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="__PUBLIC__/amazeui/assets/css/app.css">
+
+    <!--<script src="__PUBLIC__/public/js/youshu.js"></script>-->
+</head>
+<body>
+<div class="am-g" style="text-align: center;padding-top: 6px;">
+    <div class="am-u-sm-8 am-u-sm-centered">
+        <div class="am-btn-group">
+            <if condition="$is_top eq 1">
+                <a href="/wechatdiscuss/discusslist" type="button" class="am-btn am-btn-default am-btn-xs">所  有</a>
+                <a href="/wechatdiscuss/discusslist?is_top=1" type="button" class="am-btn am-btn-success am-btn-xs">精  华</a>
+                <a href="/topic/list" type="button" class="am-btn am-btn-default am-btn-xs">热门话题</a>
+                <elseif condition="$is_top eq 2"/>
+                <a href="/wechatdiscuss/discusslist" type="button" class="am-btn am-btn-default am-btn-xs">所  有</a>
+                <a href="/wechatdiscuss/discusslist?is_top=1" type="button" class="am-btn am-btn-default am-btn-xs">精  华</a>
+                <a href="/topic/list" type="button" class="am-btn am-btn-success am-btn-xs">热门话题</a>
+                <else/>
+                <a href="/wechatdiscuss/discusslist" type="button" class="am-btn am-btn-success am-btn-xs">所  有</a>
+                <a href="/wechatdiscuss/discusslist?is_top=1" type="button" class="am-btn am-btn-default am-btn-xs">精  华</a>
+                <a href="/topic/list" type="button" class="am-btn am-btn-default am-btn-xs">热门话题</a>
+            </if>
+        </div>
+    </div>
+</div>
+
+<div data-am-widget="list_news" class="am-list-news am-list-news-default" >
+    <div class="am-list-news-bd">
+        <ul class="am-list">
+            <!--缩略图在标题左边-->
+            <volist name="topic_list" id="topic">
+                <li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-left">
+                    <div class=" am-u-sm-12 am-list-main">
+                        <h3 class="am-list-item-hd">
+                            <a href="/topic/topicnote?topic={$topic.topic_title}">#{$topic.topic_title}#</a>
+                        </h3>
+                        <div class="am-list-item-text am-text-sm">
+                            {$topic.topic_content}
+                        </div>
+                        <div class="ds-comment-footer ds-comment-actions am-text-sm am-text-right">
+                            {$topic.join_nums}人参与此话题
+                        </div>
+                    </div>
+                </li>
+            </volist>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

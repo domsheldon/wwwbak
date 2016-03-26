@@ -1,0 +1,80 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>发表评论</title>
+
+  <!-- Set render engine for 360 browser -->
+  <meta name="renderer" content="webkit">
+
+  <!-- No Baidu Siteapp-->
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+  <link href="../amazeui/assets/css/amazeui.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../amazeui/assets/css/app.css">
+</head>
+<body style="border-top: 3px;margin-top: 3px;padding-top: 5px;">
+<form class="am-form" name="release" action="/wechatdiscuss/comment" method="post" data-am-validator>
+  <fieldset>
+    <legend></legend>
+    <div class="am-g am-cf" style="padding-left: 3px;padding-right: 3px;">
+      <input id="forumId" name="forumId" style="display: none">
+      <input id="reply_user_id" name="reply_user_id" style="display: none">
+      <input id="comment_type" name="comment_type" style="display: none">
+      <textarea class="" style="width: 100%;" id="commContent" name="commContent" placeholder="输入正文(10-800字)" minlength="10" maxlength="800"></textarea>
+    </div>
+    <p><button type="submit" class="am-btn am-btn-default">保存</button></p>
+  </fieldset>
+</form>
+
+
+
+<!--在这里编写你的代码-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="../amazeui/assets/js/jquery.min.js"></script>
+<!--<script src="assets/js/jquery.min.js"></script>-->
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<!--<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>-->
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<!--<script src="assets/js/amazeui.ie8polyfill.min.js"></script>-->
+<script src="../amazeui/assets/js/amazeui.ie8polyfill.min.js"></script>
+
+<![endif]-->
+<script src="../amazeui/assets/js/amazeui.min.js"></script>
+<script type="text/javascript">
+  $.extend({
+    getUrlVars: function(){
+      var vars = [], hash;
+      var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+      for(var i = 0; i < hashes.length; i++)
+      {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+      }
+      return vars;
+    },
+    getUrlVar: function(name){
+      return $.getUrlVars()[name];
+    }
+  });
+
+  $(document).ready(function() {
+    total = document.documentElement.clientHeight;
+    h_1 = total/2 -50;
+    $("#commContent").attr("style","height:" + h_1 + "px;width:100%;");
+    $("#forumId").val($.getUrlVar('forum_id'));
+    $("#reply_user_id").val($.getUrlVar('reply_user_id'));
+    $("#comment_type").val($.getUrlVar('comment_type'));
+    $("form fieldset legend:first-child").html('@'+decodeURI($.getUrlVar('name')));
+  });
+</script>
+</body>
+</html>

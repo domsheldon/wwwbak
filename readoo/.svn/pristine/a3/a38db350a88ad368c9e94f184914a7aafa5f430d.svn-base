@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <style>
+        .nofound{text-align: center;width: 100%;margin-top: 100px;}
+        h1{font-weight: normal;font-size: 18px;line-height: 35px;margin-top: 20px;}
+        @media(min-height:600px){
+            .nofound{margin-top: 150px;}
+            h1{font-size: 20px;}
+        }
+    </style>
+    <title>研发小伙伴们正在努力开发中</title>
+</head>
+<body>
+<div class="nofound">
+    <img src='__PUBLIC__/images/logo_404.png'>
+    <h1>研发的小伙伴们正在努力开发中<br>敬请期待...</h1>
+</div>
+</body>
+</html>

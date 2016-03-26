@@ -1,0 +1,120 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>有书共读对抗赛</title>
+  <!-- Set render engine for 360 browser -->
+  <meta name="renderer" content="webkit">
+
+  <!-- No Baidu Siteapp-->
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <link rel="icon" type="image/png" href="__PUBLIC__/amazeui/assets/i/favicon.png">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" sizes="192x192" href="__PUBLIC__/amazeui/assets/i/app-icon72x72@2x.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+  <link rel="apple-touch-icon-precomposed" href="__PUBLIC__/amazeui/assets/i/app-icon72x72@2x.png">
+
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="__PUBLIC__/amazeui/assets/i/app-icon72x72@2x.png">
+  <meta name="msapplication-TileColor" content="#0e90d2">
+
+  <link rel="stylesheet" href="__PUBLIC__/amazeui/assets/css/amazeui.min.css">
+</head>
+<body onselectstart="return false">
+
+<div class="am-g" id="top_div"></div>
+<div class="am-g" style="padding: 20px 5px 0px 5px;">
+  <h1 class="am-text-center" style="background:url(__PUBLIC__/images/line.png) no-repeat;background-size:100%;
+  background-position:center center;">有书对抗任务</h1>
+  <dl style="padding: 0px 8px 5px 8px;">
+    <dd class="am-text-lg">1、参与共读、签到、发随笔、集赞得分，和队友比拼谁更勤奋！</dd>
+    <dd class="am-text-lg">2、个人得分汇总成小队成绩，参与群组PK榜排名</dd>
+  </dl>
+</div>
+<div class="am-g" style="padding: 20px 5px 0px 5px;">
+  <h1 class="am-text-center" style="background:url(__PUBLIC__/images/line.png) no-repeat;background-size:100%;
+  background-position:center center;">对抗赛得分规则</h1>
+  <table class="am-table am-table-bordered am-table-radius am-table-striped am-text-center">
+    <thead>
+      <tr>
+        <th class="am-text-center">规定动作</th>
+        <th class="am-text-center">得分</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>签到</td>
+        <td>5分/次</td>
+      </tr>
+      <tr>
+        <td>获得赞</td>
+        <td>1分/个</td>
+      </tr>
+      <tr>
+        <td>发布随笔</td>
+        <td>8分/条</td>
+      </tr>
+      <tr>
+        <td>回复消息</td>
+        <td>2分/次</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="am-g am-cf" style="width:80%">
+  <a href='/chengjiu?user_id={$user_id}'><button type="button" class="am-btn am-btn-success am-btn-block am-center">查看群组成绩单</button></a>
+</div>
+<br/>
+<!--在这里编写你的代码-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="__PUBLIC__/amazeui/assets/js/jquery.min.js"></script>
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="__PUBLIC__/amazeui/assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="__PUBLIC__/amazeui/assets/js/amazeui.min.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+            total = document.documentElement.clientWidth;
+            //如果尺寸小于图片原始尺寸
+            if(total <= 750){
+              $(document.body).css("background","url(__PUBLIC__/images/duikang.jpg) no-repeat");
+              $(document.body).css("background-position","center top");
+
+              h3 = document.documentElement.clientHeight;
+              var height = 375 * total / 750;
+              $(document.body).css("background-size","100% " + height + "px");
+              h_1 = height;
+              $("#top_div").attr("style","height:" + h_1 + "px;");
+            }else{
+              console.log(total);
+              $(document.body).css("background","url(__PUBLIC__/images/duikang.jpg) no-repeat");
+              $(document.body).css("background-position","left top");
+              $(document.body).css("background-size","750px");
+              $(document.body).css("width","750px");
+
+              h_1 = 375;
+              $("#top_div").attr("style","height:" + h_1 + "px;");
+
+            }
+          }
+  );
+</script>
+
+</body>
+</html>

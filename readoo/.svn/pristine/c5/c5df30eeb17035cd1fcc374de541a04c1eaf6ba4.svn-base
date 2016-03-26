@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="__PUBLIC__/css/bootstrap.min.css" rel="stylesheet">
+    <script src="__PUBLIC__/js/jquery-1.11.0.js"></script>
+    <script src="__PUBLIC__/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div>
+    <table id="tb" class="table table-condensed">
+        <caption>书籍列表</caption>
+        <thead>
+        <tr>
+            <th>选择</th>
+            <th>书籍编号</th>
+            <th>isbn编码</th>
+            <th>书籍名称</th>
+            <th>图书封面</th>
+        </tr>
+        </thead>
+        <tbody>
+        <volist name="bookInfo" id="vo">
+            <tr>
+                <td><input type="radio" name="ch" value="{$vo.book_id}" id="chradio" onclick="GetSelectedVal()"></td>
+                <td id="book_id" value="{$vo.book_id}">{$vo.book_id}</td>
+                <td id="isbn" value="{$vo.isbn13}">{$vo.isbn13}</td>
+                <td id="title" value="{$vo.title}">{$vo.title}</td>
+                <td id="cover" value="{$vo.cover}">{$vo.cover}</td>
+            </tr>
+        </volist>
+        </tbody>
+    </table>
+    <div style="position: absolute;bottom: 10px;padding: 10px">
+        <button id="addToPlanbook" type="submit" class="btn btn-default">新增共读书籍</button>
+    </div>
+</div>
+
+</body>
+<script type="application/javascript">
+    var chooseId = '';
+    var bookId = '';
+    var isbn = '';
+    var title = '';
+    var cover = '';
+    function GetSelectedVal()
+    {
+        var rds=document.getElementsByName("ch");
+        var rdVal;
+
+        for(var i=0;i<rds.length;i++)
+        {
+            if(rds.item(i).checked){
+                rdVal=rds.item(i).getAttribute("value");
+                chooseId = rdVal;
+                var tb = document.getElementById("tb");  //根据id找到这个表格
+                var rows = tb.rows;               //取得这个table下的所有行
+                for(var i=0;i<rows.length;i++)//循环遍历所有的tr行
+                {
+                    for(var j=0;j<rows[i].cells.length;j++)//取得第几行下面的td个数，再次循环遍历该行下面的td元素
+                    {
+                        var cell = rows[i].cells[j];//获取某行下面的某个td元素
+                        if((i>0)&&(j == 1)&&(cell.innerHTML == chooseId)){
+                            var jj = j;
+
+                            for(var j=jj;j<rows[i].cells.length;j++)//取得第几行下面的td个数，再次循环遍历该行下面的td元素
+                            {
+                                var cell = rows[i].cells[j];//获取某行下面的某个td元素
+                                if(j == 1){
+                                    bookId = cell.innerHTML;
+                                }
+                                if(j == 2){
+                                    isbn = cell.innerHTML;
+                                }
+                                if(j == 3){
+                                    title = cell.innerHTML;
+                                }
+                                if(j == 4){
+                                    cover = cell.innerHTML;
+                                }
+                            }
+
+
+                        }
+                    }
+                }
+                break;
+            }
+            else{
+                continue;
+            }
+        }
+    }
+
+    $('#addToPlanbook').click(function(){
+        window.parent.document.getElementById('bookId').value=bookId;
+        window.parent.document.getElementById('isbnVal').value=isbn;
+        window.parent.document.getElementById('bookVal').value=title;
+        //window.parent.document.getElementById('file_path').value=cover;
+        $.ajax({
+            type : 'post',
+            url : '/admin/coreading/add',
+            data : {'chooseId':chooseId},
+            success : function() {
+                var index = parent.layer.getFrameIndex(window.name); //获取当前窗体索引
+                parent.layer.close(index); //执行关闭
+            },
+            error :function(e){
+                alert(e);
+            }
+        });
+    })
+</script>
+</html>

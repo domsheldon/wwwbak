@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/tx.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/group_style.css">
+    <title>个人中心</title>
+</head>
+<body>
+<header>
+    <div class="tx_h">
+        <i class='bj'></i>
+        <div class='all'>
+            <p class="tx">
+                <img src="__PUBLIC__/images/tx_mr.png">
+                <i class='b'></i>
+                <i class="boy"></i>
+            </p>
+            <p class="name"><span></span></p>
+            <p class="info"><span>职业：</span><span>地区：</span></p>
+            <p class="con"><span></span></p>
+        </div>
+    </div>
+</header>
+<div class="list_h">
+    <ul></ul>
+    <div class='more' data-p='2'>正在加载...</div>
+</div>
+<script src="__PUBLIC__/js/jquery-1.8.3.min.js"></script>
+<script>
+$(document).ready(function(){
+    var page = 10; //定义页面显示条数
+    var url01 = 'http://zaia.fengwo.com/m/otherinfo/digother'; //点赞接口
+    var url02 = 'http://zaia.fengwo.com/m/otherinfo/digother'; //取消赞接口
+    var url03 = 'http://zaia.fengwo.com/m/otherinfo/getother'; //分页接口
+    var url04 = 'http://zaia.fengwo.com/m/otherinfo/getother'; //初始化页面接口
+    var url05 = 'http://zaia.fengwo.com/m/otherinfo/discuss'; //评论地址
+
+    var ur = location.href.split('?')[1].split('&');
+    var user_id = ur[0].split('=')[1],ta_user_id = ur[1].split('=')[1];  //获取查看页面用户ID
+    $.ajax({
+        url: url04,
+        type: 'post',
+        dataType: 'json',
+        data: {'user_id':user_id,'ta_user_id':ta_user_id},
+        success: function(json){
+            console.log(json);
+            if(json.code==200){
+                if(json.note_data.length>0){
+                    var tt = '';
+                    for(var i=0;i<json.note_data.length;i++){
+                        var im = '';
+                        if(json.note_data[i].img_str){
+                            im = "<p><img src='"+json.note_data[i].img_str+"'></p>";
+                        }
+                        var timee = json.note_data[i].create_time,
+                            tt_data = timee.split(' ')[0].split('-');
+                        var tt_tet = tt_data[1]+'-'+tt_data[2];
+                        var is_comment = json.note_data[i].is_comment==1?'pl_o':'pl';  //是否评论
+                        var is_digg = json.note_data[i].is_digg==1?'zan_o':'zan';  //是否点赞
+                        tt+="<li data-id='"+json.note_data[i].id+"'><div class='part01'><img src='"+json.other_data.avatar+"'><span>"+json.other_data.name+"<br><em>"+tt_tet+"</em></span></div><div class='part02'><h2>"+json.note_data[i].title+"</h2><div><p>"+json.note_data[i].content+"</p>"+im+"</div></div><div class='part03'><a class='share'><i></i></a><a href='"+url05+"?otherid="+ta_user_id+"&userid="+user_id+"&id="+json.note_data[i].id+"' class='"+is_comment+"'><i></i><em>"+json.note_data[i].comment_count+"</em></a><a class='"+is_digg+"'><i></i><em>"+json.note_data[i].digg_count+"</em></a></div></li>";
+                    }
+                    var ss = ''
+                    if(json.other_data.sex==1){
+                        ss='girl';
+                    }else if(json.other_data.sex==2){
+                        ss='boy';
+                    }
+                    $(".tx_h .tx img").attr('src',json.other_data.avatar);
+                    $(".tx_h .tx i:eq(1)").removeClass('boy').addClass(ss);
+                    $(".tx_h .name span").html(json.other_data.name);
+                    $(".tx_h .info").html("<span>职业："+json.other_data.job+"</span><span>地区："+json.other_data.city+"</span>");
+                    $(".tx_h .con span").html(json.other_data.intro);
+                    $(".list_h ul").html(tt);
+                    if(json.note_data.length<page){$(".more").remove();}
+                }else{
+                    $(".list_h ul").html("暂无随笔");
+                }
+            }else{
+                alert('请求失败')
+            }
+        },error: function(obj){
+            alert('服务器无响应');
+        }
+    })
+
+    //下拉加载更多
+    window.onscroll = function(){
+        if($('.list_h').children().hasClass('more')){
+            var scrolltop = $(window).scrollTop();
+            var loadheight = $(".more").offset().top;
+            var windheight = $(window).height();
+            if(loadheight-scrolltop-windheight+40<=0){
+                var page = $('.more').attr('data-p');
+                $.ajax({
+                    url: url03,
+                    type: 'post',
+                    dataType: 'json',
+                    data: {'user_id':user_id,'ta_user_id':ta_user_id,'page':page},
+                    success: function(json){
+                        if(json.code==200){
+                            if(json.note_data && json.note_data.length>0){
+                                var tt = '';
+                                for(var i=0;i<json.note_data.length;i++){
+                                    var im = '';
+                                    if(json.note_data[i].img_str){
+                                        im = "<p><img src='"+json.note_data[i].img_str+"'></p>";
+                                    }
+                                    var timee = json.note_data[i].create_time,
+                                        tt_data = timee.split(' ')[0].split('-');
+                                    var tt_tet = tt_data[1]+'-'+tt_data[2];
+                                    var is_comment = json.note_data[i].is_comment==1?'pl_o':'pl';  //是否评论
+                                    var is_digg = json.note_data[i].is_digg==1?'zan_o':'zan';  //是否点赞
+                                    tt+="<li data-id='"+json.note_data[i].id+"'><div class='part01'><img src='"+json.other_data.avatar+"'><span>"+json.other_data.name+"<br><em>"+tt_tet+"</em></span></div><div class='part02'><h2>"+json.note_data[i].title+"</h2><div><p>"+json.note_data[i].content+"</p>"+im+"</div></div><div class='part03'><a class='share'><i></i></a><a class='"+is_comment+"'><i></i><em>"+json.note_data[i].comment_count+"</em></a><a class='"+is_digg+"'><i></i><em>"+json.note_data[i].digg_count+"</em></a></div></li>";
+                                }
+                                $(".list_h ul").append(tt);
+                                $(".more").attr('data-p',page*1+1);
+                            }else{
+                                $(".more").remove();
+                            }
+                        }else{
+                            alert('加载失败')
+                        }
+                        if(json.note_data==null){$(".more").remove();}
+                    },
+                    errer: function(){
+                        alert('服务器无响应')
+                    }
+                })
+            };
+        }
+    }
+
+    //点赞
+    $(".list_h .part03 .zan").live("click",function(e){
+        var thi = $(this),
+            nu = thi.children('em').html(),
+            id = thi.parents('li').attr('data-id');
+        $.ajax({
+            url: url01,
+            type: 'post',
+            dataType: 'json',
+            data: {'user_id':user_id,'ta_user_id':ta_user_id,'id':id,'is_digg':'0'},
+            success: function(json){
+                if(json.code==200){
+                    thi.addClass('zan_o').removeClass('zan');
+                    thi.children('em').html(nu*1+1);
+                }else{
+                    alert('点赞失败')
+                }
+            },
+            error: function(){
+                alert('服务器无响应')
+            }
+        })
+    })
+    //取消赞
+    $(".list_h .part03 .zan_o").live("click",function(e){
+        var thi = $(this),
+            nu = thi.children('em').html(),
+            id = thi.parents('li').attr('data-id');
+        $.ajax({
+            url: url02,
+            type: 'post',
+            dataType: 'json',
+            data: {'user_id':user_id,'ta_user_id':ta_user_id,'id':id,'is_digg':'1'},
+            success: function(json){
+                if(json.code==200){
+                    thi.addClass('zan').removeClass('zan_o');
+                    thi.children('em').html(nu*1-1);
+                }else{
+                    alert('取消赞失败')
+                }
+            },
+            error: function(){
+                alert('服务器无响应')
+            }
+        })
+    })
+
+    $('.tx_h .all .tx .b').on('click','.b',function(){
+        alert('touxiang')
+    })
+})
+</script>
+</body>
+</html>

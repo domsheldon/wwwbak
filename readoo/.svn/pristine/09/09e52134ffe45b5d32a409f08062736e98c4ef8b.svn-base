@@ -1,0 +1,96 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Readoo</title>
+
+  <!-- Set render engine for 360 browser -->
+  <meta name="renderer" content="webkit">
+
+  <!-- No Baidu Siteapp-->
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <link rel="icon" type="image/png" href="__PUBLIC__/amazeui/assets/i/favicon.png">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" sizes="192x192" href="__PUBLIC__/amazeui/assets/i/app-icon72x72@2x.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+  <link rel="apple-touch-icon-precomposed" href="__PUBLIC__/amazeui/assets/i/app-icon72x72@2x.png">
+
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="__PUBLIC__/amazeui/assets/i/app-icon72x72@2x.png">
+  <meta name="msapplication-TileColor" content="#0e90d2">
+
+  <link rel="stylesheet" href="__PUBLIC__/amazeui/assets/css/amazeui.min.css">
+  <link rel="stylesheet" href="__PUBLIC__/amazeui/assets/css/app.css">
+</head>
+<body style="background:url(__PUBLIC__/images/over_bj.png) no-repeat;background-size:100%;">
+    <div class="am-g" id="top_div"></div>
+    <div class="am-g" id="middle_div">
+      <div class="am-u-sm-8  am-u-sm-centered">
+        <p class="am-text-default am-text-center">我刚刚在<span style="color: #2a99e4;">Readoo</span>读完了</p>
+        <p class="am-text-center" style="font-size:20px;"><strong>《{$info.book_name}》</strong></p>
+        <p class="am-text-center"><img class="am-circle" src="{$info.avatar}" height="50px" width="50px"/></p>
+        <p class="am-text-lg am-text-center"><strong>良心推荐给大家</strong></p>
+        <p class="am-text-center"><img src="{$info.large_cover}" width="45%"/></p>
+      </div>
+    </div>
+
+    <div class="am-g" style="background-color:#242424;">
+      <div class="am-u-sm-9 am-vertical-align" style="height: 56px;">
+        <img src="__PUBLIC__/images/logo.png" width="50px" style="padding: 8px 8px 5px 2px;"/>
+        <div class="am-vertical-align-middle am-text-md" style="color:#F8F8FF">
+          Readoo<br/>中国第一款陪读应用
+        </div>
+      </div>
+      <div class="am-u-sm-3 am-vertical-align" style="height: 56px;color: #ff9000;">
+        <div class="am-vertical-align-middle am-text-lg">立即下载</div>
+      </div>
+    </div>
+
+<!--在这里编写你的代码-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="__PUBLIC__/amazeui/assets/js/jquery.min.js"></script>
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="__PUBLIC__/amazeui/assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="__PUBLIC__/amazeui/assets/js/amazeui.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+                total = document.documentElement.clientWidth;
+                //如果尺寸小于图片原始尺寸
+                if(total <= 750){
+                    h3 = document.documentElement.clientHeight;
+                    console.log(h3);
+                    var size = 750 / 1095;
+                    h_1 = 150 * total / 750;
+                    h_2 = h3 - h_1 - 56;
+                    $("#top_div").attr("style","height:" + h_1 + "px;");
+                    $("#middle_div").attr("style","height:" + h_2 + "px;");
+                }else{
+                    h3 = 1095 * total / 750;
+                    console.log(h3);
+                    var size = 750 / 1095;
+                    h_1 = 100 * total / 750;
+                    h_2 = h3 - h_1 - 56;
+                    $("#top_div").attr("style","height:" + h_1 + "px;");
+                    $("#middle_div").attr("style","height:" + h_2 + "px;");
+                }
+            }
+    );
+</script>
+</body>
+</html>

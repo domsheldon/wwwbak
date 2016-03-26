@@ -1,0 +1,108 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>个人中心</title>
+
+  <!-- Set render engine for 360 browser -->
+  <meta name="renderer" content="webkit">
+
+  <!-- No Baidu Siteapp-->
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+  <link rel="stylesheet" href="__PUBLIC__/amazeui/assets/css/amazeui.min.css">
+  <link rel="stylesheet" href="__PUBLIC__/amazeui/assets/css/app.css">
+
+</head>
+<body>
+<!--在这里编写你的代码-->
+<div class="am-g" style="padding-top: 5px;">
+  <div class="am-u-sm-9 am-vertical-align" style="height: 80px;">
+    <img src="{$user_info['avatar']}" width="80px" height="80px" style="padding: 8px 8px 5px 2px;"/>
+    <div class="am-vertical-align-middle am-text-lg">
+       {$user_info['name']}
+    </div>
+  </div>
+  <!--<div class="am-u-sm-3 am-vertical-align" style="height: 100px;color: #ff9000;">-->
+    <!--<div class="am-vertical-align-middle am-text-lg" style="text-align: right;">立即下载</div>-->
+  <!--</div>-->
+</div>
+
+<!--<hr data-am-widget="divider" style="padding-top: 0px;" class="am-divider am-divider-default" />-->
+
+<ul class="am-list am-list-border">
+  <li><a href="/usercenter/myforum"><i class="am-icon-sticky-note-o"></i>
+    我的随笔<span style="text-align: right"></span>
+    <i class="am-icon-chevron-right am-fr"></i></a></li>
+  <li><a href="/usercenter/mymsg"> <i class="am-icon-comment-o am-icon-fw"></i>
+    我的消息
+    <if condition="$msg_count neq 0">
+      <span class="am-badge am-badge-danger am-round">{$msg_count}</span>
+    </if>
+    <i class="am-icon-chevron-right am-fr"></i></a></li>
+  <li><a href="/usercenter/mydigg"><i class="am-icon-thumbs-o-up am-icon-fw"></i>
+    我的赞
+    <if condition="$digg_count neq 0">
+      <span class="am-badge am-badge-danger am-round">{$digg_count}</span>
+    </if>
+    <i class="am-icon-chevron-right am-fr"></i></a></li>
+  <li><a href="/wechat/readlist?msg=2"><i class="am-icon-line-chart am-icon-fw"></i>
+    我的成就
+    <i class="am-icon-chevron-right am-fr"></i></a></li>
+  <li><a href="#" onclick="alert('暂未开放，敬请期待！');"><i class="am-icon-institution am-icon-fw"></i>
+    我的书房
+    <i class="am-icon-chevron-right am-fr"></i></a></li>
+</ul>
+
+<div data-am-widget="navbar" class="am-navbar am-cf am-navbar-default "
+     id="">
+  <ul class="am-navbar-nav am-cf am-avg-sm-4">
+    <li >
+      <a href="/wechatdiscuss/discusslist" class="">
+        <span class="am-icon-home"></span>
+        <span class="am-navbar-label">首页</span>
+      </a>
+    </li>
+    <li>
+      <a href="###" class="" onclick="send_note();">
+        <span class="am-icon-pencil-square-o"></span>
+        <span class="am-navbar-label">随笔</span>
+      </a>
+    </li>
+    <li>
+        <a href="/usercenter/index" class="">
+          <span class="am-icon-user"></span>
+                <span class="am-navbar-label">
+                    我的</span>
+        </a>
+    </li>
+    <li>
+      <a href="javascript: void(0)" class="am-menu-toggle" data-am-offcanvas="{target: '#right-menu'}">
+        <i class="am-menu-toggle-icon am-icon-bars"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="__PUBLIC__/amazeui/assets/js/jquery.min.js"></script>
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="__PUBLIC__/amazeui/assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="__PUBLIC__/amazeui/assets/js/amazeui.min.js"></script>
+
+<script type="application/javascript">
+  function send_note(){
+    var send_url = '/public/discuss/addforum.html';
+    window.location.href = send_url;
+  }
+</script>
+</body>
+</html>

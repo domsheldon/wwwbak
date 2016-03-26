@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>readoo后台管理</title>
+
+    <script src="__ECHARTS__/echarts.js" type="text/javascript"></script>
+    <!-- Bootstrap Core CSS -->
+    <link href="__PUBLIC__/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="__PUBLIC__/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- DataTables CSS -->
+    <link href="__PUBLIC__/css/plugins/dataTables.bootstrap.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="__PUBLIC__/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="__PUBLIC__/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="__PUBLIC__/js/html5shiv.js"></script>
+    <script src="__PUBLIC__/js/respond.min.js"></script>
+
+    <![endif]-->
+
+</head>
+
+<body>
+<include file='Public:header'/>
+<include file='Public:sidebar'/>
+<div id="wrapper">
+    <!-- Page Content -->
+    <div id="page-wrapper" style="height: 100%">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">新增用户数/活跃用户数</h1>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bar-chart-o fa-fw"></i> 新增用户数/活跃用户数
+                </div>
+                <div class="panel-body">
+                    <div id="main" style="height:400px;width:100%"></div>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /#page-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
+<!-- jQuery Version 1.11.0 -->
+<script src="__PUBLIC__/js/jquery-1.11.0.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="__PUBLIC__/js/bootstrap.min.js"></script>
+
+<!-- Metis Menu Plugin JavaScript -->
+<script src="__PUBLIC__/js/plugins/metisMenu/metisMenu.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="__PUBLIC__/js/sb-admin-2.js"></script>
+</body>
+
+
+<script type="text/javascript">
+    // Step:3 conifg ECharts's path, link to echarts.js from current page.
+    // Step:3 为模块加载器配置echarts的路径，从当前页面链接到echarts.js，定义所需图表路径
+    require.config({
+        paths: {
+            echarts: '/public/Admin/echarts'
+        }
+    });
+
+    // Step:4 require echarts and use it in the callback.
+    // Step:4 动态加载echarts然后在回调函数中开始使用，注意保持按需加载结构定义图表路径
+    require(
+            [
+                'echarts',
+                'echarts/chart/bar',
+            ],
+            function (ec) {
+                var chart_data='';
+                var chart_xaxis='';
+                //统计新增用户量
+                $.ajax({
+                    url: '/Admin/DataChart/statYearUser',
+                    type: 'post',
+                    async: false,
+                    data: {},
+                    dataType: 'json',
+                    success: function(msg){
+                        if(msg.code == '1'){
+
+                            chart_data = msg.data;
+                            chart_xaxis = msg.xaxis;
+                        }else{
+                            alert("error");
+                        }
+                    }
+                });
+                //--- 折柱 ---
+                var myChart = ec.init(document.getElementById('main'));
+                myChart.setOption({
+                    tooltip : {
+                        trigger: 'axis'
+                    },
+                    legend: {
+                        data:['新增用户量']
+                    },
+                    toolbox: {
+                        show : false,
+                        feature : {
+                            mark : {show: true},
+                            dataView : {show: true, readOnly: false},
+                            magicType : {show: true, type: ['line', 'bar']},
+                            restore : {show: true},
+                            saveAsImage : {show: true}
+                        }
+                    },
+                    calculable : true,
+                    xAxis : [
+                        {
+                            type : 'category',
+                            data : chart_xaxis
+                        }
+                    ],
+                    yAxis : [
+                        {
+                            type : 'value',
+                            splitArea : {show : true}
+                        }
+                    ],
+                    series : [
+                        {
+                            name:'新增用户量',
+                            type:'line',
+                            stack: '总量',
+                            data:chart_data
+                        },
+                    ]
+                });
+            }
+    );
+</script>
+</html>

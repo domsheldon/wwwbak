@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>readoo后台管理</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="__PUBLIC__/css/bootstrap.min.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="__PUBLIC__/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="__PUBLIC__/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Amaze CSS -->
+    <link href="/public/amazeui/assets/css/amazeui.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="__PUBLIC__/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="__PUBLIC__/js/html5shiv.js"></script>
+    <script src="__PUBLIC__/js/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+<include file='Public:header'/>
+<include file='Public:sidebar'/>
+<div id="wrapper">
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">编辑微信客服</h1>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        编辑微信客服
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="form-group" id="isbn" style="margin-left: 30px;">
+                                <label>客服名称:</label>
+                                <input id="custName" type="text" class="text small" name='title' value='{$editInfo[0].name}' style="width: 400px"/>
+                            </div>
+                            <div class="form-group" style="margin-left: 30px;">
+                                <label>客服标签:</label>
+                                <input id="custType" type="text" class="text small" name='title' value='{$editInfo[0].cust_type}' style="width: 400px"/>
+                            </div>
+                            <div class="col-lg-12">
+                                <button id="{$editInfo[0].id}" class="am-btn am-btn-primary am-btn-xs saveCust" style="float: left">保存</button>
+                            </div>
+                            <!-- /.col-lg-6 (nested) -->
+                        </div>
+                        <!-- /.row (nested) -->
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+                <!-- /.panel -->
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /#page-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
+<!-- jQuery Version 1.11.0 -->
+<script src="__PUBLIC__/js/jquery-1.11.0.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="__PUBLIC__/js/bootstrap.min.js"></script>
+<script src="__PUBLIC__/js/bootstrap-datetimepicker.js"></script>
+
+<!-- Metis Menu Plugin JavaScript -->
+<script src="__PUBLIC__/js/plugins/metisMenu/metisMenu.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="__PUBLIC__/js/sb-admin-2.js"></script>
+<script type="text/javascript" src="__LAYER__/layer.js"></script>
+
+
+</body>
+<script type="text/javascript">
+    var cust_service_list = document.getElementById('cust_service_list');
+    cust_service_list.setAttribute("class", "active");
+    var picPath = '';
+
+    //编辑微信客服
+    $('.saveCust').click(function(){
+        var custName = $('#custName').val();
+        var custType = $('#custType').val();
+        var custId = $(this).attr("id");
+
+        if(custName.length == 0){
+            layer.tips('请输入客服名称', '#custName', {
+                tips: [1, '#3595CC'],
+                time: 4000
+            });
+            return false;
+        }
+        $.ajax({
+            type : 'post',
+            url : '/Admin/CustService/doEditCust?custId='+custId,
+            data : {'custId':custId,'custName':custName,'custType':custType},
+            dataType : 'json',
+            success : function(msg) {
+                if(msg.code == 0){
+                    layer.msg('保存客服失败', {
+                        time: 2000 //2秒关闭（如果不配置，默认是3秒）
+                    }, function(){
+                        //do something
+                    });
+                }else{
+                    layer.msg('保存客服成功', {
+                        time: 2000 //2秒关闭（如果不配置，默认是3秒）
+                    }, function(){
+                        window.location.reload();
+                    });
+                }
+            },
+            error :function(e){
+                alert('系统发生错位，保存失败');
+            }
+        });
+
+    });
+
+    $('.form_date').datetimepicker({
+        format: 'yyyy-mm-dd hh:ii'
+    });
+</script>
+</html>

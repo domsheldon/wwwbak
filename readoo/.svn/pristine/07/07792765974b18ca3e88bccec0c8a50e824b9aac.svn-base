@@ -1,0 +1,143 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>我的随笔</title>
+
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+    <link href="__PUBLIC__/amazeui/assets/css/amazeui.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="__PUBLIC__/amazeui/assets/css/app.css">
+    <!--<script src="__PUBLIC__/public/js/youshu.js"></script>-->
+</head>
+<body>
+
+<div data-am-widget="list_news" class="am-list-news am-list-news-default">
+    <!--列表标题-->
+    <div class="am-list-news-hd am-cf" style="border-top: 0px;margin-top: 0px;padding-top: 0px;">
+        <!--带更多链接-->
+        <!--<h2>《{$bookName[0].book_title}》讨论区</h2>-->
+        <h2>【我的随笔】</h2>
+    </div>
+    <div class="am-list-news-bd">
+        <ul class="am-list" id="forum">
+            <volist name="forumList" id="vo">
+                <li class="am-g am-list-item-desced" style="padding-bottom: 0px;">
+                    <div style="padding-bottom: 2px;" class="am-cf">
+                        <a href="javascript:;" class="am-comment-actions am-fr forum-delete" style="margin-left: 3px" value="{$vo.id}">
+                            <i class="am-icon-times"></i>
+                            删除
+                        </a>
+                        <img class="am-comment-avatar" alt="" src="{$vo.avatar}"/>
+                        <p class="am-text-sm" style="padding-top: 7px; margin-top: 2px;margin-bottom: 2px;">
+                            <span style="padding-left: 5px;" class="am-text-sm "><strong>{$vo.name}</strong></span>
+                            <time>发表于 {$vo.create_time|substr=5,11}</time>
+                        </p>
+                    </div>
+                    <div>
+                        <a href="/wechatdiscuss/discuss/{$vo.id}" class="am-list-item-hd ">{$vo.title}</a>
+                        <div class="am-list-item-text">
+                            {$vo.desc}
+                        </div>
+                    </div>
+                    <footer class="am-comment-footer am-g am-cf" style="padding-top:7px;padding-bottom: 0px;">
+                        <div class="am-u-sm-5" style="padding-top: 3px;padding-bottom: 1px;">
+                        </div>
+                        <div class="am-u-sm-7 am-fr">
+                            <ul class="am-avg-sm-3 am-thumbnails">
+                                <li>
+                                </li>
+                                <li style="padding-bottom: 0px;">
+                                    <i class="am-icon-comment-o"></i>
+                                    <span>{$vo.comment_count}</span>
+                                </li>
+                                <li style="padding-bottom: 0px;">
+                                    <i class="am-icon-thumbs-o-up" value="{$vo.id}"></i>
+                                    <span>{$vo.digg_count}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </footer>
+                </li>
+            </volist>
+        </ul>
+    </div>
+</div>
+<br/>
+
+<div class="am-modal am-modal-confirm" tabindex="-1" id="my-confirm">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd"></div>
+        <div class="am-modal-bd">
+            确定要删除这条问题吗？
+        </div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn" data-am-modal-cancel>取消</span>
+            <span class="am-modal-btn" data-am-modal-confirm>确定</span>
+        </div>
+    </div>
+</div>
+
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="__PUBLIC__/amazeui/assets/js/jquery.min.js"></script>
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<!--<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>-->
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="__PUBLIC__/amazeui/assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="__PUBLIC__/amazeui/assets/js/amazeui.min.js"></script>
+
+<script type="application/javascript">
+    var book_id ="<?php echo $book_id ?>";
+
+    function send_note(){
+        var send_url = '/public/discuss/addforum.html?book_id='+book_id;
+        window.location.href = send_url;
+    }
+
+    /**
+     * 删除评论
+     */
+    function del_forum(){
+        var forum_id = $(this).attr('value');
+        $('#my-confirm').modal({
+            relatedTarget: this,
+            onConfirm: function(options) {
+                $.ajax({
+                    type : 'post',
+                    url : '/wechatdiscuss/deleteforum',
+                    data : {'forum_id':forum_id},
+                    success : function() {
+                        window.location.href='/usercenter/myforummyforum.html';
+                    },
+                    error :function(e){
+                        alert("评论失败");
+                    }
+                });
+            },
+            // closeOnConfirm: false,
+            onCancel: function() {
+            }
+        });
+    }
+
+    $(document).ready(function(){
+        //绑定删除按钮对应的事件
+        $('#forum').on('click','.forum-delete',del_forum);
+    });
+</script>
+</body>
+
+<script src="__PUBLIC__/dropload/dist/dropload.min.js"></script>
+</html>
