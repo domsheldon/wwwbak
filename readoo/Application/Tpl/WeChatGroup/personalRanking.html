@@ -1,0 +1,108 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>个人榜</title>
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="icon" type="image/png" href="__PUBLIC__/amazeui/assets/i/favicon.png">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="__PUBLIC__/amazeui/assets/i/app-icon72x72@2x.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+    <link rel="apple-touch-icon-precomposed" href="__PUBLIC__/amazeui/assets/i/app-icon72x72@2x.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="__PUBLIC__/amazeui/assets/i/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+
+    <link rel="stylesheet" href="__PUBLIC__/amazeui/assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/amazeui/assets/css/app.css">
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+</head>
+<body>
+<style>
+
+    .avatar{
+        float: left;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 1px solid transparent;
+    }
+</style>
+<div class="am-g">
+    <div class="am-u-sm-12" style="padding: 15px 5px 2px 5px;">
+        <p class="am-text"><strong>有书共读 第{$data.book.num}期《{$data.book.book_title}》</strong></p>
+        <p class="am-text" style="color: #646464">阅读时间：{$data.book.start_time} ~ {$data.book.end_time}</p>
+    </div>
+
+</div>
+
+<div class="am-g" style="background-color: #efeff4;height: 10px;"></div>
+<div class="am-g" style="padding: 5px 15px 10px 5px;">
+    <div class="am-u-sm-6 am-text-lg" style="padding-top: 8px;"><strong>个人排行周榜</strong></div>
+    <div class="am-u-sm-6 am-text-lg am-text-right" style="padding-top: 8px;"><strong>得分</strong></div>
+</div>
+<div class="am-g" style="background-color: #efeff4;height: 10px;"></div>
+
+<volist name='data.list' id='info' key='k'>
+    <div class="am-vertical-align" style="height: 50px;padding: 5px 15px 0px 3px;background-color: white;">
+        <div class="am-u-sm-2 am-text-lg am-vertical-align-middle" style="padding-top: 5px;">{$k}</div>
+        <div class="am-u-sm-7 am-text-lg" style="am-vertical-align-middle">
+            <img src="{$info.avatar}" class="avatar">
+            <span style="width:120px;padding-left: 5px;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;" class="am-vertical-align-middle">{$info.name}</span>
+        </div>
+        <div class="am-u-sm-3 am-text-right am-text-xl am-vertical-align-middle" style="color: #00b289">{$info.score}</div>
+    </div>
+    <hr data-am-widget="divider" style="margin-bottom: 0px;margin-top: 0px;" class="am-divider am-divider-dotted" />
+</volist>
+
+<!--在这里编写你的代码-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="__PUBLIC__/amazeui/assets/js/jquery.min.js"></script>
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="__PUBLIC__/amazeui/assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="__PUBLIC__/amazeui/assets/js/amazeui.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+                total = document.documentElement.clientWidth;
+                //如果尺寸小于图片原始尺寸
+                if(total <= 750){
+
+                    h3 = document.documentElement.clientHeight;
+                    var height = 375 * total / 750;
+
+                    h_1 = height;
+                    $("#top_div").attr("style","height:" + h_1 + "px;");
+                }else{
+                    h_1 = 375;
+                    $("#top_div").attr("style","height:" + h_1 + "px;");
+
+                }
+            }
+    );
+</script>
+
+</body>
+</html>

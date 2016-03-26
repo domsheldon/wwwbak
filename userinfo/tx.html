@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="css/tx.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>个人中心</title>
+</head>
+<body>
+<header>
+    <div class="tx_h">
+        <i class='bj'></i>
+        <div class='all'>
+            <p class="tx">
+                <img src="images/tx_mr.png">
+                <i class='b'></i>
+                <i class="boy"></i>
+            </p>
+            <p class="name"><span></span></p>
+            <p class="info"><span>职业：</span><span>地区：</span></p>
+            <p class="con"><span></span></p>
+        </div>
+    </div>
+</header>
+<div class="list_h">
+    <ul></ul>
+    <div class='more'>正在加载...</div>
+</div>
+<script src="jquery-1.10.1.min.js"></script>
+<script>
+$(document).ready(function(){
+    var page = 2; //定义页面显示条数
+    var id = 32;  //获取查看页面用户ID
+    $.ajax({
+        url: 'http://api.fengwo.com/m/otherinfo',
+        type: 'get',
+        dataType: 'jsonp',
+        data: {'id':id},
+        success: function(json){
+            console.log(json);
+            if(json.code==200){
+                if(json.note_data.length>0){
+                    var tt = '';
+                    for(var i=0;i<json.note_data.length;i++){
+                        var im = '';
+                        if(json.note_data[i].img){
+                            im = "<p><img src='txbj.jpg'></p>";
+                        }
+                        var tt = json.note_data[i].create_time,
+                            tt_data = tt.split(' ')[0].split('-');
+                        tt+="<li><div class='part01'><img src='"+json.other_data.avatar+"'><span>"+json.other_data.name+"<br><em>2小时前</em></span></div><div class='part02'><h2>"+json.note_data[i].title+"</h2><div><p>"+json.note_data[i].content+"</p>"+im+"</div></div><div class='part03'><a class='share'><i></i><em>"+json.note_data[i].digg_count+"</em></a><a class='pl'><i></i><em>"+json.note_data[i].comment_count+"</em></a><a class='zan'><i></i><em>"+json.note_data[i].digg_count+"</em></a></div></li>";
+                    }
+                    var ss = ''
+                    if(json.other_data.sex==1){
+                        ss='girl';
+                    }else if(json.other_data.sex==2){
+                        ss='boy';
+                    }
+                    $(".tx_h .tx img").attr('src',json.other_data.avatar);
+                    $(".tx_h .tx i:eq(1)").removeClass('boy').addClass(ss);
+                    $(".tx_h .name span").html(json.other_data.name);
+                    $(".tx_h .info").html("<span>职业："+json.other_data.job+"</span><span>地区："+json.other_data.city+"</span>");
+                    $(".tx_h .con span").html(json.other_data.intro);
+                    $(".list_h ul").html(tt);
+                    if(json.note_data.length<page){$(".more").remove();}
+                }else{
+                    $(".list_h ul").html("暂无随笔");
+                }
+            }else{
+                alert(json.msg)
+            }
+        },error: function(obj){
+            alert('服务器无响应');
+        }
+    })
+
+    //下拉加载更多
+
+})
+</script>
+</body>
+</html>

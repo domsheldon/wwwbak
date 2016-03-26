@@ -1,0 +1,737 @@
+[ 2016-01-20T10:45:14+08:00 ] 127.0.0.1 /m/forum/comment
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002066s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002222s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\config.php 第 141 行.
+NOTIC: [8] Constant REDIS_HOST already defined E:\htdocs\readolist\Application\Conf\config.php 第 146 行.
+NOTIC: [8] Constant REDIS_PORT already defined E:\htdocs\readolist\Application\Conf\config.php 第 147 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readolist\Application\Conf\config.php 第 149 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readolist\Application\Conf\config.php 第 151 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readolist\Application\Conf\config.php 第 154 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readolist\Application\Conf\config.php 第 155 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 158 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 159 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 160 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 161 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readolist\Application\Conf\config.php 第 164 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 165 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readolist\Application\Conf\config.php 第 168 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readolist\Application\Conf\config.php 第 169 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readolist\Application\Conf\config.php 第 170 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readolist\Application\Conf\config.php 第 172 行.
+NOTIC: [8] Constant QR_CODE_IMG already defined E:\htdocs\readolist\Application\Conf\config.php 第 173 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001028s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001192s ]
+NOTIC: [8] Undefined index: token E:\htdocs\readolist\Application\Lib\Action\WebCommonAction.class.php 第 25 行.
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: [2048] Declaration of ForumModel::add() should be compatible with that of Model::add() E:\htdocs\readolist\Application\Lib\Model\ForumModel.class.php 第 151 行.
+NOTIC: [2048] Declaration of ForumModel::delete() should be compatible with that of Model::delete() E:\htdocs\readolist\Application\Lib\Model\ForumModel.class.php 第 151 行.
+SQL: SHOW COLUMNS FROM `ys_forum` [ RunTime:0.056447s ]
+NOTIC: [2048] Declaration of ForumCommentModel::comment() should be compatible with that of Model::comment() E:\htdocs\readolist\Application\Lib\Model\ForumCommentModel.class.php 第 79 行.
+SQL: SHOW COLUMNS FROM `ys_forum_comment` [ RunTime:0.022366s ]
+SQL: SHOW COLUMNS FROM `ys_forum` [ RunTime:0.003495s ]
+SQL: SELECT * FROM `ys_forum` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.020100s ]
+SQL: SHOW COLUMNS FROM `ys_forum_comment` [ RunTime:0.023857s ]
+SQL: INSERT INTO `ys_forum_comment` (`forum_id`,`content`,`comment_user_id`,`reply_user_id`,`create_time`) VALUES (1,'评论岁的风口浪尖评论岁的风口浪尖评论岁的风口浪尖评论岁的风口浪尖评论岁的风口浪尖评论岁的风口浪尖评论岁的风口浪尖评论岁的风口浪尖评论岁的风口浪尖评论岁的风口浪尖',5,2,1453257914) [ RunTime:0.030479s ]
+SQL: UPDATE `ys_forum` SET `comment_count`=comment_count+1 WHERE ( id='1' ) [ RunTime:0.038324s ]
+SQL: SHOW COLUMNS FROM `ys_user_info` [ RunTime:0.036464s ]
+SQL: SELECT `name`,`avatar` FROM `ys_user_info` WHERE ( user_id=5 ) LIMIT 1   [ RunTime:0.007565s ]
+
+[ 2016-01-20T14:54:00+08:00 ] 127.0.0.1 /login
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001305s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001437s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\Admin\config.php 第 3 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000655s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000769s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.008220s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008360s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000564s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000663s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000374s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000560s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002438s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000640s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000739s ]
+
+[ 2016-01-20T14:54:00+08:00 ] 127.0.0.1 /login
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001365s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001492s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\Admin\config.php 第 3 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000603s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000707s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.007307s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007435s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000548s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000553s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000592s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000637s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002624s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000646s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000747s ]
+
+[ 2016-01-20T14:54:00+08:00 ] 127.0.0.1 /public/Admin/js/cookie.js
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002222s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002372s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000525s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000636s ]
+ERR: 无法加载模块:public
+
+[ 2016-01-20T14:54:43+08:00 ] 127.0.0.1 /login
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001077s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001202s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\Admin\config.php 第 3 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000537s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000636s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.007296s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007420s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000523s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000474s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000352s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000568s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002185s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000965s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001078s ]
+
+[ 2016-01-20T14:54:46+08:00 ] 127.0.0.1 /login
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001035s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001158s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\Admin\config.php 第 3 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000568s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000671s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.007612s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007745s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000527s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000478s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000376s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000822s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002532s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000676s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000776s ]
+
+[ 2016-01-20T14:55:22+08:00 ] 127.0.0.1 /login
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001231s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001352s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\Admin\config.php 第 3 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000555s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000655s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.007150s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007284s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000593s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000504s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000380s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000580s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002347s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000680s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000785s ]
+
+[ 2016-01-20T14:56:13+08:00 ] 127.0.0.1 /login
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001403s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001540s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\Admin\config.php 第 3 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000571s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000671s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.007382s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007508s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000525s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000470s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000362s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000738s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002379s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000931s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001087s ]
+
+[ 2016-01-20T14:56:14+08:00 ] 127.0.0.1 /login
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001276s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001404s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\Admin\config.php 第 3 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000583s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000683s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.007547s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007671s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000525s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000470s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000354s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000565s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002182s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000695s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000803s ]
+
+[ 2016-01-20T14:56:14+08:00 ] 127.0.0.1 /login
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001196s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001340s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\Admin\config.php 第 3 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000754s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000898s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.008806s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008953s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000606s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000533s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000387s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000580s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002399s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000899s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001018s ]
+
+[ 2016-01-20T14:56:14+08:00 ] 127.0.0.1 /login
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001248s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001393s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\Admin\config.php 第 3 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000630s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000753s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.007402s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007555s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000702s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000652s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000541s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000654s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002898s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000667s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000771s ]
+
+[ 2016-01-20T14:56:25+08:00 ] 127.0.0.1 /login
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001040s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001164s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\Admin\config.php 第 3 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000532s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000633s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.009323s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009513s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000525s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000477s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000352s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000552s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002171s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000625s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000722s ]
+
+[ 2016-01-20T14:56:31+08:00 ] 127.0.0.1 /admin/login/verify
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001939s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002112s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\Admin\config.php 第 3 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000752s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000869s ]
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+SQL: SHOW COLUMNS FROM `ys_backend_user` [ RunTime:0.002637s ]
+ERR: 1146:Table 'read.ys_backend_user' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `ys_backend_user`
+SQL: SELECT * FROM `ys_backend_user` WHERE ( user_name = 'fengyifan' ) LIMIT 1   [ RunTime:0.000261s ]
+ERR: 1146:Table 'read.ys_backend_user' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `ys_backend_user` WHERE ( user_name = 'fengyifan' ) LIMIT 1  
+
+[ 2016-01-20T14:56:54+08:00 ] 127.0.0.1 /login
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001107s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001238s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\Admin\config.php 第 3 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000655s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000772s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.007689s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007827s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000580s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000496s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000397s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000578s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002338s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000668s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000774s ]
+
+[ 2016-01-20T14:58:04+08:00 ] 127.0.0.1 /login
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001240s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001364s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\Admin\config.php 第 3 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000568s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000670s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.007494s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007626s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000552s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000492s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000356s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000614s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002287s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000637s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000734s ]
+
+[ 2016-01-20T14:58:29+08:00 ] 127.0.0.1 /admin/login/verify
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002095s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002228s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\Admin\config.php 第 3 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000671s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000768s ]
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+SQL: SHOW COLUMNS FROM `ys_backend_user` [ RunTime:0.002318s ]
+ERR: 1146:Table 'read.ys_backend_user' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `ys_backend_user`
+SQL: SELECT * FROM `ys_backend_user` WHERE ( user_name = 'fengyifan' ) LIMIT 1   [ RunTime:0.000242s ]
+ERR: 1146:Table 'read.ys_backend_user' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `ys_backend_user` WHERE ( user_name = 'fengyifan' ) LIMIT 1  
+
+[ 2016-01-20T14:58:33+08:00 ] 127.0.0.1 /admin/login/verify
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002057s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002210s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\Admin\config.php 第 3 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000641s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000749s ]
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+SQL: SHOW COLUMNS FROM `ys_backend_user` [ RunTime:0.002536s ]
+ERR: 1146:Table 'read.ys_backend_user' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `ys_backend_user`
+SQL: SELECT * FROM `ys_backend_user` WHERE ( user_name = 'sfdfsdf' ) LIMIT 1   [ RunTime:0.000357s ]
+ERR: 1146:Table 'read.ys_backend_user' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `ys_backend_user` WHERE ( user_name = 'sfdfsdf' ) LIMIT 1  
+
+[ 2016-01-20T14:58:35+08:00 ] 127.0.0.1 /login
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001158s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001299s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\Admin\config.php 第 3 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000563s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000681s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.007598s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007726s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000520s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000476s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000370s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000576s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002219s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000746s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000860s ]
+
+[ 2016-01-20T20:13:56+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.012225s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.012361s ]
+ERR: 无法加载模块:Index
+
+[ 2016-01-20T20:16:25+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000726s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000899s ]
+ERR: 无法加载模块:Index
+
+[ 2016-01-20T20:16:26+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000635s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000773s ]
+ERR: 无法加载模块:Index
+
+[ 2016-01-20T20:16:26+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000498s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000615s ]
+ERR: 无法加载模块:Index
+
+[ 2016-01-20T20:16:26+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000561s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000685s ]
+ERR: 无法加载模块:Index
+
+[ 2016-01-20T20:17:37+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000636s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000754s ]
+ERR: 无法加载模块:Index
+
+[ 2016-01-20T20:17:37+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000473s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000587s ]
+ERR: 无法加载模块:Index
+
+[ 2016-01-20T20:17:38+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000579s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000706s ]
+ERR: 无法加载模块:Index
+
+[ 2016-01-20T20:17:38+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000477s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000590s ]
+ERR: 无法加载模块:Index
+
+[ 2016-01-20T20:17:38+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000482s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000594s ]
+ERR: 无法加载模块:Index
+
+[ 2016-01-20T20:18:52+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000531s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000651s ]
+ERR: 无法加载模块:Index
+
+[ 2016-01-20T20:18:52+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000492s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000610s ]
+ERR: 无法加载模块:Index
+
+[ 2016-01-20T20:18:53+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000487s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000602s ]
+ERR: 无法加载模块:Index
+
+[ 2016-01-20T20:18:53+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000501s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000620s ]
+ERR: 无法加载模块:Index
+
+[ 2016-01-20T20:18:53+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000509s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000626s ]
+ERR: 无法加载模块:Index
+
+[ 2016-01-20T20:19:25+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000492s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000607s ]
+ERR: 无法加载模块:Index
+
+[ 2016-01-20T20:19:25+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000599s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000813s ]
+ERR: 无法加载模块:Index
+
+[ 2016-01-20T20:19:26+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000508s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000624s ]
+ERR: 无法加载模块:Index
+
+[ 2016-01-20T20:19:26+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000498s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000613s ]
+ERR: 无法加载模块:Index
+
+[ 2016-01-20T20:19:26+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000479s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000591s ]
+ERR: 无法加载模块:Index
+
+[ 2016-01-20T20:19:26+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000485s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000600s ]
+ERR: 无法加载模块:Index
+
+[ 2016-01-20T20:19:26+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000518s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000652s ]
+ERR: 无法加载模块:Index
+
+[ 2016-01-20T20:19:27+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000486s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000600s ]
+ERR: 无法加载模块:Index
+
+[ 2016-01-20T20:20:25+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000680s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000808s ]
+
+[ 2016-01-20T20:20:26+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000487s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000603s ]
+
+[ 2016-01-20T20:21:37+08:00 ] 127.0.0.1 /
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readwith\Application\Conf\config.php 第 141 行.
+NOTIC: [8] Constant REDIS_HOST already defined E:\htdocs\readwith\Application\Conf\config.php 第 146 行.
+NOTIC: [8] Constant REDIS_PORT already defined E:\htdocs\readwith\Application\Conf\config.php 第 147 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readwith\Application\Conf\config.php 第 149 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readwith\Application\Conf\config.php 第 151 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readwith\Application\Conf\config.php 第 154 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readwith\Application\Conf\config.php 第 155 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readwith\Application\Conf\config.php 第 158 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readwith\Application\Conf\config.php 第 159 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readwith\Application\Conf\config.php 第 160 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readwith\Application\Conf\config.php 第 161 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readwith\Application\Conf\config.php 第 164 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readwith\Application\Conf\config.php 第 165 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readwith\Application\Conf\config.php 第 168 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readwith\Application\Conf\config.php 第 169 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readwith\Application\Conf\config.php 第 170 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readwith\Application\Conf\config.php 第 172 行.
+NOTIC: [8] Constant QR_CODE_IMG already defined E:\htdocs\readwith\Application\Conf\config.php 第 173 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000483s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000587s ]
+
+[ 2016-01-20T20:21:38+08:00 ] 127.0.0.1 /
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readwith\Application\Conf\config.php 第 141 行.
+NOTIC: [8] Constant REDIS_HOST already defined E:\htdocs\readwith\Application\Conf\config.php 第 146 行.
+NOTIC: [8] Constant REDIS_PORT already defined E:\htdocs\readwith\Application\Conf\config.php 第 147 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readwith\Application\Conf\config.php 第 149 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readwith\Application\Conf\config.php 第 151 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readwith\Application\Conf\config.php 第 154 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readwith\Application\Conf\config.php 第 155 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readwith\Application\Conf\config.php 第 158 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readwith\Application\Conf\config.php 第 159 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readwith\Application\Conf\config.php 第 160 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readwith\Application\Conf\config.php 第 161 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readwith\Application\Conf\config.php 第 164 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readwith\Application\Conf\config.php 第 165 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readwith\Application\Conf\config.php 第 168 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readwith\Application\Conf\config.php 第 169 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readwith\Application\Conf\config.php 第 170 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readwith\Application\Conf\config.php 第 172 行.
+NOTIC: [8] Constant QR_CODE_IMG already defined E:\htdocs\readwith\Application\Conf\config.php 第 173 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000558s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000671s ]
+
+[ 2016-01-20T20:21:38+08:00 ] 127.0.0.1 /
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readwith\Application\Conf\config.php 第 141 行.
+NOTIC: [8] Constant REDIS_HOST already defined E:\htdocs\readwith\Application\Conf\config.php 第 146 行.
+NOTIC: [8] Constant REDIS_PORT already defined E:\htdocs\readwith\Application\Conf\config.php 第 147 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readwith\Application\Conf\config.php 第 149 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readwith\Application\Conf\config.php 第 151 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readwith\Application\Conf\config.php 第 154 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readwith\Application\Conf\config.php 第 155 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readwith\Application\Conf\config.php 第 158 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readwith\Application\Conf\config.php 第 159 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readwith\Application\Conf\config.php 第 160 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readwith\Application\Conf\config.php 第 161 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readwith\Application\Conf\config.php 第 164 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readwith\Application\Conf\config.php 第 165 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readwith\Application\Conf\config.php 第 168 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readwith\Application\Conf\config.php 第 169 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readwith\Application\Conf\config.php 第 170 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readwith\Application\Conf\config.php 第 172 行.
+NOTIC: [8] Constant QR_CODE_IMG already defined E:\htdocs\readwith\Application\Conf\config.php 第 173 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000481s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000584s ]
+
+[ 2016-01-20T20:21:38+08:00 ] 127.0.0.1 /
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readwith\Application\Conf\config.php 第 141 行.
+NOTIC: [8] Constant REDIS_HOST already defined E:\htdocs\readwith\Application\Conf\config.php 第 146 行.
+NOTIC: [8] Constant REDIS_PORT already defined E:\htdocs\readwith\Application\Conf\config.php 第 147 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readwith\Application\Conf\config.php 第 149 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readwith\Application\Conf\config.php 第 151 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readwith\Application\Conf\config.php 第 154 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readwith\Application\Conf\config.php 第 155 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readwith\Application\Conf\config.php 第 158 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readwith\Application\Conf\config.php 第 159 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readwith\Application\Conf\config.php 第 160 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readwith\Application\Conf\config.php 第 161 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readwith\Application\Conf\config.php 第 164 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readwith\Application\Conf\config.php 第 165 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readwith\Application\Conf\config.php 第 168 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readwith\Application\Conf\config.php 第 169 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readwith\Application\Conf\config.php 第 170 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readwith\Application\Conf\config.php 第 172 行.
+NOTIC: [8] Constant QR_CODE_IMG already defined E:\htdocs\readwith\Application\Conf\config.php 第 173 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000472s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000576s ]
+
+[ 2016-01-20T20:21:38+08:00 ] 127.0.0.1 /
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readwith\Application\Conf\config.php 第 141 行.
+NOTIC: [8] Constant REDIS_HOST already defined E:\htdocs\readwith\Application\Conf\config.php 第 146 行.
+NOTIC: [8] Constant REDIS_PORT already defined E:\htdocs\readwith\Application\Conf\config.php 第 147 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readwith\Application\Conf\config.php 第 149 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readwith\Application\Conf\config.php 第 151 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readwith\Application\Conf\config.php 第 154 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readwith\Application\Conf\config.php 第 155 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readwith\Application\Conf\config.php 第 158 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readwith\Application\Conf\config.php 第 159 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readwith\Application\Conf\config.php 第 160 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readwith\Application\Conf\config.php 第 161 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readwith\Application\Conf\config.php 第 164 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readwith\Application\Conf\config.php 第 165 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readwith\Application\Conf\config.php 第 168 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readwith\Application\Conf\config.php 第 169 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readwith\Application\Conf\config.php 第 170 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readwith\Application\Conf\config.php 第 172 行.
+NOTIC: [8] Constant QR_CODE_IMG already defined E:\htdocs\readwith\Application\Conf\config.php 第 173 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000475s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000579s ]
+
+[ 2016-01-20T20:21:38+08:00 ] 127.0.0.1 /
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readwith\Application\Conf\config.php 第 141 行.
+NOTIC: [8] Constant REDIS_HOST already defined E:\htdocs\readwith\Application\Conf\config.php 第 146 行.
+NOTIC: [8] Constant REDIS_PORT already defined E:\htdocs\readwith\Application\Conf\config.php 第 147 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readwith\Application\Conf\config.php 第 149 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readwith\Application\Conf\config.php 第 151 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readwith\Application\Conf\config.php 第 154 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readwith\Application\Conf\config.php 第 155 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readwith\Application\Conf\config.php 第 158 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readwith\Application\Conf\config.php 第 159 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readwith\Application\Conf\config.php 第 160 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readwith\Application\Conf\config.php 第 161 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readwith\Application\Conf\config.php 第 164 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readwith\Application\Conf\config.php 第 165 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readwith\Application\Conf\config.php 第 168 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readwith\Application\Conf\config.php 第 169 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readwith\Application\Conf\config.php 第 170 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readwith\Application\Conf\config.php 第 172 行.
+NOTIC: [8] Constant QR_CODE_IMG already defined E:\htdocs\readwith\Application\Conf\config.php 第 173 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000515s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000624s ]
+
+[ 2016-01-20T20:21:38+08:00 ] 127.0.0.1 /
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readwith\Application\Conf\config.php 第 141 行.
+NOTIC: [8] Constant REDIS_HOST already defined E:\htdocs\readwith\Application\Conf\config.php 第 146 行.
+NOTIC: [8] Constant REDIS_PORT already defined E:\htdocs\readwith\Application\Conf\config.php 第 147 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readwith\Application\Conf\config.php 第 149 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readwith\Application\Conf\config.php 第 151 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readwith\Application\Conf\config.php 第 154 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readwith\Application\Conf\config.php 第 155 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readwith\Application\Conf\config.php 第 158 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readwith\Application\Conf\config.php 第 159 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readwith\Application\Conf\config.php 第 160 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readwith\Application\Conf\config.php 第 161 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readwith\Application\Conf\config.php 第 164 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readwith\Application\Conf\config.php 第 165 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readwith\Application\Conf\config.php 第 168 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readwith\Application\Conf\config.php 第 169 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readwith\Application\Conf\config.php 第 170 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readwith\Application\Conf\config.php 第 172 行.
+NOTIC: [8] Constant QR_CODE_IMG already defined E:\htdocs\readwith\Application\Conf\config.php 第 173 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000511s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000619s ]
+
+[ 2016-01-20T20:21:39+08:00 ] 127.0.0.1 /
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readwith\Application\Conf\config.php 第 141 行.
+NOTIC: [8] Constant REDIS_HOST already defined E:\htdocs\readwith\Application\Conf\config.php 第 146 行.
+NOTIC: [8] Constant REDIS_PORT already defined E:\htdocs\readwith\Application\Conf\config.php 第 147 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readwith\Application\Conf\config.php 第 149 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readwith\Application\Conf\config.php 第 151 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readwith\Application\Conf\config.php 第 154 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readwith\Application\Conf\config.php 第 155 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readwith\Application\Conf\config.php 第 158 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readwith\Application\Conf\config.php 第 159 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readwith\Application\Conf\config.php 第 160 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readwith\Application\Conf\config.php 第 161 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readwith\Application\Conf\config.php 第 164 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readwith\Application\Conf\config.php 第 165 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readwith\Application\Conf\config.php 第 168 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readwith\Application\Conf\config.php 第 169 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readwith\Application\Conf\config.php 第 170 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readwith\Application\Conf\config.php 第 172 行.
+NOTIC: [8] Constant QR_CODE_IMG already defined E:\htdocs\readwith\Application\Conf\config.php 第 173 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000486s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000592s ]
+
+[ 2016-01-20T20:21:50+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000486s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000601s ]
+ERR: 无法加载模块:Index
+
+[ 2016-01-20T20:22:24+08:00 ] 127.0.0.1 /
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readwith\Application\Conf\config.php 第 141 行.
+NOTIC: [8] Constant REDIS_HOST already defined E:\htdocs\readwith\Application\Conf\config.php 第 146 行.
+NOTIC: [8] Constant REDIS_PORT already defined E:\htdocs\readwith\Application\Conf\config.php 第 147 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readwith\Application\Conf\config.php 第 149 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readwith\Application\Conf\config.php 第 151 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readwith\Application\Conf\config.php 第 154 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readwith\Application\Conf\config.php 第 155 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readwith\Application\Conf\config.php 第 158 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readwith\Application\Conf\config.php 第 159 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readwith\Application\Conf\config.php 第 160 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readwith\Application\Conf\config.php 第 161 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readwith\Application\Conf\config.php 第 164 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readwith\Application\Conf\config.php 第 165 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readwith\Application\Conf\config.php 第 168 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readwith\Application\Conf\config.php 第 169 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readwith\Application\Conf\config.php 第 170 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readwith\Application\Conf\config.php 第 172 行.
+NOTIC: [8] Constant QR_CODE_IMG already defined E:\htdocs\readwith\Application\Conf\config.php 第 173 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000545s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000653s ]
+

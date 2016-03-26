@@ -1,0 +1,304 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>有书共读</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link rel="icon" type="image/png" href="__PUBLIC__/amazeui/assets/i/favicon.png">
+  <link rel="stylesheet" href="__PUBLIC__/amazeui/assets/css/amazeui.min.css">
+  <link rel="stylesheet" href="__PUBLIC__/amazeui/assets/css/app.css">
+</head>
+<body>
+
+<!--<div class="am-g" id="top_div">-->
+  <!--<img src="__PUBLIC__/images/plan.png" class="am-img-responsive" width="100%" alt=""/>-->
+<!--</div>-->
+
+<div id="top_div" style="background:url(__PUBLIC__/images/plan.png) no-repeat;background-size:100%;">
+  <p class="am-text-default am-text-center" style="color: #F8F8FF;padding-left:10px;padding-top:10px;">
+    已有10000+人参加有书签到行动<br/>
+  </p>
+</div>
+<div class="am-u-sm-12" style="text-align: center;padding-left: 10px;padding-top: 3px;">
+  <span class="am-text-default" style="color: #ff9000;padding-left:3px;">
+    您已签到{$user_sign.digg_sum}次，领先全国{$user_sign.rate}%
+  </span>
+  <if condition="$is_join eq 1">
+    <div class="am-u-sm-12 am-u-sm-centered">
+      <div class="am-btn-group">
+        <button id="morning" onclick="signIn(1)" class="am-btn am-btn-warning" href="{$pack_url[0]['CODE']}">
+          <i class="am-icon-sun-o"></i>
+          {$pack_url[0]['NAME']}签到
+        </button>
+
+        <button id="night" onclick="signIn(2)" class="am-btn am-btn-success" href="{$pack_url[1]['CODE']}">
+          <i class="am-icon-moon-o"></i>
+          {$pack_url[1]['NAME']}签到
+        </button>
+        </div>
+      </div>
+  </if>
+</div>
+
+<!--提示框，提示打卡时间-->
+<div class="am-modal am-modal-confirm" tabindex="-1" id="my-confirm">
+  <div class="am-modal-dialog">
+    <div class="am-modal-hd">友情提示</div>
+    <div class="am-modal-bd">
+      <p class="am-text-left">抱歉，您已错过打卡签到时间，明天继续加油！<br/>
+      早读签到时间：6:00至14:00<br/>
+      晚读签到时间：14:00至24:00
+      </p>
+    </div>
+    <div class="am-modal-footer">
+      <span class="am-modal-btn" data-am-modal-confirm>确定</span>
+    </div>
+  </div>
+</div>
+
+<div data-am-widget="list_news" class="am-list-news am-list-news-default" style="padding-top: 5px;">
+  <!--列表标题-->
+  <div class="am-list-news-hd am-cf">
+    <!--带更多链接-->
+    <a href="###" class="">
+      <h2>本月共读书单</h2>
+    </a>
+  </div>
+  <div class="am-list-news-bd">
+    <ul class="am-list">
+      <!--缩略图在标题左边-->
+      <volist name="bkList" id="vo">
+        <li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-left">
+          <div class="am-u-sm-3 am-list-thumb">
+            <a href="/wechatdiscuss/discusslist?book_id={$vo.book_id}" class="">
+              <img src="{$vo.book_cover}" alt=""/>
+            </a>
+          </div>
+
+          <div class=" am-u-sm-9 am-list-main">
+            <h3 class="am-list-item-hd"><a href="/wechatdiscuss/discusslist?book_id={$vo.book_id}" class="">{$vo.book_title}</a></h3>
+            <div class="am-list-item-text">{$vo.comment}</div>
+            <span class="am-list-date" style="float:right;">{$vo.end_time}</span>
+            <!--<div>阅读时间：{$vo.start_time}至{$vo.end_time}<br></div>-->
+          </div>
+        </li>
+      </volist>
+    </ul>
+  </div>
+</div>
+
+<section data-am-widget="accordion" class="am-accordion am-accordion-gapped" data-am-accordion='{  }'>
+  <if condition="$is_join eq 0">
+    <dl class="am-accordion-item">
+      <dt class="am-accordion-title am-active">
+        <strong>为什么要加入</strong>
+      </dt>
+      <dd class="am-accordion-bd am-collapse am-in">
+        <!-- 规避 Collapase 处理有 padding 的折叠内容计算计算有误问题， 加一个容器 -->
+        <div class="am-accordion-content">
+          1·组队对抗惰性，把读书的愿望变成实际的行动
+          2·每周共读一本书，一年轻松汲取52本图书的营养
+          3·以书会友，结识真正喜欢看书的朋友
+          4·拓展认识水平，提升思维能力，掌握有效方法
+        </div>
+      </dd>
+    </dl>
+  </if>
+  <dl class="am-accordion-item">
+    <dt class="am-accordion-title">
+      <strong>有书共读方式</strong>
+    </dt>
+    <dd class="am-accordion-bd am-collapse am-in">
+      <!-- 规避 Collapase 处理有 padding 的折叠内容计算计算有误问题， 加一个容器 -->
+      <div class="am-accordion-content">
+        1、有书共读通过有书领读、书友分享交流的方式，让大家在一周时间内轻松掌握共读图书的精髓；<br/>
+        2、有书将于工作日早7：00发布早读领读包，早读打卡当日14：00截止；<br/>
+        3、有书将于工作日晚7：00发布早读领读包，晚读打卡当日24：00截止；<br/>
+        4、连续打开将获得更多积分（积分功能即将推出）
+      </div>
+    </dd>
+  </dl>
+  <dl class="am-accordion-item">
+    <dt class="am-accordion-title">
+      <strong>共读规则有哪些？</strong>
+    </dt>
+    <dd class="am-accordion-bd am-collapse">
+      <!-- 规避 Collapase 处理有 padding 的折叠内容计算计算有误问题， 加一个容器 -->
+      <div class="am-accordion-content">
+        1·每天读书一小时；<br/>
+        2·每周一篇读书笔记;
+      </div>
+    </dd>
+  </dl>
+</section>
+<br/>
+
+<if condition="$is_join eq 0">
+  <div data-am-widget="navbar" class="am-navbar am-cf am-navbar-default "
+       id="">
+    <ul class="am-navbar-nav am-cf am-avg-sm-4">
+      <li >
+        <a href="#" class="" onclick="plan_join();">
+          <span class="am-icon-sign-in"></span>
+          <span class="am-navbar-label">加入签到行动</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+<else/>
+  <div class="am-g am-cf">
+    <button class="am-btn am-btn-primary am-btn-block am-btn-lg am-center" onclick="plan_quit();">
+      退出签到行动
+    </button>
+  </div>
+</if>
+
+<!--欢迎加入的模式窗口，初期隐藏-->
+<div class="am-modal am-modal-no-btn" tabindex="-1" id="your-modal">
+  <div class="am-modal-dialog">
+    <div class="am-modal-hd">请关注有书订阅号，以便为您提供更好的服务
+      <a href="javascript: void(0)" class="am-close am-close-spin" data-am-modal-close>&times;</a>
+    </div>
+    <div class="am-modal-bd">
+      <img src="__PUBLIC__/images/share.png" class="am-img-responsive" width="100%" alt=""/>
+    </div>
+  </div>
+</div>
+
+<script src="__PUBLIC__/amazeui/assets/js/jquery.min.js"></script>
+<script src="__PUBLIC__/amazeui/assets/js/amazeui.min.js"></script>
+
+<script>
+  $('#your-modal').on('close.modal.amui', function(){
+    var user_id = "<?php echo $user_id;?>";
+    $.ajax({
+      type : 'post',
+      url : '/wechat/quitplan',
+      data : {'user_id':user_id},
+      success : function(msg) {
+
+      },
+      error :function(e){
+
+      }
+    });
+  });
+
+  function plan_join(){
+    var user_id = "<?php echo $user_id;?>";
+    //加载进度条
+    $.AMUI.progress.start();
+    $.ajax({
+      type : 'post',
+      url : '/wechat/joinplan',
+      data : {'user_id':user_id},
+      success : function(msg) {
+        var $modal = $('#your-modal');
+        $modal.modal();
+        //进度条完成
+        $.AMUI.progress.done();
+      },
+      error :function(e){
+        $.AMUI.progress.done();
+      }
+    });
+  }
+
+  function plan_quit(){
+    var user_id = "<?php echo $user_id;?>";
+    //加载进度条
+    $.AMUI.progress.start();
+    $.ajax({
+      type : 'post',
+      url : '/wechat/quitplan',
+      data : {'user_id':user_id},
+      success : function(msg) {
+        //进度条完成
+        $.AMUI.progress.done();
+        window.location.href = '/wechat/bkList?user_id='+user_id;
+      },
+      error :function(e){
+        $.AMUI.progress.done();
+      }
+    });
+  }
+
+  //签到时间判断
+  function signIn(flag) {    var myDate = new Date();
+    var myHour = myDate.getHours();    //获取当前时间
+    if (flag == 1) {
+      if ((myHour >= 6) && (myHour <= 14)) {
+          window.location.href = $("#morning").attr("href");
+          return;
+      }
+    }
+    if (flag == 2) {
+      if((myHour >= 14) && (myHour <= 24)) {
+        window.location.href = $("#night").attr("href");
+        return;
+      }
+    }
+    $('#my-confirm').modal({
+      relatedTarget: this,
+      onConfirm: function(options) { }
+    });
+  }
+
+  $(document).ready(function() {
+    total = document.documentElement.clientWidth;
+    var height = 352 * total / 750;
+    var css = $("#top_div").attr("style") + "height:" + height + "px;";
+    $("#top_div").attr("style", css);
+  });
+
+</script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+  wx.config({
+    debug: false,
+    appId: '<?php echo $signPackage["appId"];?>',
+    timestamp: '<?php echo $signPackage["timestamp"];?>',
+    '<?php echo $signPackage["nonceStr"];?>',
+            signature: '<?php echo $signPackage["signature"];?>',
+    jsApiList: [
+    // 所有要调用的 API 都要加到这个列表中
+    'checkJsApi',
+    'onMenuShareTimeline',
+    'onMenuShareAppMessage'
+  ];
+  })
+  wx.ready(function () {
+    var shareData = {
+      title: '开始有书共读签到打卡，组队对抗惰性',
+      desc: '早起半小时阅读，睡觉前再阅读半小时，有书发起的共读打卡签到行动正式启动啦。',
+      link: 'http://readooapi.youshu.cc/wechat/readlist',
+      imgUrl: 'http://readooapi.youshu.cc/public/images/youshu.png',
+
+    };
+    //wx.menuItem:share:appMessage(shareData);
+    wx.onMenuShareAppMessage(shareData);
+    wx.onMenuShareTimeline(shareData);
+
+
+    function decryptCode(code, callback) {
+      $.getJSON('/jssdk/decrypt_code.php?code=' + encodeURI(code), function (res) {
+        if (res.errcode == 0) {
+          codes.push(res.code);
+        }
+      });
+    }
+  });
+
+  wx.error(function (res) {
+    alert(res);
+  });
+</script>
+<script src="__PUBLIC__/js/zepto.min.js"></script>
+</body>
+</html>

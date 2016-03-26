@@ -1,0 +1,448 @@
+[ 2015-12-17T09:45:55+08:00 ] 127.0.0.1 /push
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001401s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001533s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\config.php 第 82 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readolist\Application\Conf\config.php 第 86 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readolist\Application\Conf\config.php 第 88 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readolist\Application\Conf\config.php 第 91 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readolist\Application\Conf\config.php 第 92 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 95 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 96 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 97 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 98 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readolist\Application\Conf\config.php 第 101 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 102 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readolist\Application\Conf\config.php 第 105 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readolist\Application\Conf\config.php 第 106 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readolist\Application\Conf\config.php 第 107 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readolist\Application\Conf\config.php 第 109 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000766s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000875s ]
+
+[ 2015-12-17T09:52:16+08:00 ] 127.0.0.1 /push
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001384s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001506s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\config.php 第 82 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readolist\Application\Conf\config.php 第 86 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readolist\Application\Conf\config.php 第 88 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readolist\Application\Conf\config.php 第 91 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readolist\Application\Conf\config.php 第 92 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 95 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 96 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 97 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 98 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readolist\Application\Conf\config.php 第 101 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 102 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readolist\Application\Conf\config.php 第 105 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readolist\Application\Conf\config.php 第 106 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readolist\Application\Conf\config.php 第 107 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readolist\Application\Conf\config.php 第 109 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000721s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000822s ]
+
+[ 2015-12-17T11:36:59+08:00 ] 127.0.0.1 /push
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001570s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001724s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\config.php 第 82 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readolist\Application\Conf\config.php 第 86 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readolist\Application\Conf\config.php 第 88 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readolist\Application\Conf\config.php 第 91 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readolist\Application\Conf\config.php 第 92 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 95 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 96 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 97 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 98 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readolist\Application\Conf\config.php 第 101 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 102 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readolist\Application\Conf\config.php 第 105 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readolist\Application\Conf\config.php 第 106 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readolist\Application\Conf\config.php 第 107 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readolist\Application\Conf\config.php 第 109 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000945s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001049s ]
+
+[ 2015-12-17T19:27:39+08:00 ] 127.0.0.1 /m/plan/list
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001567s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001702s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\config.php 第 82 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readolist\Application\Conf\config.php 第 86 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readolist\Application\Conf\config.php 第 88 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readolist\Application\Conf\config.php 第 91 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readolist\Application\Conf\config.php 第 92 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 95 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 96 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 97 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 98 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readolist\Application\Conf\config.php 第 101 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 102 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readolist\Application\Conf\config.php 第 105 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readolist\Application\Conf\config.php 第 106 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readolist\Application\Conf\config.php 第 107 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readolist\Application\Conf\config.php 第 109 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001436s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001684s ]
+NOTIC: [8] Undefined index: token E:\htdocs\readolist\Application\Lib\Action\WebCommonAction.class.php 第 25 行.
+NOTIC: [2] mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'root'@'122.70.0.8' (using password: YES) E:\htdocs\readolist\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 55 行.
+ERR: Access denied for user 'root'@'122.70.0.8' (using password: YES)
+
+[ 2015-12-17T19:29:36+08:00 ] 127.0.0.1 /m/plan/list
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001388s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001525s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\config.php 第 82 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readolist\Application\Conf\config.php 第 86 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readolist\Application\Conf\config.php 第 88 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readolist\Application\Conf\config.php 第 91 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readolist\Application\Conf\config.php 第 92 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 95 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 96 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 97 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 98 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readolist\Application\Conf\config.php 第 101 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 102 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readolist\Application\Conf\config.php 第 105 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readolist\Application\Conf\config.php 第 106 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readolist\Application\Conf\config.php 第 107 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readolist\Application\Conf\config.php 第 109 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000840s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000991s ]
+NOTIC: [8] Undefined index: token E:\htdocs\readolist\Application\Lib\Action\WebCommonAction.class.php 第 25 行.
+
+[ 2015-12-17T21:01:12+08:00 ] 127.0.0.1 /m/paihang
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002253s ]
+INFO: [ route_check ] --END-- [ RunTime:0.004362s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\config.php 第 83 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readolist\Application\Conf\config.php 第 87 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readolist\Application\Conf\config.php 第 89 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readolist\Application\Conf\config.php 第 92 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readolist\Application\Conf\config.php 第 93 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 96 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 97 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 98 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 99 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readolist\Application\Conf\config.php 第 102 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 103 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readolist\Application\Conf\config.php 第 106 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readolist\Application\Conf\config.php 第 107 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readolist\Application\Conf\config.php 第 108 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readolist\Application\Conf\config.php 第 110 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000981s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001118s ]
+NOTIC: [8] Undefined index: token E:\htdocs\readolist\Application\Lib\Action\WebCommonAction.class.php 第 25 行.
+
+[ 2015-12-17T21:01:22+08:00 ] 127.0.0.1 /m/paihang
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001153s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001286s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\config.php 第 83 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readolist\Application\Conf\config.php 第 87 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readolist\Application\Conf\config.php 第 89 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readolist\Application\Conf\config.php 第 92 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readolist\Application\Conf\config.php 第 93 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 96 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 97 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 98 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 99 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readolist\Application\Conf\config.php 第 102 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 103 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readolist\Application\Conf\config.php 第 106 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readolist\Application\Conf\config.php 第 107 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readolist\Application\Conf\config.php 第 108 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readolist\Application\Conf\config.php 第 110 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001142s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001481s ]
+NOTIC: [8] Undefined index: token E:\htdocs\readolist\Application\Lib\Action\WebCommonAction.class.php 第 25 行.
+NOTIC: [2] mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'feng'@'localhost' (using password: YES) E:\htdocs\readolist\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 55 行.
+ERR: Access denied for user 'feng'@'localhost' (using password: YES)
+
+[ 2015-12-17T21:01:44+08:00 ] 127.0.0.1 /m/paihang
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001307s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001466s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\config.php 第 83 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readolist\Application\Conf\config.php 第 87 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readolist\Application\Conf\config.php 第 89 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readolist\Application\Conf\config.php 第 92 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readolist\Application\Conf\config.php 第 93 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 96 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 97 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 98 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 99 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readolist\Application\Conf\config.php 第 102 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 103 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readolist\Application\Conf\config.php 第 106 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readolist\Application\Conf\config.php 第 107 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readolist\Application\Conf\config.php 第 108 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readolist\Application\Conf\config.php 第 110 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001302s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001460s ]
+NOTIC: [8] Undefined index: token E:\htdocs\readolist\Application\Lib\Action\WebCommonAction.class.php 第 25 行.
+SQL: SHOW COLUMNS FROM `ys_note_day` [ RunTime:0.004347s ]
+ERR: 1146:Table 'read.ys_note_day' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `ys_note_day`
+SQL: select sum(day_digg_count) from ys_notes_day where create_time bewteen 2015-12-16 and 2015-12-10 [ RunTime:0.000193s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'bewteen 2015-12-16 and 2015-12-10' at line 1
+ [ SQL语句 ] : select sum(day_digg_count) from ys_notes_day where create_time bewteen 2015-12-16 and 2015-12-10
+
+[ 2015-12-17T21:01:59+08:00 ] 127.0.0.1 /m/paihang
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001205s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001334s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\config.php 第 83 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readolist\Application\Conf\config.php 第 87 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readolist\Application\Conf\config.php 第 89 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readolist\Application\Conf\config.php 第 92 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readolist\Application\Conf\config.php 第 93 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 96 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 97 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 98 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 99 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readolist\Application\Conf\config.php 第 102 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 103 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readolist\Application\Conf\config.php 第 106 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readolist\Application\Conf\config.php 第 107 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readolist\Application\Conf\config.php 第 108 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readolist\Application\Conf\config.php 第 110 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001023s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001169s ]
+NOTIC: [8] Undefined index: token E:\htdocs\readolist\Application\Lib\Action\WebCommonAction.class.php 第 25 行.
+SQL: SHOW COLUMNS FROM `ys_note_day` [ RunTime:0.004358s ]
+ERR: 1146:Table 'read.ys_note_day' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `ys_note_day`
+
+[ 2015-12-17T21:02:38+08:00 ] 127.0.0.1 /m/paihang
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001066s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001186s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\config.php 第 83 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readolist\Application\Conf\config.php 第 87 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readolist\Application\Conf\config.php 第 89 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readolist\Application\Conf\config.php 第 92 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readolist\Application\Conf\config.php 第 93 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 96 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 97 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 98 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 99 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readolist\Application\Conf\config.php 第 102 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 103 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readolist\Application\Conf\config.php 第 106 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readolist\Application\Conf\config.php 第 107 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readolist\Application\Conf\config.php 第 108 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readolist\Application\Conf\config.php 第 110 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000800s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000915s ]
+NOTIC: [8] Undefined index: token E:\htdocs\readolist\Application\Lib\Action\WebCommonAction.class.php 第 25 行.
+SQL: SHOW COLUMNS FROM `ys_note_day` [ RunTime:0.004380s ]
+ERR: 1146:Table 'read.ys_note_day' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `ys_note_day`
+
+[ 2015-12-17T21:04:33+08:00 ] 127.0.0.1 /m/paihang
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001519s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001664s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\config.php 第 83 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readolist\Application\Conf\config.php 第 87 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readolist\Application\Conf\config.php 第 89 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readolist\Application\Conf\config.php 第 92 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readolist\Application\Conf\config.php 第 93 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 96 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 97 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 98 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 99 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readolist\Application\Conf\config.php 第 102 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 103 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readolist\Application\Conf\config.php 第 106 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readolist\Application\Conf\config.php 第 107 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readolist\Application\Conf\config.php 第 108 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readolist\Application\Conf\config.php 第 110 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000815s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000924s ]
+NOTIC: [8] Undefined index: token E:\htdocs\readolist\Application\Lib\Action\WebCommonAction.class.php 第 25 行.
+SQL: SHOW COLUMNS FROM `ys_note_day` [ RunTime:0.004317s ]
+ERR: 1146:Table 'read.ys_note_day' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `ys_note_day`
+SQL: select sum(day_digg_count) from ys_notes_day where create_time bewteen 2015-12-11 and 2015-12-17 [ RunTime:0.000138s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'bewteen 2015-12-11 and 2015-12-17' at line 1
+ [ SQL语句 ] : select sum(day_digg_count) from ys_notes_day where create_time bewteen 2015-12-11 and 2015-12-17
+
+[ 2015-12-17T21:05:00+08:00 ] 127.0.0.1 /m/paihang
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002356s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002551s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\config.php 第 83 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readolist\Application\Conf\config.php 第 87 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readolist\Application\Conf\config.php 第 89 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readolist\Application\Conf\config.php 第 92 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readolist\Application\Conf\config.php 第 93 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 96 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 97 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 98 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 99 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readolist\Application\Conf\config.php 第 102 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 103 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readolist\Application\Conf\config.php 第 106 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readolist\Application\Conf\config.php 第 107 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readolist\Application\Conf\config.php 第 108 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readolist\Application\Conf\config.php 第 110 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002484s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002838s ]
+NOTIC: [8] Undefined index: token E:\htdocs\readolist\Application\Lib\Action\WebCommonAction.class.php 第 25 行.
+SQL: SHOW COLUMNS FROM `ys_note_day` [ RunTime:0.004719s ]
+ERR: 1146:Table 'read.ys_note_day' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `ys_note_day`
+
+[ 2015-12-17T21:05:08+08:00 ] 127.0.0.1 /m/paihang
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001444s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001592s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\config.php 第 83 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readolist\Application\Conf\config.php 第 87 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readolist\Application\Conf\config.php 第 89 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readolist\Application\Conf\config.php 第 92 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readolist\Application\Conf\config.php 第 93 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 96 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 97 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 98 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 99 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readolist\Application\Conf\config.php 第 102 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 103 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readolist\Application\Conf\config.php 第 106 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readolist\Application\Conf\config.php 第 107 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readolist\Application\Conf\config.php 第 108 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readolist\Application\Conf\config.php 第 110 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001122s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001292s ]
+NOTIC: [8] Undefined index: token E:\htdocs\readolist\Application\Lib\Action\WebCommonAction.class.php 第 25 行.
+SQL: SHOW COLUMNS FROM `ys_note_day` [ RunTime:0.004542s ]
+ERR: 1146:Table 'read.ys_note_day' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `ys_note_day`
+SQL: select sum(day_digg_count) from ys_notes_day where create_time >2015-12-11 and create_time< 2015-12-17 [ RunTime:0.044463s ]
+
+[ 2015-12-17T21:05:16+08:00 ] 127.0.0.1 /m/paihang
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001170s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001292s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\config.php 第 83 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readolist\Application\Conf\config.php 第 87 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readolist\Application\Conf\config.php 第 89 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readolist\Application\Conf\config.php 第 92 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readolist\Application\Conf\config.php 第 93 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 96 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 97 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 98 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 99 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readolist\Application\Conf\config.php 第 102 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 103 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readolist\Application\Conf\config.php 第 106 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readolist\Application\Conf\config.php 第 107 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readolist\Application\Conf\config.php 第 108 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readolist\Application\Conf\config.php 第 110 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000802s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000926s ]
+NOTIC: [8] Undefined index: token E:\htdocs\readolist\Application\Lib\Action\WebCommonAction.class.php 第 25 行.
+SQL: SHOW COLUMNS FROM `ys_note_day` [ RunTime:0.004438s ]
+ERR: 1146:Table 'read.ys_note_day' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `ys_note_day`
+
+[ 2015-12-17T21:06:16+08:00 ] 127.0.0.1 /m/paihang
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.006045s ]
+INFO: [ route_check ] --END-- [ RunTime:0.006243s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\config.php 第 83 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readolist\Application\Conf\config.php 第 87 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readolist\Application\Conf\config.php 第 89 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readolist\Application\Conf\config.php 第 92 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readolist\Application\Conf\config.php 第 93 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 96 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 97 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 98 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 99 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readolist\Application\Conf\config.php 第 102 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 103 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readolist\Application\Conf\config.php 第 106 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readolist\Application\Conf\config.php 第 107 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readolist\Application\Conf\config.php 第 108 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readolist\Application\Conf\config.php 第 110 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001383s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001601s ]
+NOTIC: [8] Undefined index: token E:\htdocs\readolist\Application\Lib\Action\WebCommonAction.class.php 第 25 行.
+SQL: SHOW COLUMNS FROM `ys_note_day` [ RunTime:0.005074s ]
+ERR: 1146:Table 'read.ys_note_day' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `ys_note_day`
+
+[ 2015-12-17T21:06:22+08:00 ] 127.0.0.1 /m/paihang
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001281s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001417s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\config.php 第 83 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readolist\Application\Conf\config.php 第 87 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readolist\Application\Conf\config.php 第 89 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readolist\Application\Conf\config.php 第 92 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readolist\Application\Conf\config.php 第 93 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 96 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 97 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 98 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 99 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readolist\Application\Conf\config.php 第 102 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 103 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readolist\Application\Conf\config.php 第 106 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readolist\Application\Conf\config.php 第 107 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readolist\Application\Conf\config.php 第 108 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readolist\Application\Conf\config.php 第 110 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002023s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002144s ]
+NOTIC: [8] Undefined index: token E:\htdocs\readolist\Application\Lib\Action\WebCommonAction.class.php 第 25 行.
+SQL: SHOW COLUMNS FROM `ys_note_day` [ RunTime:0.004882s ]
+ERR: 1146:Table 'read.ys_note_day' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `ys_note_day`
+SQL: select sum(day_digg_count) from ys_notes_day where create_time >"2015-12-11" and create_time< "2015-12-17" [ RunTime:0.000293s ]
+
+[ 2015-12-17T21:06:34+08:00 ] 127.0.0.1 /m/paihang
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001427s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001574s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\config.php 第 83 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readolist\Application\Conf\config.php 第 87 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readolist\Application\Conf\config.php 第 89 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readolist\Application\Conf\config.php 第 92 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readolist\Application\Conf\config.php 第 93 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 96 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 97 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 98 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 99 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readolist\Application\Conf\config.php 第 102 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 103 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readolist\Application\Conf\config.php 第 106 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readolist\Application\Conf\config.php 第 107 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readolist\Application\Conf\config.php 第 108 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readolist\Application\Conf\config.php 第 110 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000902s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001017s ]
+NOTIC: [8] Undefined index: token E:\htdocs\readolist\Application\Lib\Action\WebCommonAction.class.php 第 25 行.
+SQL: SHOW COLUMNS FROM `ys_note_day` [ RunTime:0.004390s ]
+ERR: 1146:Table 'read.ys_note_day' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `ys_note_day`
+SQL: select sum(day_digg_count) as s from ys_notes_day where create_time >"2015-12-11" and create_time< "2015-12-17" [ RunTime:0.000257s ]
+

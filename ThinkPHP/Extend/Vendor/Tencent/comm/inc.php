@@ -1,0 +1,1 @@
+{"appid":"100244360","appkey":"006dac0918497a52300b33c0229196a4","callback":"http://www.fengwo.com/qq/callback.html","scope":"get_user_info,add_share","errorReport":true,"storageType":"file","host":"localhost","user":"root","password":"root","database":"test"}

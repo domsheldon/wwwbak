@@ -1,0 +1,95 @@
+<volist name="forumList" id="vo">
+    <li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-top" style="padding-bottom: 0px;">
+        <div style="padding-bottom: 2px;" class="am-cf">
+            <if condition="$uid eq $vo[user_id]">
+                <a href="javascript:;" class="am-comment-actions am-fr forum-delete" style="margin-left: 3px" value="{$vo.id}">
+                    <i class="am-icon-times"></i>
+                    删除
+                </a>
+            <elseif condition="'1' eq $dotop_flag"/>
+                <a href="javascript:;" class="am-comment-actions am-fr forum-delete" style="margin-left: 3px" value="{$vo.id}">
+                    <i class="am-icon-times"></i>
+                    删除
+                </a>
+            </if>
+            <img class="am-comment-avatar" alt="" src="{$vo.avatar}"/>
+            <p class="am-text-sm" style="padding-top: 3px; margin-top: 2px;margin-bottom: 2px;">
+                <span style="padding-left: 5px;" class="am-text-sm "><strong>{$vo.name}</strong></span>
+                <time style='color:#bbb;'>发表于 {$vo.create_time|substr=5,11}</time>
+            </p>
+        </div>
+        <div>
+            <a url="/wechatdiscuss/discuss/{$vo.id}" class="am-list-item-hd " style='color:#00b289;'>{$vo.title}</a>
+            <div class="am-list-item-text">
+                {$vo.content}
+            </div>
+        </div>
+
+        <notempty name="vo.img_str">
+            <ul data-am-widget="gallery" class="am-gallery am-avg-sm-2
+  am-avg-md-3 am-avg-lg-4 am-gallery-default" data-am-gallery="{pureview:{target: 'a'}}" >
+                <volist name="vo.img_str" id="url">
+                    <li>
+                        <div class="am-gallery-item">
+                            <a href="<?php echo explode('@',$url)[0]; ?>" class="">
+                                <img src="{$url}"/>
+                            </a>
+                        </div>
+                    </li>
+                </volist>
+            </ul>
+        </notempty>
+        <footer class="am-comment-footer am-g am-cf" style="padding-top:7px;padding-bottom: 8px;width:100%;">
+            <div style="width:100%;">
+                <ul class="am-avg-sm-4" style="text-align: right;">
+                    <li>&nbsp;</li>
+                    <li>
+                        <if condition="'1' eq $dotop_flag">
+                            <if condition="1 eq $vo['is_top']">
+                                <a href="javascript:;" style="padding-bottom: 0px;" class="top_forum"
+                                   value="{$vo.id}" top_flag="1">
+                                    <i class="am-icon-star"></i>
+                                </a>
+                            <else/>
+                                <a href="javascript:;" style="padding-bottom: 0px;" class="top_forum"
+                                   value="{$vo.id}" top_flag="0">
+                                    <i class="am-icon-star-o"></i>
+                                </a>
+                            </if>
+                        </if>
+                        &nbsp;
+                    </li>
+                    <li style="padding-bottom: 0px;">
+                        <a href="javascript:;" style="padding-bottom: 0px;" class="comm_forum" value="{$vo.id}" receive_user="{$vo.user_id}">
+                            <i class="am-icon-comment-o" style='font-size:14px;color:#00b289'></i>
+                        <span id="comment_{$vo.id}" comment_count="{$vo.comment_count}" style='font-size:14px;color:#00b289'>
+                            <if condition="0 neq $vo['comment_count']">
+                                {$vo.comment_count}
+                                <else/>
+                                评论
+                            </if>
+
+                        </span></a>
+                    </li>
+                    <li style="padding-bottom: 0px;">
+                        <a href="javascript:;" class="digg_forum" >
+                            <if condition="1 eq $vo['digg_flag']">
+                                <i class="am-icon-thumbs-up" value="{$vo.id}"></i>
+                                <span id="digg_{$vo.id}" digg_flag="{$vo.digg_flag}" digg_count="{$vo.digg_count}">{$vo.digg_count}</span>
+                            <else/>
+                                <i class="am-icon-thumbs-o-up digg_forum" value="{$vo.id}" style='font-size:14px;color:#00b289'></i>
+                                <span id="digg_{$vo.id}" digg_flag="{$vo.digg_flag}" digg_count="{$vo.digg_count}" style='font-size:14px;color:#00b289'>
+                                    <if condition="0 neq $vo['digg_count']">
+                                        {$vo.digg_count}
+                                    <else/>
+                                        点赞
+                                    </if>
+                                </span>
+                            </if>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+    </li>
+</volist>

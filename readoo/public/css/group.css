@@ -1,0 +1,266 @@
+@media(max-height:380px) {
+	.interest li img{
+		width: 60%;
+		border-radius: 60px;
+	}
+	.inp textarea{
+		height: 30px;
+	}
+	.interest li input{
+		position: absolute;
+		background: url("checkbox.png");
+		width: 16px;
+		height: 16px;
+		background-size: 100% 100%;
+		z-index: 5;
+		top: 1em;
+		right: 1em;
+	}
+	.interest li input:checked{
+		background: url("checkbox_check.png");
+		width: 16px;
+		height: 16px;
+		background-size: 100% 100%;
+	}
+	.occupation dt{
+		float: left;
+		width: 9%;
+	}
+	.occupation dt img{
+		width: 80%;
+		border-radius: 60px;
+	}
+	.occupation dd{
+		margin-left: 12%;
+	}
+	.occupation .zc{
+		font-size: 12px;
+		color: #aaa;
+		color: #959595;
+	}
+	.occupation .zy{
+		font-size: 12px;
+	    display: block;
+	    color: #515561;
+	}
+}
+@media(max-height:480px) and (min-height:400px){
+
+}
+@media(min-height:600px){
+	.interest li img{
+		width: 70%;
+		border-radius: 60px;
+	}
+	.header .h1{
+		font-size: 16px;
+	}
+	.header .h2{
+		font-size: 14px;
+	}
+}
+@media(min-height:381px) {
+	.occupation dt{
+		float: left;
+		width: 16%;
+	}
+	.occupation dt img{
+		width: 90%;
+		border-radius: 60px;
+	}
+	.occupation dd{
+		margin-left: 21%;
+	}
+	.occupation .zc{
+		font-size: 14px;
+		color: #aaa;
+		margin-top: 2px;
+		color: #959595;
+	}
+	.occupation .zy{
+		font-size: 12px;
+	    display: block;
+	    color: #515561;
+	}
+	.inp textarea{
+		height: 60px;
+	}
+}
+#con{
+	width: 100%;
+}
+.interest{
+	width: 100%;
+	float: left;
+}
+.header{
+	width: 100%;
+}
+.header .h1{
+	width: 100%;
+	background: #fff;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	font-size: 14px;
+	color: #000;
+}
+.header .bor{
+	border-bottom: 1px solid #ccc;
+}
+.header .h2{
+	width: 100%;
+	opacity: .8;
+	text-align: center;
+	height: 30px;
+	line-height: 30px;
+	background-color: #fff;
+	font-size: 12px;
+}
+.next,.next_two{
+	position: fixed;
+	bottom: 20px;
+	left: 10px;
+	right: 10px;
+	background-color: cadetblue;
+	display: block;
+	margin-left: 10px;
+	margin-right: 10px;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	color: #fff;
+	font-size: 14px;
+	border-radius: 5px;
+}
+.interest .s{
+	background-color: #58B73E;
+}
+.interest .a span{
+	color: #e47404;
+}
+.interest .b span{
+	color: #4333e2;
+}
+.interest .c span{
+	color: #19c54d;
+}
+.interest .d span{
+	color: #dcb916;
+}
+.interest .s span{
+	color: #fff;
+}
+.header a{
+	position: absolute;
+	right: 5px;
+    top: 5px;
+	font-size: 12px;
+	color: #ddd;
+}
+.interest ul{
+	padding-bottom: 2em;
+	padding-top: 1em;
+	overflow: hidden;
+	margin-left: 10px;
+	margin-right: 10px;
+	overflow: hidden;
+}
+.interest ul .end{
+	margin-right: 0;
+}
+.interest li{
+	float: left;
+	display: inline-block;
+	position: relative;
+	width: 31%;
+	text-align: center;
+	margin-top: 20px;
+	background-color: #ededed;
+	margin-right: 3%;
+	line-height: 30px;
+	height: 30px;
+	border-radius: 3px;
+	cursor: pointer;
+}
+.interest li img{
+	width: 66%;
+	border-radius: 60px;
+}
+.interest li span{
+	display: block;
+	font-size: 14px;
+}
+.interest li input{
+	position: absolute;
+	background: url("checkbox.png");
+	width: 20px;
+	height: 20px;
+	background-size: 100% 100%;
+	z-index: 5;
+	top: 1em;
+	right: 1em;
+}
+.interest li input:checked{
+	background: url("checkbox_check.png");
+	width: 20px;
+	height: 20px;
+	background-size: 100% 100%;
+}
+
+/**/
+.occupation{
+	padding: 0px 10px 20px;
+}
+.occupation h1{
+	text-align: center;
+	font-size: 18px;
+	line-height: 30px;
+	margin-top: 16px;
+	color: #3e3e3e;
+}
+.occupation h2{
+	text-align: center;
+	font-size: 14px;
+	margin-top: 5px;
+	color: #a2a2a2;
+}
+.occupation dl{
+	margin-top: 15px;
+	overflow: hidden;
+}
+.inp{
+	margin-top: 20px;
+}
+.inp span{
+	font-size: 14px;
+	line-height: 35px;
+}
+.inp textarea{
+	border: 1px solid #ccc;
+	display: block;
+	width: 96%;
+	line-height: 30px;
+	padding: 3px 2%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

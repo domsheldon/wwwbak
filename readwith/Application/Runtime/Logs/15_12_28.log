@@ -1,0 +1,117 @@
+[ 2015-12-28T10:45:36+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000808s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000942s ]
+ERR: 无法加载模块:Index
+
+[ 2015-12-28T10:45:42+08:00 ] 127.0.0.1 /Admin/Sendmsg/send
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001769s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001903s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\Admin\config.php 第 3 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000788s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000900s ]
+ERR: 模板不存在[Application/Tpl/Admin/Sendmsg/send.html]
+
+[ 2015-12-28T10:45:48+08:00 ] 127.0.0.1 /share/1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001128s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001259s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\config.php 第 91 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readolist\Application\Conf\config.php 第 95 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readolist\Application\Conf\config.php 第 97 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readolist\Application\Conf\config.php 第 100 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readolist\Application\Conf\config.php 第 101 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 104 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 105 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 106 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 107 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readolist\Application\Conf\config.php 第 110 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 111 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readolist\Application\Conf\config.php 第 114 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readolist\Application\Conf\config.php 第 115 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readolist\Application\Conf\config.php 第 116 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readolist\Application\Conf\config.php 第 118 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000619s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000725s ]
+NOTIC: 建议使用I方法替代_get
+NOTIC: [8] Undefined index: time1 E:\htdocs\readolist\Application\Lib\Action\ShareAction.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `ys_task` [ RunTime:0.055911s ]
+SQL: SELECT * FROM `ys_task` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.055483s ]
+SQL: SHOW COLUMNS FROM `ys_user` [ RunTime:0.054456s ]
+ERR: 1146:Table 'read.ys_user' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `ys_user`
+SQL: SHOW COLUMNS FROM `ys_task_detail` [ RunTime:0.067239s ]
+SQL: SHOW COLUMNS FROM `ys_user_info` [ RunTime:0.063426s ]
+SQL: SELECT `name`,`avatar` FROM `ys_user_info` WHERE ( user_id=4 ) LIMIT 1   [ RunTime:0.062952s ]
+SQL: SHOW COLUMNS FROM `ys_task_detail` [ RunTime:0.077185s ]
+SQL: SELECT `content` FROM `ys_task_detail` WHERE ( task_id=1 )  [ RunTime:0.054779s ]
+SQL: SELECT id as plan_id,`page_num`,`task_id`,`title`,`content`,DATE_FORMAT(`update_time`,'%Y-%m-%d %H:%i') AS update_time FROM `ys_task_detail` WHERE ( task_id=1 ) ORDER BY plan_id asc  [ RunTime:0.056821s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.032326s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032453s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000647s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000593s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000506s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000713s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002737s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000924s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001024s ]
+
+[ 2015-12-28T10:45:54+08:00 ] 127.0.0.1 /share/12
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001334s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001460s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\config.php 第 91 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readolist\Application\Conf\config.php 第 95 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readolist\Application\Conf\config.php 第 97 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readolist\Application\Conf\config.php 第 100 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readolist\Application\Conf\config.php 第 101 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 104 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 105 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 106 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 107 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readolist\Application\Conf\config.php 第 110 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 111 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readolist\Application\Conf\config.php 第 114 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readolist\Application\Conf\config.php 第 115 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readolist\Application\Conf\config.php 第 116 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readolist\Application\Conf\config.php 第 118 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000750s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000866s ]
+NOTIC: 建议使用I方法替代_get
+NOTIC: [8] Undefined index: time12 E:\htdocs\readolist\Application\Lib\Action\ShareAction.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `ys_task` [ RunTime:0.055777s ]
+SQL: SELECT * FROM `ys_task` WHERE ( id=12 ) LIMIT 1   [ RunTime:0.055556s ]
+SQL: SHOW COLUMNS FROM `ys_user` [ RunTime:0.054407s ]
+ERR: 1146:Table 'read.ys_user' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `ys_user`
+SQL: SHOW COLUMNS FROM `ys_task_detail` [ RunTime:0.056115s ]
+SQL: SHOW COLUMNS FROM `ys_user_info` [ RunTime:0.056312s ]
+SQL: SELECT `name`,`avatar` FROM `ys_user_info` WHERE ( user_id= ) LIMIT 1   [ RunTime:0.056610s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `name`,`avatar` FROM `ys_user_info` WHERE ( user_id= ) LIMIT 1  
+SQL: SHOW COLUMNS FROM `ys_task_detail` [ RunTime:0.055461s ]
+SQL: SELECT `content` FROM `ys_task_detail` WHERE ( task_id=12 )  [ RunTime:0.054411s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\htdocs\readolist\Application\Lib\Model\TaskModel.class.php 第 87 行.
+SQL: SELECT id as plan_id,`page_num`,`task_id`,`title`,`content`,DATE_FORMAT(`update_time`,'%Y-%m-%d %H:%i') AS update_time FROM `ys_task_detail` WHERE ( task_id=12 ) ORDER BY plan_id asc  [ RunTime:0.056914s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\htdocs\readolist\Application\Lib\Action\ShareAction.class.php 第 19 行.
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: name E:\htdocs\readolist\Application\Runtime\Cache\84bef5adc3ee646e905029987892b07e.php 第 20 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.011691s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011814s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000609s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000574s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000443s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000649s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002567s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000732s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000855s ]
+

@@ -1,0 +1,38 @@
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td{margin:0;padding:0;}
+body{font-family:arial,Microsoft Yahei}
+table{border-collapse:collapse;border-spacing:0}
+h1,h2,h3,h4,h5,h6{font-size:100%; font-weight:normal;}
+ul,ol,li{list-style:none;}
+em,i{font-style:normal}
+strong,b{font-weight:normal}
+img{border:none}
+input,img{vertical-align:middle}
+a{text-decoration:none}
+.clearfix:after{content:"."; display:block; height:0; clear:both;visibility:hidden;}
+*html .clearfix{height:1%;}
+*+html .clearfix{height:1%;}
+.clear{height:0px; line-height:0px; clear:both; visibility:hidden;}
+.blank5{height:5px; line-height:5px; clear:both; visibility:hidden;}
+.blank10{height:10px; line-height:10px; clear:both; visibility:hidden;}
+.blank50{height:50px; line-height:50px; clear:both; visibility:hidden;}
+*{-webkit-tap-highlight-color:rgba(0,0,0,0)}
+input,select,textarea{-webkit-tap-highlight-color:rgba(0,0,0,0);border:0;border-radius:0}
+textarea:focus{outline:0}
+body{font-family:Microsoft YaHei;font-size: 1rem;}
+html{-webkit-tap-highlight-color: transparent;overflow-x: hidden;height: 100%;min-width: 320px;overflow-x: auto;font-size: 62.5%;}
+html,body{-webkit-text-size-adjust:none;}
+input, textarea, keygen, select, button, isindex, meter, progress {-webkit-writing-mode: horizontal-tb;}
+input, textarea, keygen, select, button, isindex {margin: 0em;font: -webkit-small-control;color: initial;letter-spacing: normal;word-spacing: normal;text-transform: none;text-indent: 0px;text-shadow: none;display: inline-block;text-align: start;}
+body{overflow-x: hidden;min-width: 320px;font-size: 1em;font-family: 'microsoft yahei',Verdana,Arial,Helvetica,sans-serif;}
+.wrap{width:100%;height:100%;}
+input{
+	-webkit-appearance:none;
+	outline:none;
+	font-family: "微软雅黑";
+}
+.pt41{
+    padding-top: 41px;
+}
+.pt51{
+    padding-top: 51px;
+}

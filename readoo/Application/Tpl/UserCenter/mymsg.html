@@ -1,0 +1,97 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>我的消息</title>
+
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+    <link href="__PUBLIC__/amazeui/assets/css/amazeui.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="__PUBLIC__/amazeui/assets/css/app.css">
+    <!--<script src="__PUBLIC__/public/js/youshu.js"></script>-->
+</head>
+<body>
+<div data-am-widget="list_news" class="am-list-news am-list-news-default" >
+    <div class="am-list-news-hd am-cf">
+        <!--带更多链接-->
+        <a href="###" class="">
+            <h2>我的消息</h2>
+        </a>
+    </div>
+
+    <div class="am-list-news-bd">
+        <ul class="am-list">
+            <volist name="commList" id="vo">
+                <li class="am-g am-list-item-desced">
+                    <a href="/wechatdiscuss/discuss/{$vo.id}" class="am-list-item-hd ">{$vo.title} 点击查看</a>
+                    <div class="am-list-item-text">
+                        {$vo.name}在{$vo.create_time}@您，消息内容<br/>
+                        <strong>{$vo.content}</strong>
+                    </div>
+                    <footer class="am-comment-footer am-g am-cf" style="padding-top:7px;padding-bottom: 0px;">
+                        <div class="am-u-sm-12 am-fr">
+                            <ul class="am-avg-sm-2 am-thumbnails">
+                                <li>
+                                </li>
+                                <li style="padding-bottom: 0px;text-align: right">
+                                    <if condition="0 eq $vo['read_flag']">
+                                        <a href="javascript:;" class="read_flag" value="{$vo.comment_id}">
+                                            <i class="am-icon-flag-o"></i>
+                                            <span>标为已读</span>
+                                        </a>
+                                    <else/>
+                                        <a href="javascript:;" class="read_flag" value="{$vo.comment_id}">
+                                            <i class="am-icon-flag"></i>
+                                            <span>标为已读</span>
+                                        </a>
+                                    </if>
+                                </li>
+                            </ul>
+                        </div>
+                    </footer>
+                </li>
+            </volist>
+        </ul>
+    </div>
+</div>
+
+<br/>
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="__PUBLIC__/amazeui/assets/js/jquery.min.js"></script>
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<!--<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>-->
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="__PUBLIC__/amazeui/assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="__PUBLIC__/amazeui/assets/js/amazeui.min.js"></script>
+
+<script type="application/javascript">
+    $('.read_flag').click(function(){
+        var comment_id = $(this).attr('value');
+        $(this).children("i").removeClass();
+        $(this).children("i").addClass('am-icon-flag');
+        $.ajax({
+            type : 'post',
+            url : '/usercenter/msgread',
+            data : {'comment_id':comment_id},
+            success : function() {
+            },
+            error :function(e){
+            }
+        });
+    });
+</script>
+</body>
+
+<script src="__PUBLIC__/dropload/dist/dropload.min.js"></script>
+</html>

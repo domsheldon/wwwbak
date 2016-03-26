@@ -1,0 +1,26 @@
+http://www.readwith.com/m/otherinfo?user_id=29&ta_user_id=32
+参数：user_id：当前用户的id：
+	ta_user_id:查看用户的id；
+
+
+
+
+	2.http://api.fengwo.com/m/otherinfo
+	需要获取当前登录用户user_id和被查看用户ta_user_id；
+
+
+	3.判断音频时间正则表达式：
+	(\d{4}-)*([01]*\d-[0-3]*\d\/)*[0-2]*\d:[0-5]*\d
+
+
+	4.缓存失败是将readoo下面的权限改成777；
+	chmod 777 cache -a;
+
+	5.路由设置：
+		在设置路由的时候，控制器的方法后面必须跟着要执行的方法，如果直接写控制器名，不论以后添加什么其他的控制器名下的其他方法，执行的永远是本控制器。
+		例：路由：    	'm/otherinfo'     =>'./OtherInfo/getOther',   -------设定了otherinfo为一个路由，
+
+			如果在设置他路由
+				'm/otherinfo/digother'			=>'./OtherInfo/digOther',          -------这个路由将不会执行，总会执行的是上一个'm/otherinfo'；所以要在上一个'm/otherinfo'后面添加他要执行的方法：'m/otherinfo/getother'=>'./OtherInfo/getOther';
+	6.检测返回值是否为json :
+		http://www.bejson.com/

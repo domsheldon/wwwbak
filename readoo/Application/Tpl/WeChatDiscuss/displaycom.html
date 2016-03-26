@@ -1,0 +1,38 @@
+<volist name="discussComm" id="vo">
+  <div class="am-g" style="padding-left: 10px;padding-right: 10px">
+    <article class="am-comment"> <!-- 评论容器 -->
+      <a href="images/logo.png">
+        <img class="am-comment-avatar" alt="" src="{$vo.send_avatar}"/> <!-- 评论者头像 -->
+      </a>
+
+      <div class="am-comment-main"> <!-- 评论内容容器 -->
+        <header class="am-comment-hd">
+          <!--<h3 class="am-comment-title">评论标题</h3>-->
+          <div class="am-comment-meta am-cf"> <!-- 评论元数据 -->
+            <a href="#link-to-user" class="am-comment-author" id="childComment">{$vo.comment_name}</a> <!-- 评论者 -->
+            <time datetime="">{$vo.create_time}</time>
+            <if condition="$uid eq $vo['send_user']">
+              <a href="javascript:;" class="am-fr delete-comment" style="margin-left: 3px" value="{$vo.comment_id}">
+                <i class="am-icon-times"></i>
+                删除
+              </a>
+              <else />
+                <a href="#" class="am-fr" onclick="send_comment({$vo.send_user});">
+                <i class="am-icon-reply"></i>
+                回复
+              </a>
+            </if>
+          </div>
+        </header>
+        <div class="am-comment-bd">
+          <if condition= "$vo.comment_type eq '0'">
+          @楼主：<br/>{$vo.content}
+          <else/>
+            @{$vo.receive_name}：<br/>{$vo.content}
+          </if>
+        </div> <!-- 评论内容 -->
+      </div>
+    </article>
+  </div>
+  <br/>
+</volist>

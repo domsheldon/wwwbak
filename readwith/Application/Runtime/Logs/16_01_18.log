@@ -1,0 +1,1193 @@
+[ 2016-01-18T15:07:18+08:00 ] 127.0.0.1 /m/forum/add
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.003118s ]
+INFO: [ route_check ] --END-- [ RunTime:0.011708s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\config.php 第 137 行.
+NOTIC: [8] Constant REDIS_HOST already defined E:\htdocs\readolist\Application\Conf\config.php 第 142 行.
+NOTIC: [8] Constant REDIS_PORT already defined E:\htdocs\readolist\Application\Conf\config.php 第 143 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readolist\Application\Conf\config.php 第 145 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readolist\Application\Conf\config.php 第 147 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readolist\Application\Conf\config.php 第 150 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readolist\Application\Conf\config.php 第 151 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 154 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 155 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 156 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 157 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readolist\Application\Conf\config.php 第 160 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 161 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readolist\Application\Conf\config.php 第 164 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readolist\Application\Conf\config.php 第 165 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readolist\Application\Conf\config.php 第 166 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readolist\Application\Conf\config.php 第 168 行.
+NOTIC: [8] Constant QR_CODE_IMG already defined E:\htdocs\readolist\Application\Conf\config.php 第 169 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002333s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002457s ]
+NOTIC: [8] Undefined index: token E:\htdocs\readolist\Application\Lib\Action\WebCommonAction.class.php 第 25 行.
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: [2048] Declaration of ForumModel::add() should be compatible with that of Model::add() E:\htdocs\readolist\Application\Lib\Model\ForumModel.class.php 第 3 行.
+NOTIC: [2048] Declaration of ForumModel::delete() should be compatible with that of Model::delete() E:\htdocs\readolist\Application\Lib\Model\ForumModel.class.php 第 3 行.
+SQL: SHOW COLUMNS FROM `ys_forum` [ RunTime:0.003793s ]
+SQL: SHOW COLUMNS FROM `ys_forum` [ RunTime:0.004141s ]
+SQL: INSERT INTO `ys_forum` (`user_id`,`book_id`,`title`,`desc`,`digg_count`,`comment_count`,`create_time`) VALUES (5,23,'问题1sdfa',null,0,0,'2016-01-18 15:07:18') [ RunTime:0.031855s ]
+ERR: 1048:Column 'desc' cannot be null
+ [ SQL语句 ] : INSERT INTO `ys_forum` (`user_id`,`book_id`,`title`,`desc`,`digg_count`,`comment_count`,`create_time`) VALUES (5,23,'问题1sdfa',null,0,0,'2016-01-18 15:07:18')
+
+[ 2016-01-18T15:13:13+08:00 ] 127.0.0.1 /m/forum/add
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002012s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002271s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\config.php 第 137 行.
+NOTIC: [8] Constant REDIS_HOST already defined E:\htdocs\readolist\Application\Conf\config.php 第 142 行.
+NOTIC: [8] Constant REDIS_PORT already defined E:\htdocs\readolist\Application\Conf\config.php 第 143 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readolist\Application\Conf\config.php 第 145 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readolist\Application\Conf\config.php 第 147 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readolist\Application\Conf\config.php 第 150 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readolist\Application\Conf\config.php 第 151 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 154 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 155 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 156 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 157 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readolist\Application\Conf\config.php 第 160 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 161 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readolist\Application\Conf\config.php 第 164 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readolist\Application\Conf\config.php 第 165 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readolist\Application\Conf\config.php 第 166 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readolist\Application\Conf\config.php 第 168 行.
+NOTIC: [8] Constant QR_CODE_IMG already defined E:\htdocs\readolist\Application\Conf\config.php 第 169 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000852s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000966s ]
+NOTIC: [8] Undefined index: token E:\htdocs\readolist\Application\Lib\Action\WebCommonAction.class.php 第 25 行.
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: [2048] Declaration of ForumModel::add() should be compatible with that of Model::add() E:\htdocs\readolist\Application\Lib\Model\ForumModel.class.php 第 3 行.
+NOTIC: [2048] Declaration of ForumModel::delete() should be compatible with that of Model::delete() E:\htdocs\readolist\Application\Lib\Model\ForumModel.class.php 第 3 行.
+SQL: SHOW COLUMNS FROM `ys_forum` [ RunTime:0.005422s ]
+SQL: SHOW COLUMNS FROM `ys_forum` [ RunTime:0.004113s ]
+SQL: INSERT INTO `ys_forum` (`user_id`,`book_id`,`title`,`desc`,`digg_count`,`comment_count`,`create_time`) VALUES (5,23,'问题1sdfa','',0,0,'2016-01-18 15:13:13') [ RunTime:0.028772s ]
+
+[ 2016-01-18T15:15:42+08:00 ] 127.0.0.1 /m/forum/comment
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002598s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002747s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\config.php 第 137 行.
+NOTIC: [8] Constant REDIS_HOST already defined E:\htdocs\readolist\Application\Conf\config.php 第 142 行.
+NOTIC: [8] Constant REDIS_PORT already defined E:\htdocs\readolist\Application\Conf\config.php 第 143 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readolist\Application\Conf\config.php 第 145 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readolist\Application\Conf\config.php 第 147 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readolist\Application\Conf\config.php 第 150 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readolist\Application\Conf\config.php 第 151 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 154 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 155 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 156 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 157 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readolist\Application\Conf\config.php 第 160 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 161 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readolist\Application\Conf\config.php 第 164 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readolist\Application\Conf\config.php 第 165 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readolist\Application\Conf\config.php 第 166 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readolist\Application\Conf\config.php 第 168 行.
+NOTIC: [8] Constant QR_CODE_IMG already defined E:\htdocs\readolist\Application\Conf\config.php 第 169 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000793s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000909s ]
+NOTIC: [8] Undefined index: token E:\htdocs\readolist\Application\Lib\Action\WebCommonAction.class.php 第 25 行.
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: [2048] Declaration of ForumModel::add() should be compatible with that of Model::add() E:\htdocs\readolist\Application\Lib\Model\ForumModel.class.php 第 3 行.
+NOTIC: [2048] Declaration of ForumModel::delete() should be compatible with that of Model::delete() E:\htdocs\readolist\Application\Lib\Model\ForumModel.class.php 第 3 行.
+SQL: SHOW COLUMNS FROM `ys_forum` [ RunTime:0.003989s ]
+NOTIC: [2048] Declaration of ForumCommentModel::comment() should be compatible with that of Model::comment() E:\htdocs\readolist\Application\Lib\Model\ForumCommentModel.class.php 第 79 行.
+SQL: SHOW COLUMNS FROM `ys_forum_comment` [ RunTime:0.004618s ]
+SQL: SHOW COLUMNS FROM `ys_forum` [ RunTime:0.004247s ]
+SQL: SELECT * FROM `ys_forum` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.022255s ]
+SQL: SHOW COLUMNS FROM `ys_forum_comment` [ RunTime:0.005031s ]
+SQL: INSERT INTO `ys_forum_comment` (`forum_id`,`content`,`comment_user_id`,`reply_user_id`,`create_time`) VALUES (1,'评论岁的风口浪尖',5,null,1453101342) [ RunTime:0.000187s ]
+ERR: 1048:Column 'reply_user_id' cannot be null
+ [ SQL语句 ] : INSERT INTO `ys_forum_comment` (`forum_id`,`content`,`comment_user_id`,`reply_user_id`,`create_time`) VALUES (1,'评论岁的风口浪尖',5,null,1453101342)
+SQL: UPDATE `ys_forum` SET `comment_count`=comment_count+1 WHERE ( id='1' ) [ RunTime:0.009749s ]
+
+[ 2016-01-18T15:16:33+08:00 ] 127.0.0.1 /m/forum/comment
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002223s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002434s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\config.php 第 137 行.
+NOTIC: [8] Constant REDIS_HOST already defined E:\htdocs\readolist\Application\Conf\config.php 第 142 行.
+NOTIC: [8] Constant REDIS_PORT already defined E:\htdocs\readolist\Application\Conf\config.php 第 143 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readolist\Application\Conf\config.php 第 145 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readolist\Application\Conf\config.php 第 147 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readolist\Application\Conf\config.php 第 150 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readolist\Application\Conf\config.php 第 151 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 154 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 155 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 156 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 157 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readolist\Application\Conf\config.php 第 160 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 161 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readolist\Application\Conf\config.php 第 164 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readolist\Application\Conf\config.php 第 165 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readolist\Application\Conf\config.php 第 166 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readolist\Application\Conf\config.php 第 168 行.
+NOTIC: [8] Constant QR_CODE_IMG already defined E:\htdocs\readolist\Application\Conf\config.php 第 169 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000553s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000653s ]
+NOTIC: [8] Undefined index: token E:\htdocs\readolist\Application\Lib\Action\WebCommonAction.class.php 第 25 行.
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: [2048] Declaration of ForumModel::add() should be compatible with that of Model::add() E:\htdocs\readolist\Application\Lib\Model\ForumModel.class.php 第 152 行.
+NOTIC: [2048] Declaration of ForumModel::delete() should be compatible with that of Model::delete() E:\htdocs\readolist\Application\Lib\Model\ForumModel.class.php 第 152 行.
+SQL: SHOW COLUMNS FROM `ys_forum` [ RunTime:0.003617s ]
+NOTIC: [2048] Declaration of ForumCommentModel::comment() should be compatible with that of Model::comment() E:\htdocs\readolist\Application\Lib\Model\ForumCommentModel.class.php 第 79 行.
+SQL: SHOW COLUMNS FROM `ys_forum_comment` [ RunTime:0.003539s ]
+SQL: SHOW COLUMNS FROM `ys_forum` [ RunTime:0.003412s ]
+SQL: SELECT * FROM `ys_forum` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000317s ]
+SQL: SHOW COLUMNS FROM `ys_forum_comment` [ RunTime:0.003470s ]
+SQL: INSERT INTO `ys_forum_comment` (`forum_id`,`content`,`comment_user_id`,`reply_user_id`,`create_time`) VALUES (1,'评论岁的风口浪尖',5,null,1453101393) [ RunTime:0.000172s ]
+ERR: 1048:Column 'reply_user_id' cannot be null
+ [ SQL语句 ] : INSERT INTO `ys_forum_comment` (`forum_id`,`content`,`comment_user_id`,`reply_user_id`,`create_time`) VALUES (1,'评论岁的风口浪尖',5,null,1453101393)
+SQL: UPDATE `ys_forum` SET `comment_count`=comment_count+1 WHERE ( id='1' ) [ RunTime:0.000218s ]
+SQL: SHOW COLUMNS FROM `ys_user_info` [ RunTime:0.004238s ]
+SQL: SELECT `name`,`avatar` FROM `ys_user_info` WHERE ( user_id=5 ) LIMIT 1   [ RunTime:0.016414s ]
+SQL: SHOW COLUMNS FROM `ys_user_client` [ RunTime:0.003917s ]
+SQL: SELECT `client_id` FROM `ys_user_client` WHERE ( user_id=5 ) LIMIT 1   [ RunTime:0.000262s ]
+NOTIC: [2] Missing argument 5 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 63 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [2] Missing argument 6 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 63 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [2] Missing argument 7 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 63 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [2] Missing argument 8 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 63 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [8] Undefined variable: payload E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 62 行.
+NOTIC: [8] Undefined variable: locKey E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 65 行.
+NOTIC: [8] Undefined variable: locArgs E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 68 行.
+NOTIC: [8] Undefined variable: launchImage E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 71 行.
+NOTIC: [8] Undefined variable: locKey E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+NOTIC: [8] Undefined variable: locArgs E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+NOTIC: [8] Undefined variable: launchImage E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+NOTIC: [8] Undefined variable: payload E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+
+[ 2016-01-18T15:17:21+08:00 ] 127.0.0.1 /m/forum/comment
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002910s ]
+INFO: [ route_check ] --END-- [ RunTime:0.003075s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\config.php 第 137 行.
+NOTIC: [8] Constant REDIS_HOST already defined E:\htdocs\readolist\Application\Conf\config.php 第 142 行.
+NOTIC: [8] Constant REDIS_PORT already defined E:\htdocs\readolist\Application\Conf\config.php 第 143 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readolist\Application\Conf\config.php 第 145 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readolist\Application\Conf\config.php 第 147 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readolist\Application\Conf\config.php 第 150 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readolist\Application\Conf\config.php 第 151 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 154 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 155 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 156 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 157 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readolist\Application\Conf\config.php 第 160 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 161 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readolist\Application\Conf\config.php 第 164 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readolist\Application\Conf\config.php 第 165 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readolist\Application\Conf\config.php 第 166 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readolist\Application\Conf\config.php 第 168 行.
+NOTIC: [8] Constant QR_CODE_IMG already defined E:\htdocs\readolist\Application\Conf\config.php 第 169 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000589s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000690s ]
+NOTIC: [8] Undefined index: token E:\htdocs\readolist\Application\Lib\Action\WebCommonAction.class.php 第 25 行.
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: [2048] Declaration of ForumModel::add() should be compatible with that of Model::add() E:\htdocs\readolist\Application\Lib\Model\ForumModel.class.php 第 152 行.
+NOTIC: [2048] Declaration of ForumModel::delete() should be compatible with that of Model::delete() E:\htdocs\readolist\Application\Lib\Model\ForumModel.class.php 第 152 行.
+SQL: SHOW COLUMNS FROM `ys_forum` [ RunTime:0.004312s ]
+NOTIC: [2048] Declaration of ForumCommentModel::comment() should be compatible with that of Model::comment() E:\htdocs\readolist\Application\Lib\Model\ForumCommentModel.class.php 第 79 行.
+SQL: SHOW COLUMNS FROM `ys_forum_comment` [ RunTime:0.004284s ]
+SQL: SHOW COLUMNS FROM `ys_forum` [ RunTime:0.003727s ]
+SQL: SELECT * FROM `ys_forum` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000297s ]
+SQL: SHOW COLUMNS FROM `ys_forum_comment` [ RunTime:0.005706s ]
+SQL: INSERT INTO `ys_forum_comment` (`forum_id`,`content`,`comment_user_id`,`reply_user_id`,`create_time`) VALUES (1,'评论岁的风口浪尖',5,0,1453101441) [ RunTime:0.000445s ]
+SQL: UPDATE `ys_forum` SET `comment_count`=comment_count+1 WHERE ( id='1' ) [ RunTime:0.000829s ]
+SQL: SHOW COLUMNS FROM `ys_user_info` [ RunTime:0.004025s ]
+SQL: SELECT `name`,`avatar` FROM `ys_user_info` WHERE ( user_id=5 ) LIMIT 1   [ RunTime:0.000322s ]
+SQL: SHOW COLUMNS FROM `ys_user_client` [ RunTime:0.004768s ]
+SQL: SELECT `client_id` FROM `ys_user_client` WHERE ( user_id=5 ) LIMIT 1   [ RunTime:0.000998s ]
+NOTIC: [2] Missing argument 5 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 63 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [2] Missing argument 6 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 63 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [2] Missing argument 7 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 63 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [2] Missing argument 8 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 63 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [8] Undefined variable: payload E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 62 行.
+NOTIC: [8] Undefined variable: locKey E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 65 行.
+NOTIC: [8] Undefined variable: locArgs E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 68 行.
+NOTIC: [8] Undefined variable: launchImage E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 71 行.
+NOTIC: [8] Undefined variable: locKey E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+NOTIC: [8] Undefined variable: locArgs E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+NOTIC: [8] Undefined variable: launchImage E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+NOTIC: [8] Undefined variable: payload E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+
+[ 2016-01-18T15:21:29+08:00 ] 127.0.0.1 /m/forum/comment
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002173s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002309s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\config.php 第 137 行.
+NOTIC: [8] Constant REDIS_HOST already defined E:\htdocs\readolist\Application\Conf\config.php 第 142 行.
+NOTIC: [8] Constant REDIS_PORT already defined E:\htdocs\readolist\Application\Conf\config.php 第 143 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readolist\Application\Conf\config.php 第 145 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readolist\Application\Conf\config.php 第 147 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readolist\Application\Conf\config.php 第 150 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readolist\Application\Conf\config.php 第 151 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 154 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 155 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 156 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 157 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readolist\Application\Conf\config.php 第 160 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 161 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readolist\Application\Conf\config.php 第 164 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readolist\Application\Conf\config.php 第 165 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readolist\Application\Conf\config.php 第 166 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readolist\Application\Conf\config.php 第 168 行.
+NOTIC: [8] Constant QR_CODE_IMG already defined E:\htdocs\readolist\Application\Conf\config.php 第 169 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001931s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002455s ]
+NOTIC: [8] Undefined index: token E:\htdocs\readolist\Application\Lib\Action\WebCommonAction.class.php 第 25 行.
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: [2048] Declaration of ForumModel::add() should be compatible with that of Model::add() E:\htdocs\readolist\Application\Lib\Model\ForumModel.class.php 第 152 行.
+NOTIC: [2048] Declaration of ForumModel::delete() should be compatible with that of Model::delete() E:\htdocs\readolist\Application\Lib\Model\ForumModel.class.php 第 152 行.
+SQL: SHOW COLUMNS FROM `ys_forum` [ RunTime:0.007387s ]
+NOTIC: [2048] Declaration of ForumCommentModel::comment() should be compatible with that of Model::comment() E:\htdocs\readolist\Application\Lib\Model\ForumCommentModel.class.php 第 79 行.
+SQL: SHOW COLUMNS FROM `ys_forum_comment` [ RunTime:0.003950s ]
+SQL: SHOW COLUMNS FROM `ys_forum` [ RunTime:0.005740s ]
+SQL: SELECT * FROM `ys_forum` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000647s ]
+SQL: SHOW COLUMNS FROM `ys_forum_comment` [ RunTime:0.003653s ]
+SQL: INSERT INTO `ys_forum_comment` (`forum_id`,`content`,`comment_user_id`,`reply_user_id`,`create_time`) VALUES (1,'评论岁的风口浪尖',5,5,1453101689) [ RunTime:0.000289s ]
+SQL: UPDATE `ys_forum` SET `comment_count`=comment_count+1 WHERE ( id='1' ) [ RunTime:0.000206s ]
+SQL: SHOW COLUMNS FROM `ys_user_info` [ RunTime:0.004281s ]
+SQL: SELECT `name`,`avatar` FROM `ys_user_info` WHERE ( user_id=5 ) LIMIT 1   [ RunTime:0.000235s ]
+SQL: SHOW COLUMNS FROM `ys_user_client` [ RunTime:0.003242s ]
+SQL: SELECT `client_id` FROM `ys_user_client` WHERE ( user_id=5 ) LIMIT 1   [ RunTime:0.000236s ]
+NOTIC: [2] Missing argument 5 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 63 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [2] Missing argument 6 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 63 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [2] Missing argument 7 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 63 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [2] Missing argument 8 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 63 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [8] Undefined variable: payload E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 62 行.
+NOTIC: [8] Undefined variable: locKey E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 65 行.
+NOTIC: [8] Undefined variable: locArgs E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 68 行.
+NOTIC: [8] Undefined variable: launchImage E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 71 行.
+NOTIC: [8] Undefined variable: locKey E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+NOTIC: [8] Undefined variable: locArgs E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+NOTIC: [8] Undefined variable: launchImage E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+NOTIC: [8] Undefined variable: payload E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+
+[ 2016-01-18T15:21:45+08:00 ] 127.0.0.1 /m/forum/comment
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002252s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002395s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\config.php 第 137 行.
+NOTIC: [8] Constant REDIS_HOST already defined E:\htdocs\readolist\Application\Conf\config.php 第 142 行.
+NOTIC: [8] Constant REDIS_PORT already defined E:\htdocs\readolist\Application\Conf\config.php 第 143 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readolist\Application\Conf\config.php 第 145 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readolist\Application\Conf\config.php 第 147 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readolist\Application\Conf\config.php 第 150 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readolist\Application\Conf\config.php 第 151 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 154 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 155 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 156 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 157 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readolist\Application\Conf\config.php 第 160 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 161 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readolist\Application\Conf\config.php 第 164 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readolist\Application\Conf\config.php 第 165 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readolist\Application\Conf\config.php 第 166 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readolist\Application\Conf\config.php 第 168 行.
+NOTIC: [8] Constant QR_CODE_IMG already defined E:\htdocs\readolist\Application\Conf\config.php 第 169 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000689s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000797s ]
+NOTIC: [8] Undefined index: token E:\htdocs\readolist\Application\Lib\Action\WebCommonAction.class.php 第 25 行.
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: [2048] Declaration of ForumModel::add() should be compatible with that of Model::add() E:\htdocs\readolist\Application\Lib\Model\ForumModel.class.php 第 152 行.
+NOTIC: [2048] Declaration of ForumModel::delete() should be compatible with that of Model::delete() E:\htdocs\readolist\Application\Lib\Model\ForumModel.class.php 第 152 行.
+SQL: SHOW COLUMNS FROM `ys_forum` [ RunTime:0.003578s ]
+NOTIC: [2048] Declaration of ForumCommentModel::comment() should be compatible with that of Model::comment() E:\htdocs\readolist\Application\Lib\Model\ForumCommentModel.class.php 第 79 行.
+SQL: SHOW COLUMNS FROM `ys_forum_comment` [ RunTime:0.003488s ]
+SQL: SHOW COLUMNS FROM `ys_forum` [ RunTime:0.003432s ]
+SQL: SELECT * FROM `ys_forum` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000257s ]
+SQL: SHOW COLUMNS FROM `ys_forum_comment` [ RunTime:0.003576s ]
+SQL: INSERT INTO `ys_forum_comment` (`forum_id`,`content`,`comment_user_id`,`reply_user_id`,`create_time`) VALUES (1,'评论岁的风口浪尖',5,5,1453101705) [ RunTime:0.000252s ]
+SQL: UPDATE `ys_forum` SET `comment_count`=comment_count+1 WHERE ( id='1' ) [ RunTime:0.000190s ]
+SQL: SHOW COLUMNS FROM `ys_user_info` [ RunTime:0.003534s ]
+SQL: SELECT `name`,`avatar` FROM `ys_user_info` WHERE ( user_id=5 ) LIMIT 1   [ RunTime:0.000218s ]
+SQL: SHOW COLUMNS FROM `ys_user_client` [ RunTime:0.003400s ]
+SQL: SELECT `client_id` FROM `ys_user_client` WHERE ( user_id=5 ) LIMIT 1   [ RunTime:0.000216s ]
+NOTIC: [2] Missing argument 5 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 63 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [2] Missing argument 6 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 63 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [2] Missing argument 7 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 63 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [2] Missing argument 8 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 63 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [8] Undefined variable: payload E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 62 行.
+NOTIC: [8] Undefined variable: locKey E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 65 行.
+NOTIC: [8] Undefined variable: locArgs E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 68 行.
+NOTIC: [8] Undefined variable: launchImage E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 71 行.
+NOTIC: [8] Undefined variable: locKey E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+NOTIC: [8] Undefined variable: locArgs E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+NOTIC: [8] Undefined variable: launchImage E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+NOTIC: [8] Undefined variable: payload E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+
+[ 2016-01-18T15:25:37+08:00 ] 127.0.0.1 /m/forum/comment
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002199s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002371s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\config.php 第 137 行.
+NOTIC: [8] Constant REDIS_HOST already defined E:\htdocs\readolist\Application\Conf\config.php 第 142 行.
+NOTIC: [8] Constant REDIS_PORT already defined E:\htdocs\readolist\Application\Conf\config.php 第 143 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readolist\Application\Conf\config.php 第 145 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readolist\Application\Conf\config.php 第 147 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readolist\Application\Conf\config.php 第 150 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readolist\Application\Conf\config.php 第 151 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 154 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 155 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 156 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 157 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readolist\Application\Conf\config.php 第 160 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 161 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readolist\Application\Conf\config.php 第 164 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readolist\Application\Conf\config.php 第 165 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readolist\Application\Conf\config.php 第 166 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readolist\Application\Conf\config.php 第 168 行.
+NOTIC: [8] Constant QR_CODE_IMG already defined E:\htdocs\readolist\Application\Conf\config.php 第 169 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000691s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000796s ]
+NOTIC: [8] Undefined index: token E:\htdocs\readolist\Application\Lib\Action\WebCommonAction.class.php 第 25 行.
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: [2048] Declaration of ForumModel::add() should be compatible with that of Model::add() E:\htdocs\readolist\Application\Lib\Model\ForumModel.class.php 第 152 行.
+NOTIC: [2048] Declaration of ForumModel::delete() should be compatible with that of Model::delete() E:\htdocs\readolist\Application\Lib\Model\ForumModel.class.php 第 152 行.
+SQL: SHOW COLUMNS FROM `ys_forum` [ RunTime:0.003680s ]
+NOTIC: [2048] Declaration of ForumCommentModel::comment() should be compatible with that of Model::comment() E:\htdocs\readolist\Application\Lib\Model\ForumCommentModel.class.php 第 79 行.
+SQL: SHOW COLUMNS FROM `ys_forum_comment` [ RunTime:0.003351s ]
+SQL: SHOW COLUMNS FROM `ys_forum` [ RunTime:0.003271s ]
+SQL: SELECT * FROM `ys_forum` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000422s ]
+SQL: SHOW COLUMNS FROM `ys_forum_comment` [ RunTime:0.003594s ]
+SQL: INSERT INTO `ys_forum_comment` (`forum_id`,`content`,`comment_user_id`,`reply_user_id`,`create_time`) VALUES (1,'评论岁的风口浪尖',5,5,1453101937) [ RunTime:0.000266s ]
+SQL: UPDATE `ys_forum` SET `comment_count`=comment_count+1 WHERE ( id='1' ) [ RunTime:0.000230s ]
+SQL: SHOW COLUMNS FROM `ys_user_info` [ RunTime:0.003681s ]
+SQL: SELECT `name`,`avatar` FROM `ys_user_info` WHERE ( user_id=5 ) LIMIT 1   [ RunTime:0.000222s ]
+SQL: SHOW COLUMNS FROM `ys_user_client` [ RunTime:0.003309s ]
+SQL: SELECT `client_id` FROM `ys_user_client` WHERE ( user_id=5 ) LIMIT 1   [ RunTime:0.000238s ]
+NOTIC: [2] Missing argument 5 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 63 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [2] Missing argument 6 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 63 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [2] Missing argument 7 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 63 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [2] Missing argument 8 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 63 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [8] Undefined variable: payload E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 62 行.
+NOTIC: [8] Undefined variable: locKey E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 65 行.
+NOTIC: [8] Undefined variable: locArgs E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 68 行.
+NOTIC: [8] Undefined variable: launchImage E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 71 行.
+NOTIC: [8] Undefined variable: locKey E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+NOTIC: [8] Undefined variable: locArgs E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+NOTIC: [8] Undefined variable: launchImage E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+NOTIC: [8] Undefined variable: payload E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+
+[ 2016-01-18T15:26:04+08:00 ] 127.0.0.1 /m/forum/comment
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001720s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001851s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\config.php 第 137 行.
+NOTIC: [8] Constant REDIS_HOST already defined E:\htdocs\readolist\Application\Conf\config.php 第 142 行.
+NOTIC: [8] Constant REDIS_PORT already defined E:\htdocs\readolist\Application\Conf\config.php 第 143 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readolist\Application\Conf\config.php 第 145 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readolist\Application\Conf\config.php 第 147 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readolist\Application\Conf\config.php 第 150 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readolist\Application\Conf\config.php 第 151 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 154 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 155 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 156 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 157 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readolist\Application\Conf\config.php 第 160 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 161 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readolist\Application\Conf\config.php 第 164 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readolist\Application\Conf\config.php 第 165 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readolist\Application\Conf\config.php 第 166 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readolist\Application\Conf\config.php 第 168 行.
+NOTIC: [8] Constant QR_CODE_IMG already defined E:\htdocs\readolist\Application\Conf\config.php 第 169 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000799s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000931s ]
+NOTIC: [8] Undefined index: token E:\htdocs\readolist\Application\Lib\Action\WebCommonAction.class.php 第 25 行.
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: [2048] Declaration of ForumModel::add() should be compatible with that of Model::add() E:\htdocs\readolist\Application\Lib\Model\ForumModel.class.php 第 152 行.
+NOTIC: [2048] Declaration of ForumModel::delete() should be compatible with that of Model::delete() E:\htdocs\readolist\Application\Lib\Model\ForumModel.class.php 第 152 行.
+SQL: SHOW COLUMNS FROM `ys_forum` [ RunTime:0.011465s ]
+NOTIC: [2048] Declaration of ForumCommentModel::comment() should be compatible with that of Model::comment() E:\htdocs\readolist\Application\Lib\Model\ForumCommentModel.class.php 第 79 行.
+SQL: SHOW COLUMNS FROM `ys_forum_comment` [ RunTime:0.008084s ]
+SQL: SHOW COLUMNS FROM `ys_forum` [ RunTime:0.006045s ]
+SQL: SELECT * FROM `ys_forum` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000391s ]
+SQL: SHOW COLUMNS FROM `ys_forum_comment` [ RunTime:0.004330s ]
+SQL: INSERT INTO `ys_forum_comment` (`forum_id`,`content`,`comment_user_id`,`reply_user_id`,`create_time`) VALUES (1,'评论岁的风口浪尖',5,5,1453101964) [ RunTime:0.000323s ]
+SQL: UPDATE `ys_forum` SET `comment_count`=comment_count+1 WHERE ( id='1' ) [ RunTime:0.000257s ]
+SQL: SHOW COLUMNS FROM `ys_user_info` [ RunTime:0.004007s ]
+SQL: SELECT `name`,`avatar` FROM `ys_user_info` WHERE ( user_id=5 ) LIMIT 1   [ RunTime:0.000266s ]
+
+[ 2016-01-18T15:26:14+08:00 ] 127.0.0.1 /m/forum/comment
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001887s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002034s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\config.php 第 137 行.
+NOTIC: [8] Constant REDIS_HOST already defined E:\htdocs\readolist\Application\Conf\config.php 第 142 行.
+NOTIC: [8] Constant REDIS_PORT already defined E:\htdocs\readolist\Application\Conf\config.php 第 143 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readolist\Application\Conf\config.php 第 145 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readolist\Application\Conf\config.php 第 147 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readolist\Application\Conf\config.php 第 150 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readolist\Application\Conf\config.php 第 151 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 154 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 155 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 156 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 157 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readolist\Application\Conf\config.php 第 160 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 161 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readolist\Application\Conf\config.php 第 164 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readolist\Application\Conf\config.php 第 165 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readolist\Application\Conf\config.php 第 166 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readolist\Application\Conf\config.php 第 168 行.
+NOTIC: [8] Constant QR_CODE_IMG already defined E:\htdocs\readolist\Application\Conf\config.php 第 169 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000574s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000675s ]
+NOTIC: [8] Undefined index: token E:\htdocs\readolist\Application\Lib\Action\WebCommonAction.class.php 第 25 行.
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: [2048] Declaration of ForumModel::add() should be compatible with that of Model::add() E:\htdocs\readolist\Application\Lib\Model\ForumModel.class.php 第 152 行.
+NOTIC: [2048] Declaration of ForumModel::delete() should be compatible with that of Model::delete() E:\htdocs\readolist\Application\Lib\Model\ForumModel.class.php 第 152 行.
+SQL: SHOW COLUMNS FROM `ys_forum` [ RunTime:0.003790s ]
+NOTIC: [2048] Declaration of ForumCommentModel::comment() should be compatible with that of Model::comment() E:\htdocs\readolist\Application\Lib\Model\ForumCommentModel.class.php 第 79 行.
+SQL: SHOW COLUMNS FROM `ys_forum_comment` [ RunTime:0.004205s ]
+SQL: SHOW COLUMNS FROM `ys_forum` [ RunTime:0.004379s ]
+SQL: SELECT * FROM `ys_forum` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000265s ]
+SQL: SHOW COLUMNS FROM `ys_forum_comment` [ RunTime:0.003786s ]
+SQL: INSERT INTO `ys_forum_comment` (`forum_id`,`content`,`comment_user_id`,`reply_user_id`,`create_time`) VALUES (1,'评论岁的风口浪尖',5,5,1453101974) [ RunTime:0.000279s ]
+SQL: UPDATE `ys_forum` SET `comment_count`=comment_count+1 WHERE ( id='1' ) [ RunTime:0.000228s ]
+SQL: SHOW COLUMNS FROM `ys_user_info` [ RunTime:0.003768s ]
+SQL: SELECT `name`,`avatar` FROM `ys_user_info` WHERE ( user_id=5 ) LIMIT 1   [ RunTime:0.000349s ]
+SQL: SHOW COLUMNS FROM `ys_user_client` [ RunTime:0.004537s ]
+SQL: SELECT `client_id` FROM `ys_user_client` WHERE ( user_id=5 ) LIMIT 1   [ RunTime:0.000302s ]
+NOTIC: [2] Missing argument 5 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 63 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [2] Missing argument 6 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 63 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [2] Missing argument 7 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 63 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [2] Missing argument 8 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 63 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [8] Undefined variable: payload E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 62 行.
+NOTIC: [8] Undefined variable: locKey E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 65 行.
+NOTIC: [8] Undefined variable: locArgs E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 68 行.
+NOTIC: [8] Undefined variable: launchImage E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 71 行.
+NOTIC: [8] Undefined variable: locKey E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+NOTIC: [8] Undefined variable: locArgs E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+NOTIC: [8] Undefined variable: launchImage E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+NOTIC: [8] Undefined variable: payload E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+
+[ 2016-01-18T15:27:57+08:00 ] 127.0.0.1 /m/forum/comment
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001945s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002086s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\config.php 第 137 行.
+NOTIC: [8] Constant REDIS_HOST already defined E:\htdocs\readolist\Application\Conf\config.php 第 142 行.
+NOTIC: [8] Constant REDIS_PORT already defined E:\htdocs\readolist\Application\Conf\config.php 第 143 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readolist\Application\Conf\config.php 第 145 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readolist\Application\Conf\config.php 第 147 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readolist\Application\Conf\config.php 第 150 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readolist\Application\Conf\config.php 第 151 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 154 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 155 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 156 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 157 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readolist\Application\Conf\config.php 第 160 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 161 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readolist\Application\Conf\config.php 第 164 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readolist\Application\Conf\config.php 第 165 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readolist\Application\Conf\config.php 第 166 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readolist\Application\Conf\config.php 第 168 行.
+NOTIC: [8] Constant QR_CODE_IMG already defined E:\htdocs\readolist\Application\Conf\config.php 第 169 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000772s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000883s ]
+NOTIC: [8] Undefined index: token E:\htdocs\readolist\Application\Lib\Action\WebCommonAction.class.php 第 25 行.
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: [2048] Declaration of ForumModel::add() should be compatible with that of Model::add() E:\htdocs\readolist\Application\Lib\Model\ForumModel.class.php 第 152 行.
+NOTIC: [2048] Declaration of ForumModel::delete() should be compatible with that of Model::delete() E:\htdocs\readolist\Application\Lib\Model\ForumModel.class.php 第 152 行.
+SQL: SHOW COLUMNS FROM `ys_forum` [ RunTime:0.003558s ]
+NOTIC: [2048] Declaration of ForumCommentModel::comment() should be compatible with that of Model::comment() E:\htdocs\readolist\Application\Lib\Model\ForumCommentModel.class.php 第 79 行.
+SQL: SHOW COLUMNS FROM `ys_forum_comment` [ RunTime:0.003770s ]
+SQL: SHOW COLUMNS FROM `ys_forum` [ RunTime:0.003533s ]
+SQL: SELECT * FROM `ys_forum` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000243s ]
+SQL: SHOW COLUMNS FROM `ys_forum_comment` [ RunTime:0.003351s ]
+SQL: INSERT INTO `ys_forum_comment` (`forum_id`,`content`,`comment_user_id`,`reply_user_id`,`create_time`) VALUES (1,'评论岁的风口浪尖',5,5,1453102076) [ RunTime:0.000283s ]
+SQL: UPDATE `ys_forum` SET `comment_count`=comment_count+1 WHERE ( id='1' ) [ RunTime:0.000269s ]
+SQL: SHOW COLUMNS FROM `ys_user_info` [ RunTime:0.003794s ]
+SQL: SELECT `name`,`avatar` FROM `ys_user_info` WHERE ( user_id=5 ) LIMIT 1   [ RunTime:0.000221s ]
+SQL: SHOW COLUMNS FROM `ys_user_client` [ RunTime:0.003391s ]
+SQL: SELECT `client_id` FROM `ys_user_client` WHERE ( user_id=5 ) LIMIT 1   [ RunTime:0.000240s ]
+NOTIC: [2] Missing argument 5 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 63 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [2] Missing argument 6 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 63 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [2] Missing argument 7 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 63 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [2] Missing argument 8 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 63 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [8] Undefined variable: payload E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 62 行.
+NOTIC: [8] Undefined variable: locKey E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 65 行.
+NOTIC: [8] Undefined variable: locArgs E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 68 行.
+NOTIC: [8] Undefined variable: launchImage E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 71 行.
+NOTIC: [8] Undefined variable: locKey E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+NOTIC: [8] Undefined variable: locArgs E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+NOTIC: [8] Undefined variable: launchImage E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+NOTIC: [8] Undefined variable: payload E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+
+[ 2016-01-18T15:28:46+08:00 ] 127.0.0.1 /m/forum/comment
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.012839s ]
+INFO: [ route_check ] --END-- [ RunTime:0.012987s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\config.php 第 137 行.
+NOTIC: [8] Constant REDIS_HOST already defined E:\htdocs\readolist\Application\Conf\config.php 第 142 行.
+NOTIC: [8] Constant REDIS_PORT already defined E:\htdocs\readolist\Application\Conf\config.php 第 143 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readolist\Application\Conf\config.php 第 145 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readolist\Application\Conf\config.php 第 147 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readolist\Application\Conf\config.php 第 150 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readolist\Application\Conf\config.php 第 151 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 154 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 155 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 156 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 157 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readolist\Application\Conf\config.php 第 160 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 161 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readolist\Application\Conf\config.php 第 164 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readolist\Application\Conf\config.php 第 165 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readolist\Application\Conf\config.php 第 166 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readolist\Application\Conf\config.php 第 168 行.
+NOTIC: [8] Constant QR_CODE_IMG already defined E:\htdocs\readolist\Application\Conf\config.php 第 169 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000630s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000735s ]
+NOTIC: [8] Undefined index: token E:\htdocs\readolist\Application\Lib\Action\WebCommonAction.class.php 第 25 行.
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: [2048] Declaration of ForumModel::add() should be compatible with that of Model::add() E:\htdocs\readolist\Application\Lib\Model\ForumModel.class.php 第 152 行.
+NOTIC: [2048] Declaration of ForumModel::delete() should be compatible with that of Model::delete() E:\htdocs\readolist\Application\Lib\Model\ForumModel.class.php 第 152 行.
+SQL: SHOW COLUMNS FROM `ys_forum` [ RunTime:0.006820s ]
+NOTIC: [2048] Declaration of ForumCommentModel::comment() should be compatible with that of Model::comment() E:\htdocs\readolist\Application\Lib\Model\ForumCommentModel.class.php 第 79 行.
+SQL: SHOW COLUMNS FROM `ys_forum_comment` [ RunTime:0.005142s ]
+SQL: SHOW COLUMNS FROM `ys_forum` [ RunTime:0.004084s ]
+SQL: SELECT * FROM `ys_forum` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000405s ]
+SQL: SHOW COLUMNS FROM `ys_forum_comment` [ RunTime:0.005224s ]
+SQL: INSERT INTO `ys_forum_comment` (`forum_id`,`content`,`comment_user_id`,`reply_user_id`,`create_time`) VALUES (1,'评论岁的风口浪尖',5,5,1453102126) [ RunTime:0.000289s ]
+SQL: UPDATE `ys_forum` SET `comment_count`=comment_count+1 WHERE ( id='1' ) [ RunTime:0.000268s ]
+SQL: SHOW COLUMNS FROM `ys_user_info` [ RunTime:0.003787s ]
+SQL: SELECT `name`,`avatar` FROM `ys_user_info` WHERE ( user_id=5 ) LIMIT 1   [ RunTime:0.000222s ]
+SQL: SHOW COLUMNS FROM `ys_user_client` [ RunTime:0.003697s ]
+SQL: SELECT `client_id` FROM `ys_user_client` WHERE ( user_id=5 ) LIMIT 1   [ RunTime:0.000264s ]
+NOTIC: [2] Missing argument 5 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 63 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [2] Missing argument 6 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 63 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [2] Missing argument 7 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 63 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [2] Missing argument 8 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 63 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [8] Undefined variable: payload E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 62 行.
+NOTIC: [8] Undefined variable: locKey E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 65 行.
+NOTIC: [8] Undefined variable: locArgs E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 68 行.
+NOTIC: [8] Undefined variable: launchImage E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 71 行.
+NOTIC: [8] Undefined variable: locKey E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+NOTIC: [8] Undefined variable: locArgs E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+NOTIC: [8] Undefined variable: launchImage E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+NOTIC: [8] Undefined variable: payload E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+
+[ 2016-01-18T15:58:57+08:00 ] 127.0.0.1 /m/forum/comment
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002105s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002325s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\config.php 第 137 行.
+NOTIC: [8] Constant REDIS_HOST already defined E:\htdocs\readolist\Application\Conf\config.php 第 142 行.
+NOTIC: [8] Constant REDIS_PORT already defined E:\htdocs\readolist\Application\Conf\config.php 第 143 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readolist\Application\Conf\config.php 第 145 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readolist\Application\Conf\config.php 第 147 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readolist\Application\Conf\config.php 第 150 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readolist\Application\Conf\config.php 第 151 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 154 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 155 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 156 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 157 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readolist\Application\Conf\config.php 第 160 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 161 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readolist\Application\Conf\config.php 第 164 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readolist\Application\Conf\config.php 第 165 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readolist\Application\Conf\config.php 第 166 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readolist\Application\Conf\config.php 第 168 行.
+NOTIC: [8] Constant QR_CODE_IMG already defined E:\htdocs\readolist\Application\Conf\config.php 第 169 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000826s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000993s ]
+NOTIC: [8] Undefined index: token E:\htdocs\readolist\Application\Lib\Action\WebCommonAction.class.php 第 25 行.
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: [2048] Declaration of ForumModel::add() should be compatible with that of Model::add() E:\htdocs\readolist\Application\Lib\Model\ForumModel.class.php 第 152 行.
+NOTIC: [2048] Declaration of ForumModel::delete() should be compatible with that of Model::delete() E:\htdocs\readolist\Application\Lib\Model\ForumModel.class.php 第 152 行.
+SQL: SHOW COLUMNS FROM `ys_forum` [ RunTime:0.005259s ]
+NOTIC: [2048] Declaration of ForumCommentModel::comment() should be compatible with that of Model::comment() E:\htdocs\readolist\Application\Lib\Model\ForumCommentModel.class.php 第 79 行.
+SQL: SHOW COLUMNS FROM `ys_forum_comment` [ RunTime:0.004288s ]
+SQL: SHOW COLUMNS FROM `ys_forum` [ RunTime:0.005438s ]
+SQL: SELECT * FROM `ys_forum` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000401s ]
+SQL: SHOW COLUMNS FROM `ys_forum_comment` [ RunTime:0.003868s ]
+SQL: INSERT INTO `ys_forum_comment` (`forum_id`,`content`,`comment_user_id`,`reply_user_id`,`create_time`) VALUES (1,'评论岁的风口浪尖',5,5,1453103936) [ RunTime:0.000462s ]
+SQL: UPDATE `ys_forum` SET `comment_count`=comment_count+1 WHERE ( id='1' ) [ RunTime:0.000322s ]
+SQL: SHOW COLUMNS FROM `ys_user_info` [ RunTime:0.004821s ]
+SQL: SELECT `name`,`avatar` FROM `ys_user_info` WHERE ( user_id=5 ) LIMIT 1   [ RunTime:0.000558s ]
+SQL: SHOW COLUMNS FROM `ys_user_client` [ RunTime:0.003851s ]
+SQL: SELECT `client_id`,`os_type` FROM `ys_user_client` WHERE ( user_id=5 ) LIMIT 1   [ RunTime:0.000317s ]
+NOTIC: [2] Missing argument 5 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 66 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [2] Missing argument 6 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 66 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [2] Missing argument 7 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 66 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [2] Missing argument 8 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 66 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [8] Undefined variable: payload E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 62 行.
+NOTIC: [8] Undefined variable: locKey E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 65 行.
+NOTIC: [8] Undefined variable: locArgs E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 68 行.
+NOTIC: [8] Undefined variable: launchImage E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 71 行.
+NOTIC: [8] Undefined variable: locKey E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+NOTIC: [8] Undefined variable: locArgs E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+NOTIC: [8] Undefined variable: launchImage E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+NOTIC: [8] Undefined variable: payload E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+
+[ 2016-01-18T16:00:03+08:00 ] 127.0.0.1 /m/forum/comment
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001815s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001948s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\config.php 第 137 行.
+NOTIC: [8] Constant REDIS_HOST already defined E:\htdocs\readolist\Application\Conf\config.php 第 142 行.
+NOTIC: [8] Constant REDIS_PORT already defined E:\htdocs\readolist\Application\Conf\config.php 第 143 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readolist\Application\Conf\config.php 第 145 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readolist\Application\Conf\config.php 第 147 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readolist\Application\Conf\config.php 第 150 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readolist\Application\Conf\config.php 第 151 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 154 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 155 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 156 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 157 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readolist\Application\Conf\config.php 第 160 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 161 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readolist\Application\Conf\config.php 第 164 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readolist\Application\Conf\config.php 第 165 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readolist\Application\Conf\config.php 第 166 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readolist\Application\Conf\config.php 第 168 行.
+NOTIC: [8] Constant QR_CODE_IMG already defined E:\htdocs\readolist\Application\Conf\config.php 第 169 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000673s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000790s ]
+NOTIC: [8] Undefined index: token E:\htdocs\readolist\Application\Lib\Action\WebCommonAction.class.php 第 25 行.
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: [2048] Declaration of ForumModel::add() should be compatible with that of Model::add() E:\htdocs\readolist\Application\Lib\Model\ForumModel.class.php 第 152 行.
+NOTIC: [2048] Declaration of ForumModel::delete() should be compatible with that of Model::delete() E:\htdocs\readolist\Application\Lib\Model\ForumModel.class.php 第 152 行.
+SQL: SHOW COLUMNS FROM `ys_forum` [ RunTime:0.003485s ]
+NOTIC: [2048] Declaration of ForumCommentModel::comment() should be compatible with that of Model::comment() E:\htdocs\readolist\Application\Lib\Model\ForumCommentModel.class.php 第 79 行.
+SQL: SHOW COLUMNS FROM `ys_forum_comment` [ RunTime:0.003755s ]
+SQL: SHOW COLUMNS FROM `ys_forum` [ RunTime:0.003311s ]
+SQL: SELECT * FROM `ys_forum` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000236s ]
+SQL: SHOW COLUMNS FROM `ys_forum_comment` [ RunTime:0.003427s ]
+SQL: INSERT INTO `ys_forum_comment` (`forum_id`,`content`,`comment_user_id`,`reply_user_id`,`create_time`) VALUES (1,'评论岁的风口浪尖',5,5,1453104003) [ RunTime:0.000376s ]
+SQL: UPDATE `ys_forum` SET `comment_count`=comment_count+1 WHERE ( id='1' ) [ RunTime:0.000250s ]
+SQL: SHOW COLUMNS FROM `ys_user_info` [ RunTime:0.003868s ]
+SQL: SELECT `name`,`avatar` FROM `ys_user_info` WHERE ( user_id=5 ) LIMIT 1   [ RunTime:0.000226s ]
+SQL: SHOW COLUMNS FROM `ys_user_client` [ RunTime:0.003394s ]
+SQL: SELECT `client_id`,`os_type` FROM `ys_user_client` WHERE ( user_id=5 ) LIMIT 1   [ RunTime:0.000216s ]
+NOTIC: [2] Missing argument 1 for IGtNotificationTemplate::set_logoURL(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 79 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.NotificationTemplate.php 第 94 行.
+NOTIC: [8] Undefined variable: logoURL E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.NotificationTemplate.php 第 95 行.
+
+[ 2016-01-18T17:38:16+08:00 ] 127.0.0.1 /m/forum/comment
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001917s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002049s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\config.php 第 139 行.
+NOTIC: [8] Constant REDIS_HOST already defined E:\htdocs\readolist\Application\Conf\config.php 第 144 行.
+NOTIC: [8] Constant REDIS_PORT already defined E:\htdocs\readolist\Application\Conf\config.php 第 145 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readolist\Application\Conf\config.php 第 147 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readolist\Application\Conf\config.php 第 149 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readolist\Application\Conf\config.php 第 152 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readolist\Application\Conf\config.php 第 153 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 156 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 157 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 158 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 159 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readolist\Application\Conf\config.php 第 162 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 163 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readolist\Application\Conf\config.php 第 166 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readolist\Application\Conf\config.php 第 167 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readolist\Application\Conf\config.php 第 168 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readolist\Application\Conf\config.php 第 170 行.
+NOTIC: [8] Constant QR_CODE_IMG already defined E:\htdocs\readolist\Application\Conf\config.php 第 171 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000828s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000945s ]
+NOTIC: [8] Undefined index: token E:\htdocs\readolist\Application\Lib\Action\WebCommonAction.class.php 第 25 行.
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: [2048] Declaration of ForumModel::add() should be compatible with that of Model::add() E:\htdocs\readolist\Application\Lib\Model\ForumModel.class.php 第 152 行.
+NOTIC: [2048] Declaration of ForumModel::delete() should be compatible with that of Model::delete() E:\htdocs\readolist\Application\Lib\Model\ForumModel.class.php 第 152 行.
+SQL: SHOW COLUMNS FROM `ys_forum` [ RunTime:0.005514s ]
+NOTIC: [2048] Declaration of ForumCommentModel::comment() should be compatible with that of Model::comment() E:\htdocs\readolist\Application\Lib\Model\ForumCommentModel.class.php 第 79 行.
+SQL: SHOW COLUMNS FROM `ys_forum_comment` [ RunTime:0.004511s ]
+SQL: SHOW COLUMNS FROM `ys_forum` [ RunTime:0.004505s ]
+SQL: SELECT * FROM `ys_forum` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000442s ]
+SQL: SHOW COLUMNS FROM `ys_forum_comment` [ RunTime:0.004060s ]
+SQL: INSERT INTO `ys_forum_comment` (`forum_id`,`content`,`comment_user_id`,`reply_user_id`,`create_time`) VALUES (1,'评论岁的风口浪尖',5,5,1453109894) [ RunTime:0.000422s ]
+SQL: UPDATE `ys_forum` SET `comment_count`=comment_count+1 WHERE ( id='1' ) [ RunTime:0.000310s ]
+SQL: SHOW COLUMNS FROM `ys_user_info` [ RunTime:0.005267s ]
+SQL: SELECT `name`,`avatar` FROM `ys_user_info` WHERE ( user_id=5 ) LIMIT 1   [ RunTime:0.000362s ]
+SQL: SHOW COLUMNS FROM `ys_user_client` [ RunTime:0.004683s ]
+SQL: SELECT `client_id`,`os_type` FROM `ys_user_client` WHERE ( user_id=5 ) LIMIT 1   [ RunTime:0.000328s ]
+NOTIC: [2] Missing argument 1 for IGtNotificationTemplate::set_logoURL(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 79 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.NotificationTemplate.php 第 94 行.
+NOTIC: [8] Undefined variable: logoURL E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.NotificationTemplate.php 第 95 行.
+
+[ 2016-01-18T17:42:26+08:00 ] 127.0.0.1 /m/forum/comment
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002017s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002150s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\config.php 第 139 行.
+NOTIC: [8] Constant REDIS_HOST already defined E:\htdocs\readolist\Application\Conf\config.php 第 144 行.
+NOTIC: [8] Constant REDIS_PORT already defined E:\htdocs\readolist\Application\Conf\config.php 第 145 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readolist\Application\Conf\config.php 第 147 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readolist\Application\Conf\config.php 第 149 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readolist\Application\Conf\config.php 第 152 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readolist\Application\Conf\config.php 第 153 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 156 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 157 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 158 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 159 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readolist\Application\Conf\config.php 第 162 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 163 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readolist\Application\Conf\config.php 第 166 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readolist\Application\Conf\config.php 第 167 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readolist\Application\Conf\config.php 第 168 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readolist\Application\Conf\config.php 第 170 行.
+NOTIC: [8] Constant QR_CODE_IMG already defined E:\htdocs\readolist\Application\Conf\config.php 第 171 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000763s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000879s ]
+NOTIC: [8] Undefined index: token E:\htdocs\readolist\Application\Lib\Action\WebCommonAction.class.php 第 25 行.
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: [2048] Declaration of ForumModel::add() should be compatible with that of Model::add() E:\htdocs\readolist\Application\Lib\Model\ForumModel.class.php 第 152 行.
+NOTIC: [2048] Declaration of ForumModel::delete() should be compatible with that of Model::delete() E:\htdocs\readolist\Application\Lib\Model\ForumModel.class.php 第 152 行.
+SQL: SHOW COLUMNS FROM `ys_forum` [ RunTime:0.003799s ]
+NOTIC: [2048] Declaration of ForumCommentModel::comment() should be compatible with that of Model::comment() E:\htdocs\readolist\Application\Lib\Model\ForumCommentModel.class.php 第 79 行.
+SQL: SHOW COLUMNS FROM `ys_forum_comment` [ RunTime:0.003517s ]
+SQL: SHOW COLUMNS FROM `ys_forum` [ RunTime:0.003726s ]
+SQL: SELECT * FROM `ys_forum` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000270s ]
+SQL: SHOW COLUMNS FROM `ys_forum_comment` [ RunTime:0.003458s ]
+SQL: INSERT INTO `ys_forum_comment` (`forum_id`,`content`,`comment_user_id`,`reply_user_id`,`create_time`) VALUES (1,'评论岁的风口浪尖',5,5,1453110146) [ RunTime:0.000314s ]
+SQL: UPDATE `ys_forum` SET `comment_count`=comment_count+1 WHERE ( id='1' ) [ RunTime:0.000242s ]
+SQL: SHOW COLUMNS FROM `ys_user_info` [ RunTime:0.003723s ]
+SQL: SELECT `name`,`avatar` FROM `ys_user_info` WHERE ( user_id=5 ) LIMIT 1   [ RunTime:0.000221s ]
+SQL: SHOW COLUMNS FROM `ys_user_client` [ RunTime:0.003240s ]
+SQL: SELECT `client_id`,`os_type` FROM `ys_user_client` WHERE ( user_id=5 ) LIMIT 1   [ RunTime:0.000270s ]
+NOTIC: [2] Missing argument 1 for IGtNotificationTemplate::set_logoURL(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 79 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.NotificationTemplate.php 第 94 行.
+NOTIC: [8] Undefined variable: logoURL E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.NotificationTemplate.php 第 95 行.
+
+[ 2016-01-18T17:42:50+08:00 ] 127.0.0.1 /m/forum/comment
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001907s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002100s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\config.php 第 139 行.
+NOTIC: [8] Constant REDIS_HOST already defined E:\htdocs\readolist\Application\Conf\config.php 第 144 行.
+NOTIC: [8] Constant REDIS_PORT already defined E:\htdocs\readolist\Application\Conf\config.php 第 145 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readolist\Application\Conf\config.php 第 147 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readolist\Application\Conf\config.php 第 149 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readolist\Application\Conf\config.php 第 152 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readolist\Application\Conf\config.php 第 153 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 156 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 157 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 158 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 159 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readolist\Application\Conf\config.php 第 162 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 163 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readolist\Application\Conf\config.php 第 166 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readolist\Application\Conf\config.php 第 167 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readolist\Application\Conf\config.php 第 168 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readolist\Application\Conf\config.php 第 170 行.
+NOTIC: [8] Constant QR_CODE_IMG already defined E:\htdocs\readolist\Application\Conf\config.php 第 171 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000669s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000781s ]
+NOTIC: [8] Undefined index: token E:\htdocs\readolist\Application\Lib\Action\WebCommonAction.class.php 第 25 行.
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: [2048] Declaration of ForumModel::add() should be compatible with that of Model::add() E:\htdocs\readolist\Application\Lib\Model\ForumModel.class.php 第 152 行.
+NOTIC: [2048] Declaration of ForumModel::delete() should be compatible with that of Model::delete() E:\htdocs\readolist\Application\Lib\Model\ForumModel.class.php 第 152 行.
+SQL: SHOW COLUMNS FROM `ys_forum` [ RunTime:0.003984s ]
+NOTIC: [2048] Declaration of ForumCommentModel::comment() should be compatible with that of Model::comment() E:\htdocs\readolist\Application\Lib\Model\ForumCommentModel.class.php 第 79 行.
+SQL: SHOW COLUMNS FROM `ys_forum_comment` [ RunTime:0.003752s ]
+SQL: SHOW COLUMNS FROM `ys_forum` [ RunTime:0.004197s ]
+SQL: SELECT * FROM `ys_forum` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000349s ]
+SQL: SHOW COLUMNS FROM `ys_forum_comment` [ RunTime:0.004226s ]
+SQL: INSERT INTO `ys_forum_comment` (`forum_id`,`content`,`comment_user_id`,`reply_user_id`,`create_time`) VALUES (1,'评论岁的风口浪尖',5,2,1453110170) [ RunTime:0.000303s ]
+SQL: UPDATE `ys_forum` SET `comment_count`=comment_count+1 WHERE ( id='1' ) [ RunTime:0.000243s ]
+SQL: SHOW COLUMNS FROM `ys_user_info` [ RunTime:0.004470s ]
+SQL: SELECT `name`,`avatar` FROM `ys_user_info` WHERE ( user_id=5 ) LIMIT 1   [ RunTime:0.000429s ]
+SQL: SHOW COLUMNS FROM `ys_user_client` [ RunTime:0.004277s ]
+SQL: SELECT `client_id`,`os_type` FROM `ys_user_client` WHERE ( user_id=2 ) LIMIT 1   [ RunTime:0.000293s ]
+NOTIC: [2] Missing argument 1 for IGtNotificationTemplate::set_logoURL(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 79 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.NotificationTemplate.php 第 94 行.
+NOTIC: [8] Undefined variable: logoURL E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.NotificationTemplate.php 第 95 行.
+
+[ 2016-01-18T17:43:19+08:00 ] 127.0.0.1 /m/forum/comment
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.010242s ]
+INFO: [ route_check ] --END-- [ RunTime:0.010720s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\config.php 第 139 行.
+NOTIC: [8] Constant REDIS_HOST already defined E:\htdocs\readolist\Application\Conf\config.php 第 144 行.
+NOTIC: [8] Constant REDIS_PORT already defined E:\htdocs\readolist\Application\Conf\config.php 第 145 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readolist\Application\Conf\config.php 第 147 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readolist\Application\Conf\config.php 第 149 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readolist\Application\Conf\config.php 第 152 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readolist\Application\Conf\config.php 第 153 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 156 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 157 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 158 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 159 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readolist\Application\Conf\config.php 第 162 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 163 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readolist\Application\Conf\config.php 第 166 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readolist\Application\Conf\config.php 第 167 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readolist\Application\Conf\config.php 第 168 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readolist\Application\Conf\config.php 第 170 行.
+NOTIC: [8] Constant QR_CODE_IMG already defined E:\htdocs\readolist\Application\Conf\config.php 第 171 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000868s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001014s ]
+NOTIC: [8] Undefined index: token E:\htdocs\readolist\Application\Lib\Action\WebCommonAction.class.php 第 25 行.
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: [2048] Declaration of ForumModel::add() should be compatible with that of Model::add() E:\htdocs\readolist\Application\Lib\Model\ForumModel.class.php 第 152 行.
+NOTIC: [2048] Declaration of ForumModel::delete() should be compatible with that of Model::delete() E:\htdocs\readolist\Application\Lib\Model\ForumModel.class.php 第 152 行.
+SQL: SHOW COLUMNS FROM `ys_forum` [ RunTime:0.003644s ]
+NOTIC: [2048] Declaration of ForumCommentModel::comment() should be compatible with that of Model::comment() E:\htdocs\readolist\Application\Lib\Model\ForumCommentModel.class.php 第 79 行.
+SQL: SHOW COLUMNS FROM `ys_forum_comment` [ RunTime:0.003660s ]
+SQL: SHOW COLUMNS FROM `ys_forum` [ RunTime:0.003311s ]
+SQL: SELECT * FROM `ys_forum` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000235s ]
+SQL: SHOW COLUMNS FROM `ys_forum_comment` [ RunTime:0.003309s ]
+SQL: INSERT INTO `ys_forum_comment` (`forum_id`,`content`,`comment_user_id`,`reply_user_id`,`create_time`) VALUES (1,'评论岁的风口浪尖',5,2,1453110199) [ RunTime:0.000219s ]
+SQL: UPDATE `ys_forum` SET `comment_count`=comment_count+1 WHERE ( id='1' ) [ RunTime:0.000194s ]
+SQL: SHOW COLUMNS FROM `ys_user_info` [ RunTime:0.004076s ]
+SQL: SELECT `name`,`avatar` FROM `ys_user_info` WHERE ( user_id=5 ) LIMIT 1   [ RunTime:0.000233s ]
+SQL: SHOW COLUMNS FROM `ys_user_client` [ RunTime:0.003334s ]
+SQL: SELECT `client_id`,`os_type` FROM `ys_user_client` WHERE ( user_id=2 ) LIMIT 1   [ RunTime:0.000215s ]
+NOTIC: [2] Missing argument 5 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 66 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [2] Missing argument 6 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 66 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [2] Missing argument 7 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 66 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [2] Missing argument 8 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 66 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [8] Undefined variable: payload E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 62 行.
+NOTIC: [8] Undefined variable: locKey E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 65 行.
+NOTIC: [8] Undefined variable: locArgs E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 68 行.
+NOTIC: [8] Undefined variable: launchImage E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 71 行.
+NOTIC: [8] Undefined variable: locKey E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+NOTIC: [8] Undefined variable: locArgs E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+NOTIC: [8] Undefined variable: launchImage E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+NOTIC: [8] Undefined variable: payload E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+
+[ 2016-01-18T17:43:44+08:00 ] 127.0.0.1 /m/forum/comment
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002987s ]
+INFO: [ route_check ] --END-- [ RunTime:0.003132s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\config.php 第 139 行.
+NOTIC: [8] Constant REDIS_HOST already defined E:\htdocs\readolist\Application\Conf\config.php 第 144 行.
+NOTIC: [8] Constant REDIS_PORT already defined E:\htdocs\readolist\Application\Conf\config.php 第 145 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readolist\Application\Conf\config.php 第 147 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readolist\Application\Conf\config.php 第 149 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readolist\Application\Conf\config.php 第 152 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readolist\Application\Conf\config.php 第 153 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 156 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 157 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 158 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 159 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readolist\Application\Conf\config.php 第 162 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 163 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readolist\Application\Conf\config.php 第 166 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readolist\Application\Conf\config.php 第 167 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readolist\Application\Conf\config.php 第 168 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readolist\Application\Conf\config.php 第 170 行.
+NOTIC: [8] Constant QR_CODE_IMG already defined E:\htdocs\readolist\Application\Conf\config.php 第 171 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000696s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000808s ]
+NOTIC: [8] Undefined index: token E:\htdocs\readolist\Application\Lib\Action\WebCommonAction.class.php 第 25 行.
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: [2048] Declaration of ForumModel::add() should be compatible with that of Model::add() E:\htdocs\readolist\Application\Lib\Model\ForumModel.class.php 第 152 行.
+NOTIC: [2048] Declaration of ForumModel::delete() should be compatible with that of Model::delete() E:\htdocs\readolist\Application\Lib\Model\ForumModel.class.php 第 152 行.
+SQL: SHOW COLUMNS FROM `ys_forum` [ RunTime:0.003601s ]
+NOTIC: [2048] Declaration of ForumCommentModel::comment() should be compatible with that of Model::comment() E:\htdocs\readolist\Application\Lib\Model\ForumCommentModel.class.php 第 79 行.
+SQL: SHOW COLUMNS FROM `ys_forum_comment` [ RunTime:0.003512s ]
+SQL: SHOW COLUMNS FROM `ys_forum` [ RunTime:0.003402s ]
+SQL: SELECT * FROM `ys_forum` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000397s ]
+SQL: SHOW COLUMNS FROM `ys_forum_comment` [ RunTime:0.003661s ]
+SQL: INSERT INTO `ys_forum_comment` (`forum_id`,`content`,`comment_user_id`,`reply_user_id`,`create_time`) VALUES (1,'评论岁的风口浪尖',5,2,1453110223) [ RunTime:0.000223s ]
+SQL: UPDATE `ys_forum` SET `comment_count`=comment_count+1 WHERE ( id='1' ) [ RunTime:0.000191s ]
+SQL: SHOW COLUMNS FROM `ys_user_info` [ RunTime:0.003532s ]
+SQL: SELECT `name`,`avatar` FROM `ys_user_info` WHERE ( user_id=5 ) LIMIT 1   [ RunTime:0.000243s ]
+SQL: SHOW COLUMNS FROM `ys_user_client` [ RunTime:0.003494s ]
+SQL: SELECT `client_id`,`os_type` FROM `ys_user_client` WHERE ( user_id=2 ) LIMIT 1   [ RunTime:0.000234s ]
+NOTIC: [2] Missing argument 5 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 66 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [2] Missing argument 6 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 66 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [2] Missing argument 7 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 66 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [2] Missing argument 8 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 66 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [8] Undefined variable: payload E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 62 行.
+NOTIC: [8] Undefined variable: locKey E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 65 行.
+NOTIC: [8] Undefined variable: locArgs E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 68 行.
+NOTIC: [8] Undefined variable: launchImage E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 71 行.
+NOTIC: [8] Undefined variable: locKey E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+NOTIC: [8] Undefined variable: locArgs E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+NOTIC: [8] Undefined variable: launchImage E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+NOTIC: [8] Undefined variable: payload E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+
+[ 2016-01-18T17:45:41+08:00 ] 127.0.0.1 /m/forum/comment
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002122s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002254s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\config.php 第 139 行.
+NOTIC: [8] Constant REDIS_HOST already defined E:\htdocs\readolist\Application\Conf\config.php 第 144 行.
+NOTIC: [8] Constant REDIS_PORT already defined E:\htdocs\readolist\Application\Conf\config.php 第 145 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readolist\Application\Conf\config.php 第 147 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readolist\Application\Conf\config.php 第 149 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readolist\Application\Conf\config.php 第 152 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readolist\Application\Conf\config.php 第 153 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 156 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 157 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 158 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 159 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readolist\Application\Conf\config.php 第 162 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 163 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readolist\Application\Conf\config.php 第 166 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readolist\Application\Conf\config.php 第 167 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readolist\Application\Conf\config.php 第 168 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readolist\Application\Conf\config.php 第 170 行.
+NOTIC: [8] Constant QR_CODE_IMG already defined E:\htdocs\readolist\Application\Conf\config.php 第 171 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000675s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000778s ]
+NOTIC: [8] Undefined index: token E:\htdocs\readolist\Application\Lib\Action\WebCommonAction.class.php 第 25 行.
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: [2048] Declaration of ForumModel::add() should be compatible with that of Model::add() E:\htdocs\readolist\Application\Lib\Model\ForumModel.class.php 第 152 行.
+NOTIC: [2048] Declaration of ForumModel::delete() should be compatible with that of Model::delete() E:\htdocs\readolist\Application\Lib\Model\ForumModel.class.php 第 152 行.
+SQL: SHOW COLUMNS FROM `ys_forum` [ RunTime:0.004021s ]
+NOTIC: [2048] Declaration of ForumCommentModel::comment() should be compatible with that of Model::comment() E:\htdocs\readolist\Application\Lib\Model\ForumCommentModel.class.php 第 79 行.
+SQL: SHOW COLUMNS FROM `ys_forum_comment` [ RunTime:0.003828s ]
+SQL: SHOW COLUMNS FROM `ys_forum` [ RunTime:0.003551s ]
+SQL: SELECT * FROM `ys_forum` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000253s ]
+SQL: SHOW COLUMNS FROM `ys_forum_comment` [ RunTime:0.003589s ]
+SQL: INSERT INTO `ys_forum_comment` (`forum_id`,`content`,`comment_user_id`,`reply_user_id`,`create_time`) VALUES (1,'评论岁的风口浪尖',5,2,1453110341) [ RunTime:0.000256s ]
+SQL: UPDATE `ys_forum` SET `comment_count`=comment_count+1 WHERE ( id='1' ) [ RunTime:0.000204s ]
+SQL: SHOW COLUMNS FROM `ys_user_info` [ RunTime:0.004359s ]
+SQL: SELECT `name`,`avatar` FROM `ys_user_info` WHERE ( user_id=5 ) LIMIT 1   [ RunTime:0.000323s ]
+SQL: SHOW COLUMNS FROM `ys_user_client` [ RunTime:0.003632s ]
+SQL: SELECT `client_id`,`os_type` FROM `ys_user_client` WHERE ( user_id=2 ) LIMIT 1   [ RunTime:0.000232s ]
+
+[ 2016-01-18T17:46:41+08:00 ] 127.0.0.1 /m/forum/comment
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001734s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001889s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\config.php 第 139 行.
+NOTIC: [8] Constant REDIS_HOST already defined E:\htdocs\readolist\Application\Conf\config.php 第 144 行.
+NOTIC: [8] Constant REDIS_PORT already defined E:\htdocs\readolist\Application\Conf\config.php 第 145 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readolist\Application\Conf\config.php 第 147 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readolist\Application\Conf\config.php 第 149 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readolist\Application\Conf\config.php 第 152 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readolist\Application\Conf\config.php 第 153 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 156 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 157 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 158 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 159 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readolist\Application\Conf\config.php 第 162 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 163 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readolist\Application\Conf\config.php 第 166 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readolist\Application\Conf\config.php 第 167 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readolist\Application\Conf\config.php 第 168 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readolist\Application\Conf\config.php 第 170 行.
+NOTIC: [8] Constant QR_CODE_IMG already defined E:\htdocs\readolist\Application\Conf\config.php 第 171 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000660s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000769s ]
+NOTIC: [8] Undefined index: token E:\htdocs\readolist\Application\Lib\Action\WebCommonAction.class.php 第 25 行.
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: [2048] Declaration of ForumModel::add() should be compatible with that of Model::add() E:\htdocs\readolist\Application\Lib\Model\ForumModel.class.php 第 152 行.
+NOTIC: [2048] Declaration of ForumModel::delete() should be compatible with that of Model::delete() E:\htdocs\readolist\Application\Lib\Model\ForumModel.class.php 第 152 行.
+SQL: SHOW COLUMNS FROM `ys_forum` [ RunTime:0.004156s ]
+NOTIC: [2048] Declaration of ForumCommentModel::comment() should be compatible with that of Model::comment() E:\htdocs\readolist\Application\Lib\Model\ForumCommentModel.class.php 第 79 行.
+SQL: SHOW COLUMNS FROM `ys_forum_comment` [ RunTime:0.003651s ]
+SQL: SHOW COLUMNS FROM `ys_forum` [ RunTime:0.005510s ]
+SQL: SELECT * FROM `ys_forum` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000483s ]
+SQL: SHOW COLUMNS FROM `ys_forum_comment` [ RunTime:0.003937s ]
+SQL: INSERT INTO `ys_forum_comment` (`forum_id`,`content`,`comment_user_id`,`reply_user_id`,`create_time`) VALUES (1,'评论岁的风口浪尖',5,2,1453110397) [ RunTime:0.000292s ]
+SQL: UPDATE `ys_forum` SET `comment_count`=comment_count+1 WHERE ( id='1' ) [ RunTime:0.000198s ]
+SQL: SHOW COLUMNS FROM `ys_user_info` [ RunTime:0.004159s ]
+SQL: SELECT `name`,`avatar` FROM `ys_user_info` WHERE ( user_id=5 ) LIMIT 1   [ RunTime:0.000283s ]
+SQL: SHOW COLUMNS FROM `ys_user_client` [ RunTime:0.003462s ]
+SQL: SELECT `client_id`,`os_type` FROM `ys_user_client` WHERE ( user_id=2 ) LIMIT 1   [ RunTime:0.000220s ]
+NOTIC: [2] Missing argument 5 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 66 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [2] Missing argument 6 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 66 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [2] Missing argument 7 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 66 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [2] Missing argument 8 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 66 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [8] Undefined variable: payload E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 62 行.
+NOTIC: [8] Undefined variable: locKey E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 65 行.
+NOTIC: [8] Undefined variable: locArgs E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 68 行.
+NOTIC: [8] Undefined variable: launchImage E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 71 行.
+NOTIC: [8] Undefined variable: locKey E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+NOTIC: [8] Undefined variable: locArgs E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+NOTIC: [8] Undefined variable: launchImage E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+NOTIC: [8] Undefined variable: payload E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+
+[ 2016-01-18T17:49:49+08:00 ] 127.0.0.1 /m/forum/comment
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.003632s ]
+INFO: [ route_check ] --END-- [ RunTime:0.003790s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\config.php 第 139 行.
+NOTIC: [8] Constant REDIS_HOST already defined E:\htdocs\readolist\Application\Conf\config.php 第 144 行.
+NOTIC: [8] Constant REDIS_PORT already defined E:\htdocs\readolist\Application\Conf\config.php 第 145 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readolist\Application\Conf\config.php 第 147 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readolist\Application\Conf\config.php 第 149 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readolist\Application\Conf\config.php 第 152 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readolist\Application\Conf\config.php 第 153 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 156 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 157 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 158 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 159 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readolist\Application\Conf\config.php 第 162 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 163 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readolist\Application\Conf\config.php 第 166 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readolist\Application\Conf\config.php 第 167 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readolist\Application\Conf\config.php 第 168 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readolist\Application\Conf\config.php 第 170 行.
+NOTIC: [8] Constant QR_CODE_IMG already defined E:\htdocs\readolist\Application\Conf\config.php 第 171 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001032s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001196s ]
+NOTIC: [8] Undefined index: token E:\htdocs\readolist\Application\Lib\Action\WebCommonAction.class.php 第 25 行.
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: [2048] Declaration of ForumModel::add() should be compatible with that of Model::add() E:\htdocs\readolist\Application\Lib\Model\ForumModel.class.php 第 152 行.
+NOTIC: [2048] Declaration of ForumModel::delete() should be compatible with that of Model::delete() E:\htdocs\readolist\Application\Lib\Model\ForumModel.class.php 第 152 行.
+SQL: SHOW COLUMNS FROM `ys_forum` [ RunTime:0.003745s ]
+NOTIC: [2048] Declaration of ForumCommentModel::comment() should be compatible with that of Model::comment() E:\htdocs\readolist\Application\Lib\Model\ForumCommentModel.class.php 第 79 行.
+SQL: SHOW COLUMNS FROM `ys_forum_comment` [ RunTime:0.003900s ]
+SQL: SHOW COLUMNS FROM `ys_forum` [ RunTime:0.003327s ]
+SQL: SELECT * FROM `ys_forum` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000258s ]
+SQL: SHOW COLUMNS FROM `ys_forum_comment` [ RunTime:0.003441s ]
+SQL: INSERT INTO `ys_forum_comment` (`forum_id`,`content`,`comment_user_id`,`reply_user_id`,`create_time`) VALUES (1,'评论岁的风口浪尖',5,2,1453110589) [ RunTime:0.000235s ]
+SQL: UPDATE `ys_forum` SET `comment_count`=comment_count+1 WHERE ( id='1' ) [ RunTime:0.000195s ]
+SQL: SHOW COLUMNS FROM `ys_user_info` [ RunTime:0.003747s ]
+SQL: SELECT `name`,`avatar` FROM `ys_user_info` WHERE ( user_id=5 ) LIMIT 1   [ RunTime:0.000236s ]
+SQL: SHOW COLUMNS FROM `ys_user_client` [ RunTime:0.003326s ]
+SQL: SELECT `client_id`,`os_type` FROM `ys_user_client` WHERE ( user_id=2 ) LIMIT 1   [ RunTime:0.000210s ]
+NOTIC: [2] Missing argument 5 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 67 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [2] Missing argument 6 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 67 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [2] Missing argument 7 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 67 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [2] Missing argument 8 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 67 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [8] Undefined variable: payload E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 62 行.
+NOTIC: [8] Undefined variable: locKey E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 65 行.
+NOTIC: [8] Undefined variable: locArgs E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 68 行.
+NOTIC: [8] Undefined variable: launchImage E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 71 行.
+NOTIC: [8] Undefined variable: locKey E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+NOTIC: [8] Undefined variable: locArgs E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+NOTIC: [8] Undefined variable: launchImage E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+NOTIC: [8] Undefined variable: payload E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+
+[ 2016-01-18T18:12:18+08:00 ] 127.0.0.1 /m/forum/comment
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002401s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002560s ]
+NOTIC: [8] Use of undefined constant TMPL_PARSE_STRING - assumed 'TMPL_PARSE_STRING' E:\htdocs\readolist\Application\Conf\config.php 第 139 行.
+NOTIC: [8] Constant REDIS_HOST already defined E:\htdocs\readolist\Application\Conf\config.php 第 144 行.
+NOTIC: [8] Constant REDIS_PORT already defined E:\htdocs\readolist\Application\Conf\config.php 第 145 行.
+NOTIC: [8] Constant ADMIN_USER already defined E:\htdocs\readolist\Application\Conf\config.php 第 147 行.
+NOTIC: [8] Constant MIN_SOFT already defined E:\htdocs\readolist\Application\Conf\config.php 第 149 行.
+NOTIC: [8] Constant COVER_BUCKET already defined E:\htdocs\readolist\Application\Conf\config.php 第 152 行.
+NOTIC: [8] Constant COVER_OBJECT already defined E:\htdocs\readolist\Application\Conf\config.php 第 153 行.
+NOTIC: [8] Constant OSS_ORI_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 156 行.
+NOTIC: [8] Constant OSS_AVATAR already defined E:\htdocs\readolist\Application\Conf\config.php 第 157 行.
+NOTIC: [8] Constant OSS_AVATAR_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 158 行.
+NOTIC: [8] Constant OSS_NOTE_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 159 行.
+NOTIC: [8] Constant OSS_COVER already defined E:\htdocs\readolist\Application\Conf\config.php 第 162 行.
+NOTIC: [8] Constant OSS_COVER_RULE already defined E:\htdocs\readolist\Application\Conf\config.php 第 163 行.
+NOTIC: [8] Constant SMS_APP_ID already defined E:\htdocs\readolist\Application\Conf\config.php 第 166 行.
+NOTIC: [8] Constant SMS_APP_SECRTE already defined E:\htdocs\readolist\Application\Conf\config.php 第 167 行.
+NOTIC: [8] Constant RETURN_URL already defined E:\htdocs\readolist\Application\Conf\config.php 第 168 行.
+NOTIC: [8] Constant MY_SUPER_KEY already defined E:\htdocs\readolist\Application\Conf\config.php 第 170 行.
+NOTIC: [8] Constant QR_CODE_IMG already defined E:\htdocs\readolist\Application\Conf\config.php 第 171 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000870s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000991s ]
+NOTIC: [8] Undefined index: token E:\htdocs\readolist\Application\Lib\Action\WebCommonAction.class.php 第 25 行.
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+NOTIC: [2048] Declaration of ForumModel::add() should be compatible with that of Model::add() E:\htdocs\readolist\Application\Lib\Model\ForumModel.class.php 第 152 行.
+NOTIC: [2048] Declaration of ForumModel::delete() should be compatible with that of Model::delete() E:\htdocs\readolist\Application\Lib\Model\ForumModel.class.php 第 152 行.
+SQL: SHOW COLUMNS FROM `ys_forum` [ RunTime:0.022354s ]
+NOTIC: [2048] Declaration of ForumCommentModel::comment() should be compatible with that of Model::comment() E:\htdocs\readolist\Application\Lib\Model\ForumCommentModel.class.php 第 79 行.
+SQL: SHOW COLUMNS FROM `ys_forum_comment` [ RunTime:0.004205s ]
+SQL: SHOW COLUMNS FROM `ys_forum` [ RunTime:0.003461s ]
+SQL: SELECT * FROM `ys_forum` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000259s ]
+SQL: SHOW COLUMNS FROM `ys_forum_comment` [ RunTime:0.003325s ]
+SQL: INSERT INTO `ys_forum_comment` (`forum_id`,`content`,`comment_user_id`,`reply_user_id`,`create_time`) VALUES (1,'评论岁的风口浪尖',5,2,1453111938) [ RunTime:0.000308s ]
+SQL: UPDATE `ys_forum` SET `comment_count`=comment_count+1 WHERE ( id='1' ) [ RunTime:0.000239s ]
+SQL: SHOW COLUMNS FROM `ys_user_info` [ RunTime:0.004273s ]
+SQL: SELECT `name`,`avatar` FROM `ys_user_info` WHERE ( user_id=5 ) LIMIT 1   [ RunTime:0.000243s ]
+SQL: SHOW COLUMNS FROM `ys_user_client` [ RunTime:0.003436s ]
+SQL: SELECT `client_id`,`os_type` FROM `ys_user_client` WHERE ( user_id=2 ) LIMIT 1   [ RunTime:0.000228s ]
+NOTIC: [2] Missing argument 5 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 67 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [2] Missing argument 6 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 67 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [2] Missing argument 7 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 67 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [2] Missing argument 8 for IGtBaseTemplate::set_pushInfo(), called in E:\htdocs\readolist\Application\Lib\Action\PushAction.class.php on line 67 and defined E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 53 行.
+NOTIC: [8] Undefined variable: payload E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 62 行.
+NOTIC: [8] Undefined variable: locKey E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 65 行.
+NOTIC: [8] Undefined variable: locArgs E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 68 行.
+NOTIC: [8] Undefined variable: launchImage E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 71 行.
+NOTIC: [8] Undefined variable: locKey E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+NOTIC: [8] Undefined variable: locArgs E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+NOTIC: [8] Undefined variable: launchImage E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+NOTIC: [8] Undefined variable: payload E:\htdocs\readolist\ThinkPHP\Extend\Vendor\GeTui\igetui\template\IGt.BaseTemplate.php 第 74 行.
+

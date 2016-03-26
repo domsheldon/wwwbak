@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>返回入群图片</title>
+    <meta name="description" content="">
+</head>
+<body>
+<h1 style="text-align: center;">返回入群图片</h1>
+<script src="__PUBLIC__/js/jquery-1.10.1.min.js"></script>
+<div style="text-align: center; width: 100%;">
+<input type='text' id='groupname' style="width: 30%;height:34px;font-size: 14px;"/>&nbsp;<input type='button' id='tj' value='提交' style="height:34px;"/>
+<br/>
+<img src='' id='img'/>
+</div>
+<script type="text/javascript">
+$('#tj').click(function() {
+	var name=$('#groupname').val();
+	if (name) {		//提交生成二维码
+		$.ajax({
+            type : 'post',
+            url : '/getimg',
+            data : {'name':name},
+            success : function(msg) {
+                $('#img').attr('src', msg);
+            }
+        });
+	} else {
+		alert('群名不能为空哟！');		
+	}
+	
+});
+</script>
+
+</body>
+</html>

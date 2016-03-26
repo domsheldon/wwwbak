@@ -1,0 +1,413 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>有书圈--评论</title>
+
+  <!-- Set render engine for 360 browser -->
+  <meta name="renderer" content="webkit">
+
+  <!-- No Baidu Siteapp-->
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+  <link href="__PUBLIC__/amazeui/assets/css/amazeui.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="__PUBLIC__/amazeui/assets/css/app.css">
+  <link rel="stylesheet" href="__PUBLIC__/weui/dist/style/weui.css"/>　
+</head>
+<body>
+<div class="am-g" style="padding-left: 10px;padding-right: 10px;padding-bottom: 2px;">
+  <div style="padding-bottom: 2px;">
+    <img class="am-comment-avatar" alt="" src="{$discussInfo.avatar}"/> <!-- 评论者头像 -->
+    <p class="am-text-sm" style="padding-top: 2px; margin-top: 2px;margin-bottom: 2px;">
+      <span style="padding-left: 5px;" class="am-text-sm" id="formName">{$discussInfo.name}</span>
+      <span style="padding-left: 5px;" class="am-text-xs">发表于：{$discussInfo.create_time|substr=5,13}</span>
+    </p>
+  </div>
+</div>
+
+<article class="am-article" style="padding-left: 10px;padding-right: 10px;">
+  <div class="am-article-bd">
+    <p style="margin-top: 2px;margin-bottom: 2px;"><strong>{$discussInfo.title}</strong></p>
+    <p style="margin-top: 2px;margin-bottom: 2px;">{$discussInfo.content}
+    </p>
+  </div>
+</article>
+
+<notempty name="discussInfo.img_str">
+  <ul data-am-widget="gallery" class="am-gallery am-avg-sm-2
+  am-avg-md-3 am-avg-lg-4 am-gallery-default" data-am-gallery="{ pureview: true }" >
+    <volist name="discussInfo.img_str" id="url">
+      <li>
+        <div class="am-gallery-item">
+          <a href="<?php echo explode('@',$url)[0]; ?>" class="">
+            <img src="{$url}"/>
+          </a>
+        </div>
+      </li>
+    </volist>
+  </ul>
+</notempty>
+
+<hr data-am-widget="divider" style="" class="am-divider am-divider-default" />
+<div id="comment">
+  <include file="WeChatDiscuss:displaycom"/>
+</div>
+
+<div data-am-widget="navbar" class="am-navbar am-cf am-navbar-default "
+     id="">
+  <ul class="am-navbar-nav am-cf am-avg-sm-4">
+    <li >
+      <a href="/wechatdiscuss/discusslist" class="">
+        <span class="am-icon-chevron-left"></span>
+        <span class="am-navbar-label">返回</span>
+      </a>
+    </li>
+    <li>
+      <a class="" role="">
+      <if condition="$diggStatus eq 0">
+        <span class="am-icon-thumbs-o-up digg"> </span>
+        <span class="am-navbar-label" id="diggCount">
+          赞 {$discussInfo.digg_count}</span></a>
+        <else />
+        <span class="am-icon-thumbs-up digg"></span>
+        <span class="am-navbar-label" id="diggCount">
+          赞 {$discussInfo.digg_count}</span></a>
+      </if>
+    </li>
+    <li>
+      <a class="comm">
+        <span class="am-icon-comment-o"></span>
+        <span class="am-navbar-label">评论 {$discussInfo.comment_count}</span></a>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+<!--删除的确认弹窗-->
+<div class="am-modal am-modal-confirm" tabindex="-1" id="my-confirm">
+  <div class="am-modal-dialog">
+    <div class="am-modal-hd"></div>
+    <div class="am-modal-bd">
+      确定要删除这条评论吗？
+    </div>
+    <div class="am-modal-footer">
+      <span class="am-modal-btn" data-am-modal-cancel>取消</span>
+      <span class="am-modal-btn" data-am-modal-confirm>确定</span>
+    </div>
+  </div>
+</div>
+
+<!--BEGIN toast-->
+<div id="toast" style="display: none;">
+  <div class="weui_mask_transparent"></div>
+  <div class="weui_toast">
+    <i class="weui_icon_toast"></i>
+    <p class="weui_toast_content">发送成功</p>
+  </div>
+</div>
+<!--end toast-->
+
+<!--点击评论时，弹出该div，让用户输入评论-->
+<div class="am-modal am-modal-prompt" tabindex="-1" id="my-prompt">
+  <div class="am-modal-dialog">
+    <div class="am-modal-hd recv-user">@楼主</div>
+    <div class="am-modal-bd" style="padding: 0;border: 0;margin:0;">
+      <form class="am-form" id="comment_form" name="release" action="/wechatdiscuss/comment" method="post" data-am-validator>
+        <fieldset>
+          <div class="am-g am-cf" style="padding-left: 3px;padding-right: 3px;">
+            <input id="noteId" name="noteId" style="display: none">
+            <input id="receive_user" name="receive_user" style="display: none">
+            <input id="comment_type" name="comment_type" style="display: none">
+            <textarea class="" rows="5" style="width: 100%;" id="commContent" name="commContent" placeholder="输入正文(5-200字)" minlength="3" maxlength="200"></textarea>
+            <span class="am-text-xs">点击窗口其他区域取消发送</span>
+          </div>
+            <button type="submit" class="am-btn am-btn-default" id="bt_submit">发送</button></p>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="__PUBLIC__/amazeui/assets/js/jquery.min.js"></script>
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<!--<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>-->
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="__PUBLIC__/amazeui/assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="__PUBLIC__/amazeui/assets/js/amazeui.min.js"></script>
+
+<script type="text/javascript">
+  var book_id ="<?php echo $book_id ?>";
+  function send_note(){
+    var send_url = '/public/discuss/addforum.html?book_id='+book_id;
+    window.location.href = send_url;
+  }
+
+  var digg_count ="<?php echo $discussInfo['digg_count'];?>";
+  var digg_flag ="<?php echo $discussInfo['status'];?>";
+  var note_id ="<?php echo $discussInfo['id'];?>";
+  var receive_user ="<?php echo $discussInfo['user_id'];?>";
+
+  $('.digg').click(function(){
+    var note_id ="<?php echo $discussInfo['id'];?>";
+    if(digg_flag == 0){
+      digg_flag=true;
+      $(this).removeClass('am-icon-thumbs-o-up');
+      $(this).addClass('am-icon-thumbs-up');
+      //赞
+      $.ajax({
+        type : 'post',
+        url : '/wechatdiscuss/digg',
+        data : {'note_id':note_id},
+        success : function() {
+          digg_flag = 1;
+          $("#diggCount").html('赞 '+ ++digg_count);
+
+        },
+        error :function(e){
+          alert("点赞失败");
+        }
+      });
+      return;
+    }
+
+    if(digg_flag == 1){
+      //取消赞
+      $(this).removeClass('am-icon-thumbs-up');
+      $(this).addClass('am-icon-thumbs-o-up');
+      $.ajax({
+        type : 'post',
+        url : '/wechatdiscuss/undigg',
+        data : {'note_id':note_id},
+        success : function() {
+          digg_flag = 0;
+          $("#diggCount").html('赞 '+ --digg_count);
+        },
+        error :function(e){
+          alert("取消赞失败");
+        }
+      });
+
+    }
+  });
+
+  //点击评论按钮
+  $('.comm').click(function(){
+    var formName = document.getElementById('formName');
+    var name = formName.innerHTML;
+    $('.recv-user').html('@楼主');
+    $('#receive_user').val(receive_user);
+    $('#noteId').val(note_id);
+    $('#comment_type').val('0');
+    $('#my-prompt').modal();
+  });
+
+  //点击评论按钮
+  function send_comment(reply_id){
+    var childComment = document.getElementById('childComment');
+    var name = childComment.innerHTML;
+    $('.recv-user').html('@'+name);
+    $('#receive_user').val(reply_id);
+    $('#noteId').val(note_id);
+    $('#comment_type').val('1');
+    $('#my-prompt').modal();
+  }
+
+  $('#bt_submit').click(function (e) {
+    var $toast = $('#toast');
+    if ($toast.css('display') != 'none') {
+      return;
+    }
+    $toast.show();
+    setTimeout(function () {
+      $toast.hide();
+    }, 2000);
+    return true;
+  });
+
+//  $('.comm').click(function(){
+//    var formName = document.getElementById('formName');
+//    var name = formName.innerHTML;
+//    $.ajax({
+//      type : 'post',
+//      url : '/wechatdiscuss/release',
+//      data : {'note_id':note_id,'name':name},
+//      success : function() {
+//        window.location.href='/public/discuss/addcomment.html?comment_type=0&note_id='+note_id+'&receive_user='+receive_user+'&name='+name;
+//      },
+//      error :function(e){
+//        alert("评论失败");
+//      }
+//    });
+//
+//  });
+    function comment(){
+      $.ajax({
+        type : 'post',
+        url : '/wechatdiscuss/displaycom',
+        data : {'page':1,'noteId':note_id},
+        dataType : "html",
+        success : function(displaycomm) {
+          $("#comment").html(displaycomm);
+          $('.delete-comment').click(function(){
+            var comment_id = $(this).attr('value');
+            $('#my-confirm').modal({
+              relatedTarget: this,
+              onConfirm: function(options) {
+                $.ajax({
+                  type : 'post',
+                  url : '/wechatdiscuss/deletecomment',
+                  data : {'note_id':note_id,'comment_id':comment_id},
+                  success : function() {
+                      window.location.href='/wechatdiscuss/discuss/'+note_id;
+                  },
+                  error :function(e){
+                    alert("评论失败");
+                  }
+                });
+              },
+              // closeOnConfirm: false,
+              onCancel: function() {
+              }
+            });
+          });
+        },
+        error :function(e){
+          alert(e);
+        }
+      });
+    }
+    window.onload = comment();
+</script>
+<script src="__PUBLIC__/dropload/dist/dropload.min.js"></script>
+<script>
+  $(function(){
+    var curPage = 1;
+
+    // dropload
+    var dropload = $(document.body).dropload({
+      scrollArea : window,
+      domUp : {
+        domClass   : 'dropload-up',
+        domRefresh : '<div class="am-g dropload-refresh"><p class="am-text-center">↓下拉刷新</p></div>',
+        domUpdate  : '<div class="am-g dropload-update"><p class="am-text-center">↑释放更新</p></div>',
+        domLoad    : '<div class="am-g dropload-load"><p class="am-text-center"><span class="loading"></span>加载中...</p></div>'
+      },
+      domDown : {
+        domClass   : 'dropload-down',
+        domRefresh : '<div class="am-g dropload-refresh"><p class="am-text-center">↑上拉加载</p></div>',
+        domLoad    : '<div class="am-g dropload-load"><p class="am-text-center"><span class="loading"></span>加载中...</p></div>',
+        domNoData  : '<div class="am-g dropload-noData"><p class="am-text-center">暂无数据</p></div>'
+      },
+      loadUpFn : function(me){
+        $.ajax({
+          type : 'post',
+          url : '/wechatdiscuss/displaycom',
+          data : {'page':1,'noteId':note_id},
+          dataType : "html",
+          success: function(data){
+            if(data.trim()!=''){
+              $('#comment').html(data);
+              // 锁定
+              dropload.unlock();
+              $('.dropload-down').show();
+            }
+            curPage = 1;
+            me.resetload();
+          },
+          error: function(xhr, type){
+            alert('Ajax error!');
+            // 即使加载出错，也得重置
+            me.resetload();
+          }
+        });
+      },
+      loadDownFn : function(me){
+        $.ajax({
+          type : 'post',
+          url : '/wechatdiscuss/displaycom',
+          data : {'page':curPage+1,'noteId':note_id},
+          dataType : "html",
+          success: function(data){
+            if(data.trim() == ''){
+//              // 锁定
+//              me.lock();
+//              // 无数据
+//              me.noData();
+              // 锁定
+              dropload.lock();
+              $('.dropload-down').hide();
+            }else {
+              curPage++;
+              $('#comment').append(data);
+            }
+            // 每次数据加载完，必须重置
+            me.resetload();
+          },
+          error: function(xhr, type){
+            alert('Ajax error!');
+            // 即使加载出错，也得重置
+            me.resetload();
+          }
+        });
+      },
+      threshold : 50
+    });
+  });
+</script>
+
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+  var title = '<?php echo $discussInfo["title"];?>';
+  var avatar = '<?php echo $discussInfo["avatar"];?>';
+  wx.config({
+    debug: false,
+    appId: '<?php echo $signPackage["appId"];?>',
+    timestamp: <?php echo $signPackage["timestamp"];?>,
+  nonceStr: '<?php echo $signPackage["nonceStr"];?>',
+          signature: '<?php echo $signPackage["signature"];?>',
+          jsApiList: [
+    // 所有要调用的 API 都要加到这个列表中
+    'checkJsApi',
+    'onMenuShareTimeline',
+    'onMenuShareAppMessage'
+  ]
+  });
+  wx.ready(function () {
+    var shareData = {
+      title: title,
+      desc: '我在有书圈发表了一篇随笔，快来加入有书共读，一起组队对抗惰性。',
+      link: 'http://gongdu.youshu.cc/share/note?note_id='+note_id,
+      imgUrl: avatar,
+//      imgUrl: 'http://readooapi.youshu.cc/public/images/youshu.png',
+    };
+    //wx.menuItem:share:appMessage(shareData);
+    wx.onMenuShareAppMessage(shareData);
+    wx.onMenuShareTimeline(shareData);
+
+
+    function decryptCode(code, callback) {
+      $.getJSON('/jssdk/decrypt_code.php?code=' + encodeURI(code), function (res) {
+        if (res.errcode == 0) {
+          codes.push(res.code);
+        }
+      });
+    }
+  });
+
+  wx.error(function (res) {
+//    alert('wx.error: '+JSON.stringify(res));
+  });
+
+</script>
+<script src="__PUBLIC__/js/zepto.min.js"></script>
+</body>
+</html>

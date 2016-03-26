@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/group.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/group_style.css">
+    <title>介绍自己</title>
+</head>
+<body>
+
+<div id="con">
+    <div class="interest">
+        <div class="header">
+            <div class="h1">填写您的兴趣</div>
+            <div class="h2">有书会为您提供个性化的阅读服务</div>
+            <a href='/join?user_id={$user_id}'>跳过</a>
+        </div>
+        <ul>
+            <li class='a'><span>小说</span></li>
+            <li class='b'><span>散文</span></li>
+            <li class='c end'><span>推理</span></li>
+            <li class='d'><span>青春</span></li>
+            <li class='a'><span>科幻</span></li>
+            <li class='b end'><span>历史</span></li>
+            <li class='c'><span>哲学</span></li>
+            <li class='d'><span>传记</span></li>
+            <li class='a end'><span>经济</span></li>
+            <li class='b'><span>旅行</span></li>
+            <li class='d'><span>职场</span></li>
+            <li class='d end'><span>科技</span></li>
+            <li class='a'><span>互联网</span></li>
+        </ul>
+        <a class='next'>下一步</a>
+    </div>
+
+    <div class="interest" style="display:none">
+        <div class="header">
+            <div class="h1 bor">填写一句话介绍</div>
+        </div>
+        <div class="occupation">
+            <h1>填写您的个人简介？</h1>
+            <h2>他们是这样介绍自己的</h2>
+            <dl>
+                <dt><img src="__PUBLIC__/images/tx01.jpg"></dt>
+                <dd>
+                    <div class='zc'>松爸</div>
+                    <div class="zy">我们终此一生，就是要摆脱他人的期待找到真正的自己。</div>
+                </dd>
+            </dl>
+            <dl>
+                <dt><img src="__PUBLIC__/images/tx02.jpg"></dt>
+                <dd>
+                    <div class='zc'>韶寻幽</div>
+                    <div class="zy">一辈子总是得让一些善意执念推着往前令我们愿意听从内心的安排</div>
+                </dd>
+            </dl>
+            <dl>
+                <dt><img src="__PUBLIC__/images/tx03.jpg"></dt>
+                <dd>
+                    <div class='zc'>朱立</div>
+                    <div class="zy">不同的理念，不同的选择；不同的结果，不同的人生。</div>
+                </dd>
+            </dl>
+            <dl class="dis">
+                <dt><img src="__PUBLIC__/images/tx04.jpg"></dt>
+                <dd>
+                    <div class='zc'>刘卫明</div>
+                    <div class="zy">运动、读书、旅游。</div>
+                </dd>
+            </dl>
+            <div class="inp">
+                <span>写一句话简单介绍自己:</span>
+                <textarea type="text" name="con_input" placeholder='简单介绍下自己'></textarea>
+            </div>
+            <input type='hidden' name='user_id' id='user_id' value='{$user_id}'/>
+        </div>
+    </div>
+</div>
+
+<script src="__PUBLIC__/js/jquery-1.10.1.min.js"></script>
+<script>
+var lis = $(".interest").find("li");
+var funny = function(i){
+    lis[i].onclick = function(){
+        if($(this).hasClass("s")){
+            $(this).removeClass("s");
+        }else{
+            $(this).addClass("s");
+        }
+    }
+}
+for(var i=0;i<lis.length;i++){
+    funny(i);
+}
+$(document).ready(function(){
+    var tips="";
+    $(".interest").css("width",document.body.clientWidth);
+    $(".interest:eq(1)").css("display","block");
+    $("#con").css("width",document.body.clientWidth*3);
+    if(screen.height<=480){
+        $(".occupation dl:eq(3)").css("display","none")
+        $(".occupation dl:eq(2)").css("display","none")
+    }
+    if(document.body.clientHeight<=550){
+        $(".occupation dl:eq(3)").css("display","none")
+    }
+    $(".next").on("click",function(){
+        var page = $(".next").attr("page");
+        if(page){
+            var conn = $("textarea[name=con_input]").val();
+            var user_id = $("#user_id").val();
+            $.ajax({
+                url: "/xq",  //请求地址
+                type: "post",
+                dataType: "json",
+                data: {"conn":conn,"tips":tips,"user_id":user_id},
+                success: function(obj) {
+                	console.log(obj);
+                    if(obj.code==1){
+                        location.href=obj.url;  //跳转地址
+                    }else{
+                        alert('请填写完整哦');  //错误提示
+                    }
+                },
+                error: function(obj){
+                    alert('请求失败');  //请求失败
+                }
+            })
+        }else{
+            var con = "";
+            $(".interest").find("li").each(function(){
+                if($(this).hasClass("s")){
+                    con +=$(this).find("span").html()+"|";
+                }
+            })
+            con = con.substring(0,con.length-1);
+            if(con){
+                console.log(con);
+                tips = con;
+            }else{
+                alert("至少选择一个兴趣");
+                return false;
+            }
+            $(".interest:eq(0)").animate({"margin-left":"-100%"})
+            $(".interest:eq(1)").animate({"margin-left":"0"},function(){
+                $(".next").attr("page","2");
+                $(".next").html("完成");
+                $("textarea[name=con_input]").focus();
+            })
+        }
+    })
+})
+</script>
+</body>
+</html>

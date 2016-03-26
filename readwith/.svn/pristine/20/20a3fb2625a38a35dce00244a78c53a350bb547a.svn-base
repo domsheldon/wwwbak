@@ -1,0 +1,143 @@
+<?php
+$dbConfig = require './config.db.php';
+$config = array(
+    
+    'URL_MODEL' => 2, //URL模式为REWRITE模式
+    //'URL_HTML_SUFFIX'       =>  '.html',                //伪静态后缀.html 
+//    'APP_GROUP_MODE' => 0,
+    'DEFAULT_MODULE' => 'Index',
+    'TMPL_STRIP_SPACE' => false, //去除模板文件里面的html空格与换行
+    'SHOW_PAGE_TRACE' => false, //Trace显示开关
+    'DB_SQL_BUILD_CACHE' => false, //MYSQL高速缓存开关
+    'TMPL_CACHE_ON' => false, //关闭模版缓存
+    'TMPL_L_DELIM' => '{',
+    'TMPL_R_DELIM' => '}',
+    'APP_DEBUG' => true,
+    'DB_FIELD_CACHE' => false,
+    'HTML_CACHE_ON' => false,
+    'URL_ROUTER_ON' => true, //开启路由
+    'APP_GROUP_LIST' => ',Admin',
+    'DEFAULT_GROUP' => '',
+	'APP_SUB_DOMAIN_DEPLOY' => 1, // 开启子域名配置
+    'APP_SUB_DOMAIN_RULES' => array(
+        'admin' => array('Admin/'), // admin域名指向Admin分组
+    ),
+
+    //开启分布式数据库
+//  	'DB_DEPLOY_TYPE'=>'1', 
+	  
+    'URL_ROUTE_RULES' => array(
+    
+    	'm/sign/msg'	=>'MobileLogin/send_msg',//发验证码
+    	'm/check/code'	=>'MobileLogin/checkCode',	//检验验证码
+    	'm/get_code'  	=>'Sms/get_code',//验证回调
+    	//'m/user/sign' 	=>'MobileLogin/app_sign', //手机用户注册
+    	
+//    	'm/user/entry' 	=>'MobileLogin/app_entry', //手机用户登录
+    	'm/is/pass' 	=>'MobileLogin/showPhone', //是否显示手机号登录
+    	'm/third/login' 	=>'MobileLogin/thirdEntry', //第三方登录
+    	'm/third/bind'			=>'User/thirdBind',			//绑定、解绑
+
+    	'm/pwd/msg'		=>'MobileLogin/uppwd_send_msg',//忘记密码验证手机号
+    	'm/up/pwd'		=>'MobileLogin/up_pwd',//密码重置
+    	
+    	'm/client/save'  		=>'User/save_client',//保存cid
+    	'm/client/del'  		=>'User/delete_client',//删除cid
+    
+    	'm/userinfo/save'  		=>'User/saveInfo',	//保存用户信息
+    	'm/user/fav'  		=>'User/userNote',	//我的收藏，我的随笔
+    	'm/msg/save'  		=>'User/saveMsg',	//用户反馈
+    	'm/check/pai'  		=>'./User/getUserSort',	//我的成就排行
+    	'm/user/cj'  		=>'User/getChengJiu',	//我的成就
+    	'm/config'  		=>'Index/getConfig',
+    	'm/index'  			=>'Index/getIndexData',//首页
+    	'm/user/data'  		=>'User/getUserData',
+    	'm/user/read'  		=>'User/getReadBooks',//我的共读列表、阅历
+		'm/get/pbook'  		=>'Index/bookList',	//读过的书籍列表
+    	'm/note/list'  		=>'Note/getNoteList',
+    	'm/note/save'  		=>'Note/noteSave',
+    	'm/note/del'  		=>'Note/noteDel',
+    	'm/note/fav'  		=>'Note/noteFav',
+    	'm/note/jubao'  		=>'Note/noteJubao',//举报笔记
+    
+    	'm/bp/info'  		=>'Note/noteInfo',//笔记详情
+    	
+    	'm/digg/list'  		=>'Note/getDiggUser',
+    	'm/digg/add'  		=>'Note/noteDigg',
+    	'm/comment/list'  		=>'Note/commentList',
+    	'm/comment/add'  		=>'Note/noteComment',
+    	'm/comment/talk'  		=>'Note/commentTalk',//查看评论对话
+    	'm/comment/tousu'  		=>'/',//投诉评论
+    	'm/comment/del'  		=>'Note/commentDel',//评论删除
+    
+    	'm/check/in'  		=>'Package/checkIn',//签到
+    	'm/pack/info'  		=>'Package/getPackInfo',	//拆书包详情
+		'm/book/pack'  		=>'Package/getPackList',	//查看拆书列表
+    	'm/set/time'  		=>'User/setTime',			//设置闹铃
+    	
+    	'm/hot/list'  		=>'Topic/getTopicList',	//热门话题列表
+    	'm/topic/info'  		=>'Topic/getTopicInfo',	//话题详情
+    
+    	'getimg'  		=>'Test/getImg',	
+    	'setimg'  		=>'Test/setImg',	
+    	//'share/note'	=> 'Share/note',//分享随笔
+		'share/achieve'	=> 'Share/achieve',//分享随笔
+		'share/digg'	=> 'Share/doDigg',//分享随笔的点赞
+
+		'plan/info'	=> 'PlanBook/planInfo',//共读计划详情
+		'plan/join'	=> 'PlanBook/joinPlan',//加入共读计划
+		'plan/quit'	=> 'PlanBook/quitPlan',//退出共读计划
+		'userguide' => 'PlanBook/help',//帮助页暂时也调整到共读计划
+    	
+	),
+	 TMPL_PARSE_STRING => array(
+        '__PUBLIC__' => '/public',
+    )
+);
+define('REDIS_HOST','127.0.0.1');
+//define('REDIS_HOST','10.172.249.197');
+define('REDIS_PORT',6379);
+
+define('ADMIN_USER', '1');//默认后台运营帐号
+
+define('MIN_SOFT', '2');//默认软件版本最低
+
+//拆书包早晚读时间
+define(AMINTIME, '06:00:00');
+define(AMAXTIME, '14:00:00');
+define(PMINTIME, '17:00:00');
+define(PMAXTIME, '24:00:00');
+
+//OSS上bucket
+define('COVER_BUCKET', 'book-cover');
+define('AVATAR_BUCKET', 'fengwo-avatar');
+define('AD_BUCKET', 'fengwoimg');
+//OSS上的object,以项目名来命名
+define('OBJECT', 'readwith');
+
+
+//OSS域名
+define('OSS_ORI_AVATAR', 'http://fengwo-avatar.oss-cn-beijing.aliyuncs.com/');       //oss上头像原图域名
+define('OSS_AVATAR', 'http://avatarimg.fengwo.com/');       //oss上头像小图域名
+define('OSS_AVATAR_RULE', '@170w_170h.jpg');       //oss上头像小图的样式
+define('OSS_NOTE_RULE', '@165w_165h.jpg');       //oss上笔记小图的样式
+
+//OSS上图片的封面
+define('OSS_COVER', 'http://cover.fengwo.com/');
+define('OSS_COVER_RULE', '@210h_90Q_1x.jpg');
+
+//OSS上广告地址
+define('OSS_AD', 'http://feedimg.fengwo.com/');
+
+//短信
+define('SMS_APP_ID','349771590000249940');  //短信验证码应用编号
+define('SMS_APP_SECRTE', 'c7d879bfeca6d504f480e962dc9f5eb7');   //短信验证码应用密钥
+//define('RETURN_URL', 'http://api.fengwo.com/m/get_code');   //短信测试回调地址
+define('RETURN_URL', 'http://gongdu.youshu.cc/m/get_code');   //短信正式回调地址
+
+
+define('MY_SUPER_KEY', '!23@fengwo.com');       //蜂窝网加密密钥
+define('QR_CODE_IMG','/alidata/www/readoo_api/public/upload_img/');
+
+return array_merge($dbConfig, $config);
+?>

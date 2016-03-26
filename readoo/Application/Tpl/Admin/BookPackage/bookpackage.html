@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>readoo后台管理</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="__PUBLIC__/css/bootstrap.min.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="__PUBLIC__/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="__PUBLIC__/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Amaze CSS -->
+    <link href="/public/amazeui/assets/css/amazeui.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="__PUBLIC__/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="__PUBLIC__/js/html5shiv.js"></script>
+    <script src="__PUBLIC__/js/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+<include file='Public:header'/>
+<include file='Public:sidebar'/>
+    <div id="wrapper">
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">拆书包</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            新增拆书包
+                        </div>
+                        <div class="panel-body">
+                        <form action='/admin/bookpackage/add' method='post' enctype="multipart/form-data">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="col-lg-6" style="margin-left: 15px;">
+                                        <label>书名:</label>
+                                        <br>
+                                        <input type='hidden' value='{$bookpkg.book_id}' name='book_id'/>
+                                        <input class="form-control" name="book_title" type="text" value="{$bookpkg.book_title}" readonly>
+                                    </div>
+                                    <div class="col-lg-6" style="margin-left: 15px;">
+                                        <label class="control-label">拆书包发布时间:</label>
+                                        <div class="control-group">
+                                            <div class="controls input-append date form_date" data-date="" data-date-format="yyyy-mm-dd" data-link-field="pub_time" data-link-format="yyyy-mm-dd">
+                                                <input name="pub_time" type="start" size="16" type="text" value="{$start}" readonly>
+                                                <span class="add-on"><i class="icon-remove"></i></span>
+                                                <span class="add-on"><i class="icon-th"></i></span>
+                                            </div>
+                                            <input type="hidden" id="pub_time" value="" /><br/>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6" style="margin-left: 15px;">
+                                        <label>标题:</label>
+                                        <br>
+                                        <input class="form-control" type="text" name='title' >
+                                    </div>
+                                    <div class="col-lg-6" style="margin-left: 15px;">
+                                        <label>阅读目标:</label>
+                                        <br>
+                                        <input class="form-control" type="text" name='target' >
+                                    </div>
+                                </div>
+								<div class="form-group" style="margin-left: 30px;">
+                                    <label>上传音频:</label>
+                                    <input type='file' name='media'/>
+                                </div>
+                                <div class="form-group" style="margin-left: 30px;">
+                                    <label>音频时长:</label>
+                                    <input type="text" class="text" name='media_time' value="{$data.media_time}"/>(例：03:16)
+                                </div>
+                                <div class="form-group" style="margin-left: 30px;">
+                                    <label>主播名字:</label>
+                                    <input type="text" class="text" name='name' value="{$data.name}"/>
+                                </div>
+                                <div class="form-group" style="margin-left: 30px;">
+                                    <label>微信分享地址:</label>
+                                    <input type="text" class="text" name='share_url' value="{$data.share_url}"/>（注：公众号里拆书包的地址）
+                                </div>
+                                <div class="form-group" style="margin-left: 30px;">
+                                    <label>上传置顶图片:</label>
+                                    <input type='file' name='top_img'/>
+                                </div>
+                                <div class="col-lg-12">
+                                        <div class="am-form-group">
+                                            <label for="time_type" style="margin-left: 30px;">早读,晚读:</label><br/>
+                                            <select name="time_type" style="width: 300px;margin-left: 30px;height: 35px;">
+                                                <option value="1">早读</option>
+                                                <option value="2">晚读</option>
+                                            </select>
+                                            <span class="am-form-caret"></span>
+                                        </div>
+                                    <div class="form-group" style="margin-left: 30px;">
+                                        <label>摘要:</label>
+                                        <br>
+                                        <textarea name="abstract" rows="5" cols="100"></textarea>
+                                    </div>
+                                    <div class="form-group" style="margin-left: 30px;">
+                                        <label>内容:</label>
+                                        <br>
+                                        <textarea id="content" rows="5" cols="100" name='content'></textarea>
+                                    </div>
+                                    <div class="col-lg-12">
+                                    	<input type='hidden' value='{$pb_id}' name='pb_id'/>
+                                        <input type='submit' value='添加到拆书包' class="am-btn am-btn-primary am-btn-xs"/>
+                                    </div>
+                                </div>
+                                <!-- /.col-lg-6 (nested) -->
+                            </div>
+                            </form>
+                            <!-- /.row (nested) -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery Version 1.11.0 -->
+    <script src="__PUBLIC__/js/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="__PUBLIC__/js/bootstrap.min.js"></script>
+    <script src="__PUBLIC__/js/bootstrap-datetimepicker.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="__PUBLIC__/js/plugins/metisMenu/metisMenu.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="__PUBLIC__/js/sb-admin-2.js"></script>
+    <script type="text/javascript" src="__LAYER__/layer.js"></script>
+
+
+</body>
+<script type="text/javascript">
+    $('.form_date').datetimepicker({
+        format: 'yyyy-mm-dd',
+        minView: "month",
+        maxView: "decade"
+    });
+
+    var coreading_list = document.getElementById('coreading_list');
+    coreading_list.setAttribute("class", "active");
+
+    //添加到拆书包
+    $('#addToPkg').click(function(){
+        var gdid = $('#gdid').val();
+        var bookid = $('#bookid').val();
+        var bookname = $('#bookname').val();
+        var title = $('#title').val();
+        var target = $('#target').val();
+        var pub_time = $('#pub_time').val();
+        var abstract = document.getElementById("abstract").value;
+        var content = document.getElementById("content").value;
+        var time_type = $("#time_type").val();
+
+        $.ajax({
+            type : 'post',
+            url : '/admin/bookpackage/add',
+            data : {'gdid':gdid,'bookid':bookid,'bookname':bookname,'time_type':time_type,
+                'abstract':abstract,'content':content,'target':target,'title':title,'pub_time':pub_time},
+            dataType : 'json',
+            success : function(msg) {
+                if(msg.code == 0){
+                    layer.msg('添加到拆书包失败', {
+                        time: 2000 //2秒关闭（如果不配置，默认是3秒）
+                    }, function(){
+                        //do something
+                    });
+                }else{
+                    layer.msg('添加到拆书包成功', {
+                        time: 2000 //2秒关闭（如果不配置，默认是3秒）
+                    }, function(){
+                        window.location.reload();
+                    });
+                }
+            },
+            error :function(e){
+                alert(e);
+            }
+        });
+
+    });
+
+</script>
+</html>
