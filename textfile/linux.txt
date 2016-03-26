@@ -1,0 +1,246 @@
+/**
+ * Created by PhpStorm.
+ * User: win10
+ * Date: 2016-02-26
+ * Time: 20:33
+ *
+ * linux笔记
+ *
+ */
+1.网易开源镜像站：http://mirrors.163.com/
+    安装cnetos系统：
+        按提示安装完成后重新启动：按任意键进入引导菜单；选择安装的系统版本回车，进入
+2.更改root密码:
+    centos系统 启动时：按任意键进入grub菜单；
+    e键进入编辑模式
+    选择kernel，按e进入编辑；在最后输入single，回车；
+    按b进入单用户模式；
+    执行passwd 输入新的密码；重启电脑reboot;
+3.linux命令：
+    date :显示时间；
+    ls：显示目录内容，ls -l ,ls -a(显示目录下的所有文件)，ls -lh(显示文件存储大小GB/MB/KB)
+    ctrl+c:停止当前执行的命令
+    ctrl+d:推出当前的应用；
+
+    shutdown :关机；shutdown -h now /15:30/+30(指定30分钟后关机)/
+        shutdown -r +20 "System will reboot":指定时间重启；
+
+    halt:关机
+    reboot:重启；
+    cd:切换目录；cd ~admin(进入到admin用户宿主目录);cd /tmp(进入到根目录下的tmp文件夹内)；cd tmp(进入到当前目录下的tmp文件夹)；cd ..(进入到上级目录)；
+    pwd:显示当前工作目录路径；
+    .：表示当前目录；
+    ..:表示上层目录；
+
+    mkdir:创建目录；mkdir -p /a/b/c(递归创建目录);
+    rm:删除目录与文件；rm index.php(删除文件);rm -r www(递归删除目录);rm -rf www(强制递归删除目录);rm -rf *(根目录下执行,可治疗 感冒发烧流鼻涕不孕不育不消化，早中晚各一次效果最佳);
+    cp 复制文件；cp index.html /www/index.php(复制的同时可改名);
+        cp *Controller\.php /www/App/Controller;(将本目录下的所有以'Controller.php'结尾的文件复制到App/Controller目录下)；
+            在linux命令中也可以使用正则，“\”转义符；
+    mv 移动文件，移动的过程数以一个剪贴的过程，复制过去，将原来的文件删掉。mv Home /www/Admin;（将home文件夹复制到www目录下，并改名为Admin）；mv indexCcontroller adminController(本文件夹内移动就相当于是改名了);
+    head 显示前几行内容； head -n 2 /etc/passwd(显示前两行)； tail -n 5 index.php(显示后5行)；
+    cat：一次性显示全部内容；cat -n index.php(带行号显示);
+    find 查找文件； find / -name index.php;find /-size +10000k(查找大于10Mb的文件);
+        find /www -type d -exec chmod 750 {}\;（查找www目录下的所有目录，将其权限设置为750）;
+        find /www ! -type d -exec chmod 640 {}\;(查找www目录下的文件，将其权限修改为640)；
+        find / -name \*.php -exec rm -i {}\;(查找出所有的文件名以“.php”结尾的文件，删除，并列出删除的文件名称);
+
+    压缩处理:
+        gzip index.php;gzip 压缩，扩展名为gz;
+        gzip -d index.php.gz;解压缩.
+
+        bzip2 index.php :bzip压缩；扩展名为bz2;
+        bzip2 -d index.php.bz2解压缩，
+
+        gzip压缩并打包：tar zxcf /www/vancl.tar.gz /www/vancl(将www目录下的vancl压缩到www目录下，命名为vancl.tar.gz;);
+        bzip2压缩并打包：tar jcvf /www/vancl/tar.bz2 /www/vancl
+            以gzip 方式压缩 -z;
+            以bzip2方式压缩 -j;
+            显示打包过程    -v
+            新建打包文件    -c
+            解包            -x
+
+
+4.linux文本查找命令：http://www.jb51.net/article/42989.htm
+    linux中查找文本文件常用的三个命令：
+        1.grep:最早的文本匹配程序，使用posix定义的基本正则表达式来匹配文本；
+        2.egrep：扩展式grep，使用扩展式正规表达式ERE 来匹配文本
+        3.fgrep:快速grep；(这个版本匹配固定字符串而非正则表达式，并且是唯一可以并行匹配多个字符串的版本；)；
+    grep命令：
+        grep [options ...] pattern-spec [files]
+        匹配一个或多个模式的文本行。
+        options ：
+            -E:使用扩展正则表达式进行匹配，grep -E 或取代 egrep命令。
+            -F：使用固定字符串进行匹配。grep -F 或取代传统的fgrep命令；
+            -e:通常第一个飞选项的参数认为是要匹配的模式，也可以是同事提供多个模式，只要将其放入单引号内并且用换行字符分割他们；
+                模式以建好开头时，为防止混淆气味选项，-e选项说明气候的参数为模式，即使他以-开头；
+            -f:从pat-file文件读取模式作为匹配；
+            -i：列出匹配模式的文件名称，而不是打印匹配的行。
+            -q:静默的，如果匹配成功，不讲匹配的行输出到标准输出，否则即使不成功；
+            -s:不显示错误信息；同城与-q并用；
+        正则：
+5.vi文本编辑器：
+    vi index.php:打开文件；（vim文本编辑器打开文件方法：vim index.php）
+    输入内容：i
+    返回标准模式：esc键；
+    i/I：i当前光标处插入；I行首插入；
+    a/A：a光标下一行插入；A行尾插入；
+    o/O：o下一行插入，O上一行插入；
+
+    ：w    保存；
+    ：w!   强制保存；
+    :q     退出；
+    :q!    强制退出；
+    :wq!   强制保存并退出；
+    :w[filename]    另存为；
+    :!Command       执行临时命令；
+    :set nu         显示行号；
+
+    nG              移动到第N行；
+    G               移动到文件的最后一行；
+    :/word          向下搜索word的字符串
+    :?word          向上搜索word的字符串；
+    :n1,n2s/word1/word2/g   从n1行到第n2行搜索word1替换为word2；
+    :n1,$s/word1/word2/gc   与上相同，只是在替换时询问确认；
+
+    dd              剪切一整行；
+    ndd             剪切向下n行；
+    yy              复制当前行
+    nyy             复制向下n行；
+    p,P             p黏贴到下一行；P黏贴到上一行；
+    u               撤销前一次操作；
+    ctrl+r          重复前一个操作；
+    保存退出
+
+
+6.修改网路ip
+    修改配置文件： vi /etc/sysconfig/network-scripts/ifcfg-eth0
+        DEVICE=eth0     --设备名称，一般为eth0；
+        HWADDR=08:00:27:21:74:FC        网卡MAC地址；
+        TYPE=Ethernet       --网卡类型为以太网
+        UUID=0cc105b1-bee9-433e-ae92-e68fe4da83aa       --设备唯一 识别码
+        ONBOOT=yes      --启动时是否激活
+        NM_CONTROLLED=yes       --使用图形软件管理
+        BOOTPROTO=static        --协议：dhcp或static
+        NETMASK=255.255.254.0       --子网掩码
+        IPADDR=192.168.20.18        --网络ip地址
+        GATEWAY=192.168.20.1        --网关（路由）地址
+        DNS1=8.8.8.8        --DNS 服务器IP
+    配置好后重启服务service network restart
+    测试网络        ping -c 3 www.baodu.com(ping 3次百度);
+    清空防火墙       iptables -F
+    存储规则        service iptables save
+    然后将shell关闭：vi /etc/selinux/config
+        将SELINUX=disaled前面的#号弃掉；值改为disabled；
+
+7.账号管理
+    添加账号：useradd dsheldon；
+    指定附加组为normaluser    ：useradd -G normaluser  dsheldon;
+    修改密码：passwd dsheldon;
+    查看密码状态;passwd -S root;
+    删除用户：   userdel dsheldon;
+    删除用户，连同用户目录下的用户信息文件也一并删除；   userdel -r dsheldon;
+    ？？？？？？在哪里查看所有用户？？？？？？用户家目录在哪里查看，在那个路径下？？？？？？？？？？？？？？？？？？
+    新增用户组：groupadd normaluser;
+    删除用户组：groupdel normaluser;
+        设置账号dsheldon/root附加组：    usermod -G work dsheldon/root;
+            -G 使用逗号分隔可以指定多个附加组如admin,project;
+    查看账号信息  id  dsheldon;
+
+8.权限管理：
+    drwxrwxr-x   2      hdxj     hdxj     4096    3月   19 11:26    houdunwang.com
+    文件权限   连接数  所有者   所属组    大小        修改时间      文件名
+    文件属性：
+        类型说明：
+            目录      d
+            文件      -
+            连接      l
+        权限说明：
+            可读      r,4
+            可写      w,2
+            可执行    x,1
+            权限每3个代表一组；第一组代表所有者的权限，第二组代表所属组的权限，第三组代表其他用户的权限
+
+        改变文件index.php所有者为dsheldon,所属组为后盾网
+            chown dsheldon:houdunwang index.php
+            :前的所有者可以省略，后面的所属组也可以省略；（两个都省了，你还修改个毛啊）;
+
+            chown -R dsheldon:houdunwang /www
+            (修改文件www及其下所有文件的所有者和所属组)；
+9.磁盘操作
+    以易识别的单位显示大小：du -ah
+    查看计算机中的硬盘与分区的信息 fdisk -l;
+        分区命令fdisk只有超级用户root才可以使用；
+        fdisk /dev/sdb:对sdb盘进行分区；
+    磁盘分区有主分区，物理分区和逻辑分区两种；????????两种？？？？？？
+    http://www.pc6.com/infoview/Article_53651.html
+
+
+    磁盘进行了分区，并不能直接使用，必须进行格式化创建问价系统后才可以使用；
+        格式化操作：mkkfs -t ext4 /dev/sdb1
+    磁盘分区格式化后，要挂载才可以使用，一个目录就是挂载点，通过访问这个目录来访问磁盘分区；
+        mount:查看挂载点；
+        mount /dev/sdb1  /www:挂载分区sdb1到www目录下；
+        在挂载目录下查看目录文件：ls /www    ;如果存在lost+found文件，就表名挂载成功；
+        输入命令df： 可查看磁盘挂载情况；
+
+    卸载分区：umount /dev/sdb1;
+    手动挂载分区后，重新启动电脑，挂载点会消失，需要重新挂载，
+        通过修改/etc/fstab来让系统启动自动挂载；进入文件后，在文件最后加上本次挂载的磁盘与文件夹；
+        /dev/sdb1   /www    ext4(磁盘类型)  defaults    0   0
+10.apache HTTP Server
+    安装Lamp环境：
+        安装apache；
+            yum -y install httpd;
+        安装mysql；
+            yum -y install mysql mysql-server
+        安装php
+            yum -y install php php-mysql php-gd php-mbstring
+    开启apache
+        apachect1 start
+    关闭
+        apachect1 stop
+    重启
+        apachect1 restart
+    apache住配置文件
+        /etc/httpd/conf/httpd.conf
+    扩展配置文件：
+        /etc/httpd/conf.d/*.conf
+        当apache启动时，会加载/etc/httpd/conf.d目录中的所有以.conf结尾的文件，作为裴松之文件来使用；
+
+        在配置文件中：
+            Listen 80：表示监听80端口；如果修改为8080端口，则表示只能通过192.168.20.18：8080来访问
+            User apache：apache子进程所有者；
+            Group apache：Apache子进程所属组；
+            DocumentRoot"/var/www/html":apache默认的网站目录里;
+            ServerName localhost:服务器主机名
+            Directoryindex index.html index.html.var:多次指定时，一次匹配文件；
+        虚拟主机可以在一台服务器上虚拟出多个网站，可以通过不同的域名将行访问，实际上访问的是一台服务器。
+            要在住配置文件里将：
+                NameVirtualHost *:80这行的注释去掉；
+
+            创建apache扩展配置文件/etc/httpd/conf.d/virtual.conf
+                将主配置文件的最后的几行复制到副配置文件；
+
+                修改C:\Windows\System32\drivers\etc
+11.数据库分区
+    失去意义的数据;可以通过删除相关的分区来删除那些数据；
+    分区后一些插叙语句可以得到很大的优化；主要是借助于满足一个给定的where语句的数据可以保存在一个或多个分区内；
+    涉及到sum()和count()这样的聚合函数的查询，可以很容易的进行并行处理；
+        例如：selectsalesperson count(order) as order_total from sales group BY salesperson;
+    查询可以在每个分区上同时进行，最终结果只需要通过总计所有分区得到的结果；
+
+    进入数据库：mysql -uroot -p;
+
+    先查询插件有无partition;这决定能否实现分区的基本条件
+        show plugins;
+
+    range分区：基于一个给定的连续区间的列值，把多行分配给分区；
+        
+12.xshell使用：
+    登陆一个新的ip地址：
+        ssh root@192.168.0.5
+
+
+
+

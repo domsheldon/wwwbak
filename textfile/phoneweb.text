@@ -1,0 +1,64 @@
+/**
+ * Created by PhpStorm.
+ * User: win10
+ * Date: 2016-02-29
+ * Time: 16:55
+ *
+ *移动端html5
+ *
+ */
+1.doctype:<!DOCTYPE html>
+    http协议是什么东西？
+2.  html5注重都html语义化
+    contenteditable
+        修改页面的内容；contenteditable="true";
+    hidden属性：
+        隐藏元素：<p hidden >duanluo</p>
+    article;（块级元素）
+        表示一段独立的内容。
+    section（块级元素）
+        一块,部分，主要对页面的 内容进行分块或者对文章的内容进行分段;
+    nav（块级元素）
+        页面的导航的链接组
+        <nav>
+            <a href="">shouye</a>
+            <a href="">栏目</a>
+        </nav>
+    aside（块级元素）
+        边栏部分；
+    time(语义化)（行内元素）
+        <time datetime="2014-02-25" pubdate="pubdate">2014-2-14</time>
+        pubdate表示发布时间；
+    header(块级元素)
+        头部
+    footer（块几元素）
+        页脚
+    adress（语义化标签，无实际样式）
+        地址；
+            <adress>
+                <ul>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </adress>
+    code(行内元素)
+        用于显示程序代码；
+        <code>
+            &lt;?php echo "hello word”?&gt;
+        </code>
+    mark：（行内元素）
+        标记文本，默认是黄色。
+        <mark>houdunwang</mark>
+    ins与del（行内元素）
+        用于显示下划线和删除线；
+    figure（块级元素）
+        标签规定独立的流内容；
+        <figure>
+            figcaption
+        </fugure>
+    colgroup与col
+
+3.audio &video
+            _______________________________________________写一个播放器 啊___________________________________________________________
+
+

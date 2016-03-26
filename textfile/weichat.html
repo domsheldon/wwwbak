@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>weichat</title>
+</head>
+<body>
+<h1>weichat笔记</h1>
+<pre>
+    1.在服务器配置项将自己的目录下加上微信的开发验证代码加进首页代码。验证token用；
+    2.接口实时调用量及清零功能：
+        目前清零功能只对认证账号开放；
+    <!--开发者可以登录微信公众号-->
+    3.在服务器部署框架；
+        生成默认的模块，在模块下面的index控制器的index方法写上验证代码：
+            public function index(){
+                $signature=$_GET['signature'];
+                $nonce=$_GET['timerstamp'];
+                $token="houdunweixin";
+                $tmpArr=array($token,$timestamp,$nonce);
+                sort($tmpArr,SORT_STRING);
+                $tmpStr=implode($tmpArr);
+                $tmpStr=sha1($tmpStr);
+                if($tmpStr==$signature){
+                    echo $_GET['echostr'];exit;
+                }
+
+            }
+</pre>
+</body>
+</html>

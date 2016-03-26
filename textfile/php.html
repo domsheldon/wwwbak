@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>php</title>
+    <style type="text/css">
+        h1,h2{
+            display:inline-block;
+            color:#a10000;
+        }
+    </style>
+</head>
+<body>
+<h1 style="font-family:kaiti; ">php笔记</h1>
+<pre>
+
+    https://git.oschina.net/hdmzy/c58_teacher.git
+0.<h2>综合知识点</h2>：
+    {a href="javascript:;" /}:要是网页链接点击后不跳转，可以在href 内添加“###”，或者写入“javascript：void（0）”;或者重写入“javascript:;(这种写法比javascript：void（0）比较兼容，)”；
+
+1.<h2>定义变量</h2>
+	定义变量以$符开始，$name=john;
+	php中变量名师区分大小写的，
+	（1）php变量类型：php是松散类型的语言；会将变量转换为自动的类型
+2.php代码可以和hhtml文件混排；php代码要放在<？php   ？>内部；
+3.<h2>正则表达式：</h2>
+    正则表达式需要用分隔符闭合包裹；
+    经常使用分割符包括/，#，或~（取反符号）；
+    系统提供的元字符：
+                    \d匹配任意一个数字；
+                    \D与除了数字意外的任意一个字符匹配；
+                    \w域任意一个英文字母，数字，或下划线匹配；
+                    \W除了字幕，数字或下划线外的任意字符匹配；
+                    \s与任意一个空白字符匹配；
+                    \S与除了空白符外的字符匹配；
+
+    方括号匹配：匹配出放阔号内的任意一个字符；
+                []只匹配出气冲的一个原子；
+                [^]只匹配除了其中字符的任意一个原子；
+                [0-9]；
+                [a-z];
+                [A-Z];
+                .:点号在正则中表示除3换行符外的任意字符；
+    特殊字符需要转义；
+
+    如果一次要匹配多个元子；可以通过元子组完成；
+    |符号表示的是选择修饰符，就是|左右两侧有一个匹配到就可以；
+    *表示重复零次到多次；
+    +表示重复1次或多次；
+    ？表示重复零次或一次
+    {n}重复n次；
+    {n,}重复N次或多次；
+    {N，M}重复n到M次；
+
+    贪婪和吝啬：
+        正则表达式在进行重复匹配的时候;默认是贪婪匹配模式；可以通过？进行修饰来进制重复匹配；
+        *？：重复任意次；但尽可能少重复；
+        +？重复一次或更多次;
+        ？？重复0或1次；
+        {N，M}？  重复n到m次；但是尽量少重复；
+        {n,}?   重复N次以上；
+
+    匹配字符串边界：^表示匹配字符串的开始；
+    $匹配字符串的结束；忽略换行符\n；
+
+    i   不区分大小写字幕的匹配；
+    s   将字符串是为单行，换行符做普通字符看待
+    e   将替换的字符串作为字符串表达使用；
+
+    preg_match;匹配正则与字符串；第一个参数为正则，第二个参数为字符串；
+    preg_match_all：匹配字符欻中的所有的结果，并将结果以flag指定的顺序输出到一个数组中；
+            $a='123456789';
+            preg_match_all('/[0-9]/',$a,f$arr);preg_match_all函数会返回一个数值，返回的数值为匹配到的个数；
+    preg_split通过正则表达式分割给定的字符串；
+    preg_replace:在字符串种搜索某个正则，然后替换搜索到的字符串；
+    preg_replace_callback:执行一个正则表达式搜索并且使用一个回调函数进行替换
+
+
+
+4.<h2>文件操作：</h2>
+    is_readable:判断文件是否可读，返回一个bool值；
+    is_writeable():判断文件是否科协，返回一个bool值；
+    filesize：返回文件的大小字节数，如果错误会返回一个警告错误；
+
+    file_get_contents;j将整个文件读入一个字符串；
+    file_put_contents:将一个字符串写入文件；
+    打开远程文件：allow_url_fopen;
+    设置时区：date_default_timezone_set
+    获取文件最后修改时间：filemtime;返回一个时间戳；
+
+5.<h2>目录操作</h2>
+    disk_total_space();获取目标路径的文件的字节数；
+    disk_free_space();获取目标路径的文件的剩余字节数；
+    pow();指数表达式；
+    basename();参数是一个路径，此函数可以返回路径的最基本单元，就是路径的最后的一部分，如果是文件，则返回文件名；如果是文件夹，返回文件夹名；
+    dirname();与basename相反，返回目标路径除了最基本单元之外的其他信息；
+    file_exists:判断一个路径是否存在，如果这个目录存在的话，返回true;否则返回false;
+    is_dir();如果文件名存在，并且是一个目录，则返回true;如果是一个相对路径，按照当前工作目录检查其相对路径；
+    mkdir();可以传入三个参数，第一个指定目录名，第二个参数指定目录的权限，第三个参数为true则递归创建；
+
+    is_dir:判断给定文件名是否是一个目录；
+    rmdir():尝试删除所制定的目录；该目录必须是空的；而且应该要有相应的权限；
+    rename():重命名一个文件或目录；该函数有一个返回值，如果重命名成功，则返回一个true，如果失败，则返回false;
+
+    copy():f复制文件；
+    glob():
+    unlink():删除文件；
+6.<h2>数组</h2>
+    定义数组：
+        1.直接赋值 方法;$a[0]='baidu';
+        2.使用array()方法：$a=array('baidu','tencent')；
+    循环数组：
+        foreach ($arr as $key =>$value);
+        key:获取数组中的键名：key($arr )；
+        count:同级数组中的单元数目或对象中的属性个数；
+        in_array();判断数组是否存在某个值，in_array($value,$array);返回值为true或false，
+            in_array()可以包含第三个参数，第三个参数传入一个‘true'或者'false'，如果为true，in_array()函数会判断$value值是否跟$array()中的值类型相同；
+        array_key_exists():检测给定的键名是否存在于数组中；array_key_exists($key,$array);
+        array_filter():两个参数，第一个参数为数组名，第二哥参数为一个回调函数；整个函数会循环数组内的每一个元素，然后该回调函数会凡湖一个真值或假值，返回真值 ,获得该元素，返回假值，跳过该元素；；
+            用回调函数过滤数组中的单元；
+                如“去空”，去重，等；
+    array_map:        array_map(callbackfunction,$arr);
+        将回掉函数作用在给定的数组上；该函数返回一个新的数组，新的数组每个元素为原数组通过回掉函数获得的值；
+    array_push:array_push($arr,['1','2','3']);
+        将一个或多个单元压入数组的末尾；
+    array_pop:array_pop();弹出并返回数组的最后一个单元，并将数组的长度减一；
+        将数组的最后一个单元弹出；
+    array_shift()
+        将数组开头的单元移除数组；并作为结果返回；
+    array_unshift();array_unshift($arr,$var);
+        将传入的单元插入到array数组的开头；并返回array数组新的单元数目；
+    array_keys():
+        返回会数组中的所有的键名；
+    array_values:
+        返回数组中的所有的值；返回一个新的数组，并个每个元素建立新的索引；
+    array_merge()
+        合并一个或多个数组；如果输入的数组中有相同的字符串键名；则该键名后面的值将覆盖前一个的值，如果数组包含数字键名，后面的值就添加到歉意额
+        数组的后面；
+    array_change_key_case:
+        将数组内的所有键名改为全大写或全小写；改变是根据后一个选项case参数来进行的。
+	        $arr = array_change_key_case($arr,CASE_UPPER);将数组转换成大写；
+    var_export:
+        输出或返回一个变量的的字符串表示；
+        var_export($arr,true);接受两个参数，第二个参数如果是true的话，会返回$arr,如果没有第二个参数的话，会直接打印出$arr;
+
+
+
+
+
+
+7.<h2>会话控制</h2>
+    session_unset()
+    释放当前在内存中已经创建的所有$_SESSION变量，但不删除session文件以及不释放对应的session_id
+    session_destroy()
+    删除当前用户对应的session文件以及释放session_id，内存中的$_SESSION变量内容依然保留
+8.<h2>文件处理：</h2>
+    disk_total_space():返回硬盘的总容量；
+
+
+
+9.<h2>PDO抽象层：</h2>
+    pdo扩展为数据库扩展提供了一个轻量级的，一直行的接口；提供了一个数据访问抽象层，无论使用什么样的数据库。都可以通过一致的函数执行查询和获取数据；
+    php通过pdo扩展动态加载相应的数据库驱动程序来完成直接操作各种数据库；所以在使用pdo时要明确告诉pdo索要使用的数据库驱动；
+
+    linux开启pdo：如果你使用的是php5.1版本以上，pdo和pdo sql-li已经包含在内；
+        用过yum -y install php-pdo;te
+    window开启pdo需要修改php.ini文件，将extension=php.dll前面的分号去掉；将需要的数据库驱动开启；如
+
+
+    -------------------------这里的pdo知识在sql笔记部分-----------------------------------
+
+
+
+
+
+
+
+10. <h2>面向对象</h2>
+    面向对象是相对于面向过程来说的，将后哼问题的事物分解到各个对象上，建立对象的目的不是为了完成一个工作，而是为了描述某个事物在解决问题中的行为，代码重用性好，可扩展性好。
+
+    类：
+        类名首字母大写；
+        一个类定义在一个文件中，并以.class.php作为文件名的结尾；
+    对象句柄：
+        用于区分不同的对象；对象创建后，在内存中获取一块存储空间，存储空间的地址就是对象的标识或句柄；
+    属性：
+        在类中定义的变量，即为成员属性，用于描述对象静态特性的数据；
+    方法：
+        在类中即为成员方法，用于描述对象动态特性的操作行为，方法名不区分大小写，不可重名，首字母小写。
+    对象的生命周期：
+        创建后 声明周期开始，当程序结束后或程序员清除对象后记销毁；php会自动销毁对象；
+    <span style="color:#a10000;">对象的内存分布</span>
+        对象引用被放到了栈内存里（栈存放固定内内容）；对象放在堆内存里（对存放可变内容）；而静态成员放在了数据区，在第一次架子啊的时候放入的，可以让对内存里面的每个对象所共享；
+        函数和方法放在代码区；
+
+    抽象性；
+    封装性：把成员方法和成员属性封装到类中，隐藏属性和方法，隐藏方法实现的细节，通过public ,protected private 和static,限定类成员的访问权限，数据被保护在内部。
+    继承性：可以使一个类继承并拥有另一个已存在的类的成员属性和方法才可以操作。
+
+        public 共有属性；
+        private 私有属性；仅自己可以访问；
+        protected 受保护的属性或方法，自己和子类可以访问；
+
+    static
+        static方法是累中的一个成员方法，属于整个类，即使不用创建任何对象也可以直接调用；
+        static内部只能出现static变量和其他方法，而且static方法中海不能使用this等关键词，因为在调用static的时候并没有实例化这个类，所以根本就没有this.因为它属于整个类
+        静态方法效率上要比实例化高，静态方法的缺点是不能自动进行销毁，而实例化的则可以做销毁；
+        静态方法和静态变量创建后始终使用同一块内存，而使用实例的方式会创建多个内存；
+    如何理解静态变量是类的，
+        在本次php处理过程中，公用该变量，其实效果和全局变量类似，但是更安全，新版本的php将默认不支持全局变量，当对象的声明文件被引用时，静态变量会被赋予内存地址，这是他和全局变量的显著区别；
+
+    静态方法：
+        只能使用关于类的方式如self，static ，parent等；
+        $this 是对象当前的引用，一般出现在方法量，用于获取类的成员属性，或执行类的成员方法；
+        self:: 对本类的引用，用于获取当前类的表态成员属性和静态成员方法；
+            self::run();
+    构造方法：
+        __construct();在创建对象是自动执行，没有返回值，用于执行类的一些初始化共做，如对象的初始化工作，php4中构造方法必须与类同名，php5中规定构造方法为__construct(),优点是不受类名的影响，如果不存在__construct ,php会搜索与类同名的方法自动执行；
+    析构方法：
+        __destruct();用于对象在内存中被销毁时自动执行的方法，不带任何参数；
+
+
+
+    <span>抽象类&抽象方法：</span>
+        具有抽象方法的类为抽象类，抽象方法即为没有内容的空方法；要求子类进行完善内容；
+        抽象类不能实例化，只能继承；通过 extends来实现；抽象类中也可以定义普通方法；
+
+        当父类为抽象类时，子类必须重写父类的抽象方法；
+    抽象类里不一定非要写抽象方法，但又抽象方法的类必须定义为抽象类：
+        抽象类必须继承使用；抽象方法不能有主体；
+        <\?php
+            adstract class AdstractClass{
+            //强制要求子集定义这些方法；
+                abstruct proteted function getValue();
+                abstruct protected function prefixValue($prefix);
+            //普通方法；
+            public  function index(){
+                }
+            }
+        ?>
+    <span>接口</span>
+        接口是以一组成员声明方法的集合，包含空的成员方法和常量；空的方法要求继承类去具体实现；成员方法为public，属性为常量；
+    继承是一级一级层次式，如果某一层出现问题，整个继承就回出现意外，而接口只影响实现接口的类，接口可以在破坏原来的继承基础上对类扩展，接口可以实现多继承；
+
+        抽象类和普通类都可以实现接口，通过关键字implements;
+
+        interface DbInterface{
+            //获得连接，参数为表名；
+            public function connectDb();
+            //关闭数据库；
+            public function close();
+            //发送没有返回值的sql;
+            public function exe($sql);
+            //执行又返回值得sql；
+            public function query($sql);
+        }
+    //调用接口；
+    //类Db继承的是接口DbInterface;
+        class Db implements DbInterface{
+    //
+            public function exe($sql){
+
+            }
+            public function query($sql){
+            }
+        }
+
+
+
+11.<h2>字符串相关的函数</h2>
+    strlen:
+        获取字符串的长度的函数；
+    截去字符串首尾的内容：
+        trim($str,'.');
+        截去左侧的指定内容：ltrim($str,'.')；
+        截去右侧的指定内容：rtrim($str,'.');
+    字符串转小写：
+        strtolower();
+    转大写：
+        strtoupper();
+    将字符串的首字母转成大写；
+        ucfirst();
+    将字符串的每一个字母都转换成大写；
+        ucwords();
+    给字幕加密：md5();函数加密后返回一个16进制的字符串；
+    将字符串等额成另一个字符串：
+        explode('|',$str);该函数分割字符串 后返回一个被拆分的数组；
+    将数组组合成字符串：
+        implode('|',$array);
+    截取字符串：
+        substr($str,start_num,length);截取从开始start_num截取length个字符串；
+            如果不设定stop_num的话，截取开始到字符串结尾；如果start_num 为负数，则从字符串尾端开始往前提取；如果length为负数，表示取倒数第length个字符；
+    strchr($str,char,true)：
+        返回字符串指定字符到结尾之间的字符；该函数可以指定3个参数，第一个参数为要查找的字符串，第二个参数为要搜索的字符串，第三个参数为true或false，默认为false；如果设置为true的话，会截取搜索字符前的字符串；
+    strrchr():
+        返回字符串中某字符串开始处至结尾的字符串；只接受两个参数；
+    strpos:
+        寻找字符串中某字符最先出现的位置，默认从0开始；
+    strrpos:
+        寻找字符串中某字符最后出现的位置；返回的是一个数字；
+    字符串替换，
+        str_replace();
+        三种方式：str_replace( string $search,$replace, $str);
+        str_replace(array $search,$replace,$str);//判断$str中是否存在array$search中的任何一个字符，如果有的还全部替换掉；可以做一个屏蔽非法词汇来用；
+        str_replace(array $search ,$array $replace,$str);
+    str_ireplace();不区分大小写的替换；
+    url编码处理：
+        urlencode();替换所有非字母数字的字符，变为%后跟两位16进制，空格变为+；
+        urldecode():对已%##编码的url进行解析还原；
+    html实体的处理；
+        htmlspecialchars():把指定的特殊符号转换成实体，如&lt,&gt,
+    引号的处理：
+        addslashes();把‘ “ null(\0) 4个字符前添加、显示出来；
+        stripslashes():是addslashes的反函数，显示转义后的字符；
+    html标签的清理：
+        strip_tags():清理字符串中的html标签；
+        允许有第二个参数：第二个参数可以指定，不清楚某个标签；
+
+12.文件上传与下载：
+    表单设置：
+    <form action="demo.php" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="MAX_FILE_SIZE" value="3000000">
+        文件：<input type="file" name="userfile">
+        <input type="submit"  value="上传文件">
+    </form>
+    文件上传时，input表单内的type类型是type="file"，这样提交到后台的时候就会有一个$_FILES的全局变量；input框内的name属性的参数提交后会全部显示在$_FILES内，
+    注意表单设置的时候，必须要在表烦form标签内不添加上enctype="multipart/form-data"属性；
+
+    php.ini上传文件配置项；
+        file_uploads=On/Off;
+        upload_max_filesize=2M;
+        post_max_size=8M;
+        upload_tmp_dir  //上传文件放置的临时目录；
+    文件上传后返回的错误信息；
+        0 没有错误发生，文件才上传成功；1 大小超过php.ini中限制； 2 大小超过了html表单中max_files_size的限制； 3 文件只有部分被上传； 4 没有文件被上传；
+
+    $_FILES
+        超级全局变量；
+        $_FILES的各种属性：name ：客户端文件系统的文件名称；
+                          type:客户端传递的文件的类型；
+                          size:文件的字节的大小；
+                          tmp_name:服务器存储的临时文件名称；
+                          error文件上传的错误代码；
+    is_uploaded_file:判断文件是不是通过http post 上传的合法文件
+    move_uploaded_file:将上传的文件移动到新的位置；
+        接受两个参数，第一个参数为移动后文件的名称，第二个参数为文件要保存的路径；
+
+
+
+
+
+
+
+
+
+
+
+
+</pre>
+<h1>小点：</h1>
+<pre>
+    1.设置页面编码：header('Content-type:text/html;charset=utf-8');
+    2.设置时区；date_default_timezone_set('PRC');
+    3.字符串有三种形式：
+        单引号：单引号内的变量不会被解析；
+        双引号：双引号内的引号会被解析；
+        界定符字符串：界定符字符串必须要以<<<+'字符串的名字'开始 ；并且以>>>结尾；结尾必须要从行首开始；并且后面除了分号外不能包含其他任何字符；空格也不可以。
+    4.echo 是语言结构，不是真正的函数；
+        echo 可以输出多个参数； echo "firt","second","third";
+    5.自己编写functions.php
+    6.创建一个文件夹：
+        mkdir($name,0777,true);
+        接受第三个参数，为true或false；如果为true，会递归创建文件夹；
+    7.集群和分布式：
+        集群是一个物理形态，分布式是一个工作方式；
+
+        分布式：
+            对外提供无状态节点，内部实现具体有状态或者无状态的节点逻辑，节点即可以是存储服务，也可以是存储数据；
+
+        分布式系统性能指标，吞吐量，响应延迟，并发量，常用单位QPS；高吞吐量会带来低响应，他们之间是相互制约的关系；
+        分布式原理：
+            1.哈希方式，把不哦他那个的方式进行哈希运算，映射到，不同的机器或者节点，考虑冗余的时候可以把多个哈希值映射到同一个地方，
+                哈希的实现方式，取余，实现扩展时，比较困难，数据分散在很多机器上，扩展的时候要从多个机器上获取数据，而且容易出现分布不均匀的情况；
+            2.按数据范围分布，比如id在1-20的服务器A上，id在21-40
+    8.php中处理异常：
+        try catch();
+            将要处理的代码放入到try模块中，如果某一句发生异常，程序直接跳转到catch块中，由$e收集错误信息，和显示。
+
+        try{
+            ...
+        }catch(EXcepition $e){
+            print $e->getMessage();
+            exit();
+        }
+    php允许在catch内部再次抛出throw异常，当一个一场被抛出后，其后的代码将不会再继续执行。
+    10.MVC框架
+    11.p函数
+      var_dump会打印出数据的格式，print_r不会，但是会返回一串字符串，所以用pre打印出来就可以。
+    /**
+     * 打印输出数据|show的别名
+     *
+     * @param void $var
+     */
+      function p($var)
+      {
+        echo "<pre>";
+        print_r($var);
+        echo "</pre>";
+      }
+
+
+
+
+</pre>
+</body>
+</html>

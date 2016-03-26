@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css3</title>
+    <style type="text/css">
+        .box{
+            width:200px;
+            display:-webkit-box;
+            overflow:hidden;
+            text-overflow:ellipsis;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+            line-clamp: 1;
+
+            border:1px solid #ddd;
+            text-shadow:-10px 10px 5px #000;
+        }
+        .button_box{
+            background:#ddd;
+            color:#fff;
+            padding:10px 20px ;
+            border:none;
+            font-size:15px;
+            border-radius:3px;
+            box-shadow:0 5px 2px 0 darkorange;
+            cursor:pointer;
+            position:absolute;
+            left:0;
+            top:0;
+        }
+        .newspaper {
+            font-size:12px;
+            -webkit-column-count: 3;
+            -webkit-column-gap: 2em;
+            -webkit-column-rule: solid 1px #f00f00;
+            -moz-column-count: 3;
+            -moz-column-gap: 2em;
+            -moz-column-rule: dashed 1px #f00f00;
+        }
+    </style>
+</head>
+<body>
+
+    <p style="font-family: KaiTi" class="box">
+        1.rbga：表示红黄蓝，a表示透明度，1为不透明；
+        2.px：像素；em:表示衣服加的单位做参考；好处是字体可以自适应；rem :相对于跟元素html,任意浏览器的默认字体高度是16px;1rem=16px;
+        3.-webkit-line-clamp;
+            限制在一个块级元素显示的文本的行数；必须结合其他外来的webkit属性；才可以显示出属性；
+            display:-webkit-box;//将对象作为弹性盒子显示出来；
+            overflow:hidden;
+            -webkit-box-orient:vertical;设置或检索伸缩盒子的子元素的排列方式；
+            -webkit-line-clamp: 1;//限制行数，超出的行数隐藏；
+            line-clamp: 1;
+        4.text-overflow:clip|ellipsis;
+            规定当文本超出包含元素的时候；文本的显示样式；clip:不显示省略标记;直接截取.ellipsis:溢出的文本显示为“...”
+        5.text-shadow:
+            向文本添加阴影；
+            text-shadow:h-shadow（水平阴影的位置) v-shadow（垂直阴影的位置） blur（模糊的距离） color;
+        6.box-shadow:想盒子添加阴影；
+            box-shadow:h-shadow v-shadow blur（模糊距离） spread(阴影的模糊尺寸) color;
+        7.-webkit-column-width:栏宽；
+            -webkit-column-count:列数；
+            -webkit-column-gap:列间距；
+            -webkit-column-rule:分割线；
+            设置文本的分块，例如讲一段文章分成n列来显示；
+        8.background-size:规定背景图像的尺寸；
+        9.-webkit-linear-gradient;
+        10.animation：动画
+            animation:name duration(动画时长) timing-function(动画播放方式) delay(延迟时间) iteration-count(循环次数) direction(是否应该轮流反响播放动画) play-state(控制元素动画的播放状态) fill-mode(动画执行后结束后的元素状态)
+            animation-direction:如果animation-direction的值alternate，则动画会在奇数次数（1，3，5）正常播放；在偶数次（2，4，6）向后播放；
+        11.perspective透视（设置在旋转元素上）
+            perspective:100px;设置视点，一般设置在800为正常视距；
+
+        12.transform-style:设置子元素位于3D空间中（否则进行3d旋转时没有效果）
+            tranform-style:preserve-3d;
+
+
+
+zepto.js;juqery
+        swiper;微场景
+二。
+
+
+    </p>
+
+    <div class="button_box">
+
+        <span>按钮实例</span>
+        <button class="button">开始游戏</button>
+
+    </div>
+
+    <div class="newspaper">
+        1.rbga：表示红黄蓝，a表示透明度，1为不透明；
+        2.px：像素；em:表示衣服加的单位做参考；好处是字体可以自适应；rem :相对于跟元素html,任意浏览器的默认字体高度是16px;1rem=16px;
+        3.-webkit-line-clamp;
+        限制在一个块级元素显示的文本的行数；必须结合其他外来的webkit属性；才可以显示出属性；
+        display:-webkit-box;//将对象作为弹性盒子显示出来；
+        overflow:hidden;
+        -webkit-box-orient:vertical;设置或检索伸缩盒子的子元素的排列方式；
+        -webkit-line-clamp: 1;//限制行数，超出的行数隐藏；
+        line-clamp: 1;
+        4.text-overflow:clip|ellipsis;
+        规定当文本超出包含元素的时候；文本的显示样式；clip:不显示省略标记;直接截取.ellipsis:溢出的文本显示为“...”
+        5.text-shadow:
+        向文本添加阴影；
+        text-shadow:h-shadow（水平阴影的位置) v-shadow（垂直阴影的位置） blur（模糊的距离） color;
+        6.box-shadow:想盒子添加阴影；
+        box-shadow:h-shadow v-shadow blur（模糊距离） spread(阴影的模糊尺寸) color;
+        7.
+    </div>
+</body>
+</html>

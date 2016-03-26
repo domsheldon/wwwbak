@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>angularyJs</title>
+    <style type="text/css">
+        span{
+            font-weight:bold;
+            color:#a10000;
+        }
+    </style>
+</head>
+<body>
+<h1>angularyJs笔记</h1>
+    <pre>
+        1.anjularyJs最核心的是mvvm（model_view_viewModel）,模块化，自定化双向数据绑定；语义化标签，以来注入
+            下载地址：http://anjularyjs.org
+            cdn载入：http://cdn.bootcss.com/angular.js/1.4.6/angular.js
+        2.引入angular ：
+            在项目的最外层用ng-app包括就算定义了一个项目的作用域；
+            在javascript内调用angular模型；
+                var vancl=angular.module('app_name',[]);
+                vancl.controller('controller_name',function(){});
+            ng-bind指令把应用程序数据绑定到html视图；例如在p元素是自定义属性：ng-bind="name";p元素的内容就回显示为框架内的name数据，
+                效果跟 p{{name}}/p的效果是一样的，优点是：在javascript未加载完成时，不会再页面上显示出{{name}}这样的字样，用户体验更好一点呢；
+        3.$scope是angularJscript中的作用域，实际上就是存储数据的地方；
+            $rootScope是全局作用域变量；定义一个变量的时候将数据存为$rootScope.name的话就可以在整个项目app下使用；
+            函数会先查找自己的scope，如果查找不到会向上查找，$rootscope;
+        4.ng-init指令初始化应用程序数据；
+            不用再script内定义数据的变量，直接可以在项目app内定义了之后可以直接使用；
+            {p ng-init="num1=1;num2=2"}{/p}
+            {p ng-bind="num1+num2"}{/p}
+        ng-init可以定义数组，
+            {p ng-init="a=['后盾网']"}{/p}
+            {p ng-bind="a[0]"}{/p}
+        5.angular控制器
+            <span>在大型应用程序中一般是将控制器存储在外部文件中；</span>
+            {script}
+                app.controller('hd',function($scope){
+                    $scope.hd={
+                        age:'18',
+                        getName:function()
+                            {
+                                return 'function返回值';
+                            }
+                    }
+                })
+            {/script}
+        6.构造函数；
+            angular.run能在应用的其他部分执行之前被执行，可用于初始化全局域中的数据；不需要定义控制器即可使用angular.run
+        在
+    </pre>
+</body>
+</html>

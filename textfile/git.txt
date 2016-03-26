@@ -1,0 +1,43 @@
+http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013744142037508cf42e51debf49668810645e02887691000
+
+1.计算机cmd指令：
+    cd:是进入某一个目录；如果要就如C盘：cd C:(冒号)就可以
+    pwd:是查看当前目录；
+    mkdir：新建一个文件夹；
+    ls -ah :列出一个目录下的所有文件；
+    cat :三大功能：1.显示整个文件；2.从键盘创建一个文件（$cat filename;）值能创建新文件，3：讲几个文件合并成一个文件；（$cat file1 file2>file）;
+    rm:删除一个文件：$ rm test.txt;
+2.git
+    git init:将当前目录设置成git可以管理的目录；初始化一个目录
+    git add <file>:添加一个文件到库内；
+    git commit :添加文件完成后，将文件提交到仓库内；
+        提交文件是必须要在commit 后加上文件修改的描述；否则会报错；解决不了；
+        git commit -m "这里是修改"
+    git status:该命令可以让我们了解到当前的仓库的状态；告诉我们那些文件被修改过了；
+    git diff:可以查看那些文件被修改；
+            $ git diff
+            diff --git a/readme.txt b/readme.txt
+            index e2d5312..5dec344 100644
+            --- a/readme.txt
+            +++ b/readme.txt
+            @@ -1 +1,3 @@
+            -git test;
+            \ No newline at end of file
+            +git test;
+            +git is a distributed version control system;
+            +git is free software;
+            \ No newline at end of file
+    git log :查看一个文件的所有版本；
+        将所有的版本信息简化成哟行一行的列出来显示； - -pretty=oneline;
+    git reset - - hard XXX:跳转到某一个版本；
+        当前版本为HEAD，上一个版本为HEAD^,上上个版本为HEAD^^,上一百个版本为HEAD^^^^..^^;100个^;也可以写成HEAD~100
+        如果删除了当前的版本后，又想返回当前版本：就可以在hard 后面加上版本号；就可以回到已被删除的版本；
+    git reflog;如果你忘记了删掉的版本号，可以用git reflog 来显示你每次操作过的历史信息；就可以找回删除的版本号；
+
+3.将文件往git版本库内添加的时候，是分两步值行的：
+    第一步：用git add 版问价添加进去，实际生是吧文件修改添加到暂存区；
+    第二部：用git commit提交更改，实际上就是把暂存区内的所有文件提交到当前分区；
+
+        add一次稳健后，会在暂存区内新增一个LICENSE文本文件；在之后添加文件时，就是在LICENSE内在commit的时候会将
+
+

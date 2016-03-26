@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sql</title>
+    <style type="text/css">
+        h1,h2{
+            display:inline-block;
+            color:#a10000;
+        }
+    </style>
+</head>
+<body>
+<h1 style="font-family:kaiti; ">sql笔记</h1>
+<pre>
+<h2>0.通过php直接调用数据库的方法：</h2>
+        有两种方法：一种是面向过程的方法，另一种是面向对象的方法；
+<span style="color:#a10000;">面向过程：</span>
+            连接数据库：
+            @ $db=mysqli_connect('localhost','dsheldon','admin888','user');
+            这个函数返回一个资源，而不是一个对象，这个资源表示的是数据库的链接，而且如果使用过称方法，必须将这个资源传递给mysqli的所有其他函数，这与文件处理类似，例如fopen的工作方式；
+            二者的差异在于过程版本的函数名称是以mysqli_开始的，同时要求传入通过mysqli_connect()函数获得的资源句柄；
+
+            尝试连接完成后腰进行检查，因为其他程序都无法在数据库链接错误的情况下工作：
+            无论是面向对象，还是面向过程都要进行检查；
+        if(mysqli_connect_errno()){
+            echo "Error :数据库库链接错误！"
+            exit;
+        }
+    //链接数据库后，在选择使用哪个库；
+    mysqli_select_db($db,$user);
+
+    组合sql语句：
+        $query="select * from user where ".$searchtype."like '%".$name."%' ";
+
+    执行查询语句；
+        $result=mysqli_query($db,$query);
+    获得查询结果后的条数：
+        $num_result=mysqli_num_rows($result);
+    先释放结果集：
+        mysql_free_result($result);
+    然后将数据库关闭
+        mysql_close($db);
+
+
+
+
+<span style="color:#a10000;">面向对象：</span>
+            链接数据库：
+            @ $db=new mysqli('localhost','dsheldon','admin888','user');
+        链接如数据库后选择要进入的数据库；
+        $db->select_db($user);
+
+        执行查询语句；
+        $query="select * from user where ".$searchtype."like '%".$name."%' ";
+        $result=$db->query($query);
+
+        获得查询出的结果的条数，方便循环使用：
+            $num_result=$result->num_rows;
+
+        释放结果集：
+            $result->free();
+        关闭数据库：
+            $db->close();
+<h2>链接任何其他形式的数据库：</h2>
+    php支持链接到许多不同的数据库；
+    如果希望链接到数据库还不支持的数据库，通过使用常规的odbc函数，但是odbc只具有任何函数集的有限功能，入股要求必须兼容所有数据库，就不能使用任何数据库的特殊功能；
+    还可以使用MDB2抽象层，允许喂不同的数据库类型使用相同的函数名称；
+
+    <span>PEAR MDB2</span>
+        MDB2安装：自己以后再查询；
+    在使用MDB2之前，要加载MDB2.php文件；
+        require_once("MDB2.php");
+
+    链接数据库：
+
+    //首先将数据库的链接信息传入到一个变量里；
+        $dsn="mysql://".$user.":".$pass."@".$host."/".$db_name;
+
+    链接数据库：
+        $db=MDB2::connect($dsn);
+
+    数据库的信息也可以传入到一个数组里面；
+        $dsn=array(
+            'phptype'=>"mysql",
+            'username'=>"root",
+            'password'=>"",
+            'hostspec'=>"localhost",
+            'port'=>"3306",
+            'database'=>"user",
+        )
+    <span style="color:#a10000;">将数据库信息传入一个数组后，可以通过&MDB2::singleton($dsn)来连接数据库</span>
+        $mdb2=&MDB2::singleton($dsn);
+    <span>怎样链接数据库可以链接各种形式的数据库；</span>
+    链接完成后，通过isError()判断链接是否有效；
+        if(MDB2::isError($db)){
+            echo $db->getMessage();
+            exit;
+        };
+    执行查询语句：
+        $result=$db->query($query);
+    查询返回的记录行数：
+        $num=$result->numRows();
+    按照代码取回每一行内容；
+        $row=$result->fetchRow(DB_FETCHMODE_ASSOC);
+        写个for循环；通过fetchRow将从数据库取回的数据每一行的取出来；
+        通过方法fetchRow()可以以许多种形式提取结果集中的一行；
+    输出查询结果后，关闭数据库连接：
+        $db->disconnect();
+    MDB2有两种发送请求的方法：
+        query（）和exec();
+    他们分别返回两种结果；成功是返回执行结果，失败时返回MDB2_Error对象；
+    query()是请求并取值，一般用于select，show等操作，返回复合条件的数据；
+    exec()是执行的意思，一般用于insert ，update或delete等语句；返回语句执行成功后所影响的数据库行数；
+
+    这里来一个简单的链接数据库的例子：
+        第一步：连接数据库
+        MDB2提供两种连接方式：DSN＆Socket，首选DSN。提供三个连接函数：factory()、connect()、singleton()，分别表示Efficient, Eager, Available连接，就是说factory()是最有效率的连接函数，因为在你只调用factory()的时候它并没有去连接数据库，只有在你发送query请求的时候才会连接；connect()调用时立即连接数据库；而singleton()顾名思义“单独”，为你一个进程只建立一个连接时方便使用，它同样是一个"lazy connecting".
+        示例函数如下：（其中有一项:$mdb2->setFetchMode(2)是设置数据结果返回的形式为数组）
+            <?php
+        /*********************************************************
+        * MDB2 function
+        * connect to primary database & slave database
+        *
+        * Ziming <jorygong@gmail.com>
+            * 2007-12-6
+        **********************************************************/
+        require_once("MDB2.php");
+        //Connecting primary database;
+        function &open_pdb()
+        {
+          $dsn = array(
+            'phptype'  => "mysql",
+            'username' => "root",
+            'password' => "",
+            'hostspec' => "localhost",
+            'port'     => 3306,
+            'database' => "test",
+          );
+          $mdb2 = &MDB2::singleton($dsn);
+          if (PEAR::isError($mdb2))
+          {
+            exit($mdb2->getMessage());
+          }
+          $mdb2->setFetchMode(2);
+          return $mdb2;
+        }
+        //Connecting slave database;
+        function &open_sdb()
+        {
+          $dsn = array(
+            'phptype'  => "mysql",
+            'username' => "root",
+            'password' => "",
+            'hostspec' => "localhost",
+            'port'     => 3306,
+            'database' => "test",
+          );
+          $mdb2 = &MDB2::singleton($dsn);
+          if (PEAR::isError($mdb2))
+          {
+            exit($mdb2->getMessage());
+          }
+          $mdb2->setFetchMode(2);
+          return $mdb2;
+        }
+        //Disconnecting a database
+        function close_db(&$mdb2)
+        {
+          if(is_object($mdb2))
+          {
+            $mdb2->disconnect();
+            $mdb2 = "";
+          }
+        }
+        ?>
+        第二步：发送请求
+        MDB2有两种Performing queries方法：query()和exec(),它们分别产生两种结果：成功时返回执行结果和失败时返回MDB2_Error对象。但它们又有不同，query()是请求并取值，它一般用于SELECT，SHOW等，返回符合条件的数据；而exec()是执行的意思，所以它一般用于INSERT、UPDATE或DELETE，返回语句成功执行后所影响的行数。
+        例如：
+            <?PHP
+        //假设你已经建立MDB2对象$mdb2
+        $sql = "SELECT * FROM tableA";
+        $res = $mdb2->query($sql);
+        //习惯性检查语句是否被正确执行
+        if (PEAR::isError($res))
+        {
+            exit($res->getMessage());
+    //$res->getMessage()是抛出程序的错误；调用线程的消息队列里取得一个消息并将其放于指定的结构中；
+        }
+        $sql = "INSERT INTO tableB (`id`, `nickname`) VALUES ($id, '$nickname')";
+        $affected = $mdb2->exec($sql);
+        //习惯性检查语句是否被正确执行
+        if (PEAR::isError($affected))
+        {
+            die($res->getMessage());
+        }
+        ?>
+        注意：当你使用$mdb2->query()后得到的并不是数组矩阵，而是$mdb2对象，你需要使用fetchOne(),fetchRow(),fetchCol()或fetchAll()来获得你想要的值，这将在接下来讲到。
+        第三：引用包含Quoting and escaping
+        MDB2提供两个函数来引用SQL语句里的值，分别是Quoting() and escaping()。
+        在DB库发展到后期，开发人员推荐使用quoteSmart()或escapeSimple()来代替quote().
+        "This method has been deprecated. Use quoteSmart() or escapeSimple() instead."
+        但是在MDB2里，我们需要更多地使用quote()，它有4个参数，quote(要quote的值，值的类型，是否使用quote对值进行处理，是否escape通配符)，只有第一个参数是必须的。例如：
+            <?PHP
+        $sql = "INSERT INTO tableA (`id`, `nickname`, `is_member`) VALUES ("
+          .$mdb2->quote($id, "integer").","
+          .$mdb2->quote($nickname, "text", true).","
+          .$mdb2->quote($is_member, "boolean", false).")";
+        echo $sql;
+        //输出结果形如
+        //INSERT INTO tableA (`id`, `nickname`, `is_member`) VALUES (2, 'jory', 1)
+        ?>
+        允许的类型有：text, boolean, integer, decimal, float, time stamp, date, time, clob, blob.
+        其中clob和blob是两种存储不限制长度的大数据对象格式，clob表示以字符串形式存储，blob表示以二进制的形式存储。它们的区别请查阅相关资料。
+        这样做对SQL语句的严格要求来减少数据库的安全隐患。用的时候你会发现如果类型为text时，当传入变量值为空时，quote后的SQL语句对应值为null，所以我们在设计数据库结构的时候要注意不能把所有的字段都设为not null,允许为空的字段要设计为null.
+
+        第四：取得结果数据
+        上面说到使用query()函数得到的返回值是MDB2对象而不是我们需要的数据，那怎样获得我们存储的数据内容呢，就需要在请求query()后再去取，四种方法：
+        fetchOne(), fetchRow(), fetchCol() and fetchAll().使用过DB库的朋友们看这些函数是不是很眼熟，对的，它就是获取结果集：取一个，取一行，取一列，取所有（比如一个数组矩阵），配合setFetchMode()方法获取你想要的数据形式。
+        例如：（由于我已经在前的数据库连接函数内使用了$mdb2->setFetchMode(2)，这里的返回结果是字符串索引的数组）
+            <?PHP
+        $sql = "SELECT `id`, `nickname` FORM tableA";
+        $res = $mdb2->query($sql);
+        if (PEAR::isError($res))
+        {
+            exit($res->getMessage());
+        }
+        $data = $res->fetchAll();
+        print_r($data);
+        /*
+        将打印出如下形式数据
+        Array
+        (
+            [0] => Array
+                (
+                    [0] => 1
+                    [1] => jory
+                )
+            [1] => Array
+                (
+                    [0] => 2
+                    [1] => ziming
+                )
+            [2] => Array
+                (
+                    [0] => 3
+                    [1] => gong
+                )
+        )
+        */
+        ?>
+        这样每次取数据都要写两行程序，使用MDB2库并没有减少我们敲击键盘的次数。别急，当然更好的方法能让你一步达成：
+        queryOne(), queryRow(), queryCol() and queryAll(). "All of the fetch methods are also available in a variant that executes a query directly"
+        ex.
+            <?PHP
+        //建立数据库连接对象$mdb2后
+        $sql = "SELECT * FROM tableA";
+        //一步达成
+        $data = $mdb2->queryAll($sql);
+        //结果显示
+        print_r($data);
+        ?>
+        第五：预编译及批量处理Prepare & Execute
+        很多人都喜欢使用prepare()和execute()方法，而我就不太喜欢。我觉得她功能强大但使用起来过于复杂，但事实是她使用起来也很方便的。我喜欢简约一些的，或许是我还没有跨过那道门槛吧。正在尝试...相信有一天我会和她混熟的。
+        既然是“预编译＋批量处理”，那么你只需要简单的两步就能实现对一堆数据的处理：
+        第一步，整理你的SQL语句(prepare the statement)。第二步，执行(execute it)。
+        例如：
+            <?php
+        //已经建立一个数据库连接对象$mdb2
+        $types = array('integer', 'text', 'text');
+        $sql = "INSERT INTO tableA VALUES (?, ?, ?)";
+        $sth = $mdb2->prepare($sql, $types);
+        $data = array(1, 'jory', 'I do');
+        $affectedRows = $sth->execute($data);
+        ?>
+        OK, MDB2的基本使用就说到这里吧，其它的关于事务处理、扩展模块、API接口等等非三二句话能讲得清楚的，欲深究请查阅手册和相关技术文档。
+
+
+
+    <span>用pdo链接数据库：</span>
+        pdo扩展
+
+        同样的链接数据库之前将数据库的信息放到一个变量内部，
+            $dsn="mysql:host=localhost;dbname=demo";
+            $username="root";
+            $password="admin888";
+
+    //      然后掉用pdo链接数据库；
+            //使用try{}catch{}
+
+
+
+
+
+
+1. <h2>mysql路径保存</h2>
+    C:\ProgramData\Oracle\Java\javapath;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;C:\Program Files\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files\AMD\ATI.ACE\Core-Static;C:\Program Files\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\
+
+	我的电脑-》属性-》高级程序设置-》高级-》环境变量-》系统变量（path)双击path;在变量值后面加上自己的www内的数据库的bin目录地址；连接要用英文的分号隔开；
+2.关系型数据库，是简历在关系模型基础上的数据库，
+    链接数据库 进入dos 执行mysql -uroot -p -h(sql服务器地址) - -host -h -user -u - -password -p;
+    推出mysql :命令行下exit quit;
+
+    数据库语言包括4个部分：
+        1.定义语言DDL:create drop alter
+        2.操作语言DML:insert update delete
+        3.查询语言select
+        4.控制语言:grant commit rollback;
+
+    show databases;显示数据库列表；
+    create database （name） default character set utf8;创建数据库,这里要设置字符，否则会显示不出汉字；
+        数据库命名规则不能与其他库重名；名称以字母，数字，下划线，$构成，不能单独使用数字;长度不能超过64个字符；除过关键字；
+        windows中数据库名，表名不区分大小写，linux下区分，所以建议使用小写的数据库或表名；
+    use :使用数据库，改变数据的文件夹；
+    drop database if exists (name);删除数据库；
+
+    数据类型：tinyint -128~127;smallint 2字节(-32768~32767) 0~65535;mediumint:0~1677万;int/integer ;bigint 极大正数；
+            float 4浮点型；double :8字节浮点数;decimal (M,D)   -----小数点后的位数超过允许范围的值时， mysql会自动将他们四舍五入为最接近的值；
+            char 0~255字节，定长字符串； varchar 0~65525字节的字符串；tinyblob0~255字节，不超过255个字符的二进制字符串；tinytext0~255字节 短文本字符串；blob:0~65525;text:0~text:0~65535字节 长文本数据；
+            mediumblob:二进制形式的中等长度文本数据mediumtext;longblob;
+            zerofill:前导零 ；unsigned修饰符规定字段值保存正值；
+            枚举 enum :枚举类型只允许在集合中获取一个值
+            set 可以从预定义的集合中获取任意数量的值，一个set类型最多可以包含64 项元素。
+
+            一般使用一个id值，用int(8);姓名：char(20);价格：decimal(7.3);产品序列号：smallint(5) unsigned;文章内容：text;
+
+
+3.default 设置字段的默认值；
+    unique:约束唯一标识数据库表中的每条数据;
+    primary key;主键必须包含唯一的 值，主键列表不能包含null,每个表都应该彪悍一个主键，并且每个表只能与一个主键；
+    auto_increment:递增；
+    create table stu(sid tinyint(10) zerofill);
+	//删除
+	delete from stu where sid=1;
+	//复制表结构
+	create table stu2 like stu;
+	//将表内容复制到空文件内；
+	insert into stu2 select * from stu;
+	//复制表内容
+	create table stu3 select * from stu;
+    //查找所有字段；
+	select * from 表名
+	//使用别名显示出来，注：不可以将别名用到where中
+	select uid as id from stu:
+	//where 指定查询的条件
+	where sid=1;
+	//and
+	//or
+	//concat 连接字符串
+	//查询结果自身比较：
+	select age,age>22 as bigage from stu;
+	//过滤重复的记录，返回唯一结果，去重
+	distinct：selectdistinct name,age from stu;
+	//模糊查找：
+	select * from news where find_in_set("")
+	//is null 判断字段值是否为空；
+	//is not null 判断字段值是否不为2空；
+	if(表达式，值1，值2)；
+	select age,if(age>25,"大","小") from stu;
+	ifnull(字段，值)；如果字段值为null，返回值；
+	order by 对查询到的结果进行排序；
+	desc 降序；
+	asc 升序排列；
+	limit (n) 取出部分数据记录；
+	limit（n,m）取出从m开始的N条数据，n从0开始计数；
+	between n and m; 在n和M之间检索内容；
+	in(n,m,..)检索值是否是在in表达式指定的值当中；
+	left();right();mid();截取字段；
+	rand()；返回一个随机数;
+	//向表中插入记录；
+	insert/replace into stu （name,age） values('a',20),('b',23);
+	//更新记录
+	update  stu set name='小王' where sid=1;
+	//删除记录；
+	delete from stu where sid=1;
+
+
+	修改表结构：
+	//修改表名：
+	alter table stu rename student;
+	    或者alter table stu rename student;
+    change 修改；
+        alter table stu change uid id int;
+    modify 修改
+        alter table stu modify id  int(8) after name;
+    追加字段
+        alter table stu add sex enum('男','女');
+    删除字段
+        alter table stu drop sex;
+    增加主键；
+        alter table add primary key(sid);
+        设置的主键必须要原来存在，可以是任意格式的字段，都可以设置为主键；
+    删除主键
+        删除逐渐之前必须要删除这个表的自增；
+        auto_increment 希望创建的主键自动增加，可以使用auto_increment ,这个属性仅属于主键；非主键不可以使用；
+
+4.日期和时间
+    datetime 日期与时间 8bytes  CCYY_MM_DD HH:MM:SS
+    date 3bytes CCYY_MM_DD
+    year 1bytes YYYY;
+    time 3bytes HH:MM:SS
+    获取时间：
+    curdate() :获取当前日期；
+    curtime():获取当前时间；
+    now() :获取当前的日期与时间；
+
+    根据数据截取时间：
+    date():获取日期
+    time();获取时间；
+    year():年；
+    month():月；
+    day():
+    hour():
+    minute()
+    second():
+
+
+
+    table（
+        10101001
+    ）
+
+
+
+
+5.分组与统计：
+    count（）：统计记录数
+    min():
+    max():
+    sum():
+    avg():select avg(age) from stu;
+
+
+    分组：
+        group by :select name,wage,count(wage) from wage group by wage;
+    对查询的结果进行分组，
+    having
+        对查询后的结果进行筛选；
+6.多表查询
+
+7.php中调用mysql：
+    PDO::__construct()($dsn,$username,$password);
+        DSN 代表数据源，包括数据库类型，主机地址，数据库名；
+            $dsn='mysql:host=127.0.0.1;dbname=dsheldon';
+            $username='root';
+            $password='';
+        username：代表链接数据库的用户名；
+        password：代表链接数据库的密码；
+8.修改数据库密码；
+    以root用户登录，命令：mysql -uroot -p 回车 输入密码；
+    mysql>use mysql；
+    mysql>UPDATE user SET password=PASSWORD('输入新密码') WHERE user='root';
+    mysql>FLUSH PRIVILEGES;
+
+
+
+
+    </pre>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

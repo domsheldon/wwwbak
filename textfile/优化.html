@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>网站优化</h1>
+<pre>
+    1.数据库优化：
+        数据库分区：一些查询可以得到很大的优化，主要是借助于满足一个给定where语句的数据可以只保存在一个或多个分区内；
+                    涉及到sum()和count()这样的聚合函数的查询，可以很容易的进行并行处理；
+                        例如：selectsalesperson count(order) as order_total from sales group BY salesperson;
+</pre>
+</body>
+</html>

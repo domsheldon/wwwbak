@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        h1,h2{
+            display:inline-block;
+            color:#a10000;
+        }
+    </style>
+</head>
+<body>
+1.调用css样式
+    //行内样式
+    <div style=""></div>
+    //html页面顶部加入css样式；
+    <style type="text/css"></style>
+    //外部链接css文件
+    <link rel="stylesheet" type="text/css" href="url" />
+    //导入样式
+    @import url(外部样式表位置)
+        优先级：行内样式>其他的样式表;其他的样式表，优先级按照导入顺序来确定；
+2.css选择器：
+    id选择；类选择器；标签选择器；群组选择器；后代选择器；通用选择器（*{}）；伪类选择器；浏览器默认样式
+3.伪类                http://www.w3cplus.com/css3/pseudo-class-selector
+    :link       未被访问的链接；
+    :visited    添加到访问过的页面上；
+    :active     将样式添加到被激活的元素；
+    :focus     将样式添加到被选中的元素；
+    :hover     鼠标悬浮元素上方时；
+        hover必须要放在link和visited之后才是有效的；
+        active必须要放在hover之后才有效
+            link->visited->hover->active;
+    :hover在IE下只有a元素被支持；:active只有IE~7不支持；:focus 在IE6~7下不被支持;
+    :first-child        **选择作为第一个子元素的所有selector元素；并不是选取selector的第一个
+                          例如如下代码：
+                                <html>
+                                <head>
+                                <style type="text/css">
+                                p > i:first-child {
+                                  font-weight:bold;
+                                  }
+                                </style>
+                                </head>
+
+                                <body>
+                                <p>some <i>text</i>. some <i>text</i>.</p>
+                                <p>some <i>text</i>. some <i>text</i>.</p>
+                                </body>
+                                </html>
+    :lang       允许为不同的语言定义特殊的规则；
+            例如如下代码：
+                q:lang{
+                    quotes:"~" "~";
+                }
+                被lang 包起来的代码会被~~两个字符包起来；
+
+    css3 的 :nth选择器
+        :first-child    选择某个元素的第一个元素；       IE6不支持:first-child选择器；
+        :last-child
+        :nth-child      选择某个的一个或多个特定的子元素；
+                    :nth-child(length);//length参数是具体的数字，n在语句中不变，，还是n;
+                    :nth-child(n);参数是从n,n从0开始算；表示第几个的样式变化；
+                            :nth-child(2n);也等于:nth-child(even);
+                            :nth-child(2n-1);表示奇数项；也相当于是:nth-child(odd);
+                    :nth-child(n*length);n的倍数，n从0开始计算；
+                    :nth-child(n+length);选择大于length后面的元素；
+                    :nth-child(-n+length):选小于length的元素；
+                    :nth-child(n*length+1):表示隔几个选一；
+            IE6~8和FF3浏览器不值吃:nth-child选择器；
+        :nth-last-child()选择器，只是将元素从后面的顺序选择；和前面的选择规则是一样的；
+            ie6~8和FF3 同样不支持:nth-last-child;
+        :nth-of-type:       类似于:nth-child，不同的是他只计算选择器中指定的那个元素,其实我们前面的实例都是指定了具体的元素，这个选择器主要对用来定位元素中包含了好多不同类型的元素是很有用处，比如说，我们div.demo下有好多p元素，li元素，img元素等，但我只需要选择p元素，并让他每隔一个p元素就有不同的样式，那我们就可以简单的写成：
+                                例如：
+                                    .demo p:nth-of-type(even) {background-color: lime;}
+        :nth-last-of-type:和前面的:nth-last-child一样使用，只是指定了哟个类型；
+        :only-child 表示一个元素是他父元素的唯一一个子元素
+            :only-of-type是表示一个元素他有很多个子元素，而其中只有一个子元素是唯一的，那么我们使用这种选择方法就可以选择中这个唯一的子元素，比如说
+                <div class="post">
+                    <div>Lorem ipsum dolor sit amet, consectetur</div>
+                    <p>Lorem ipsum dolor sit amet, consectetur</p>
+                    <div>Lorem ipsum dolor sit amet, consectetur</div>
+                </div>
+        :empty      是用来显示没有任何内容的元素；值没有任何元素，连一个空格都没有；
+        :not    否定选择器，和jquery中的：not选择器一模一样；
+            input:not([type="submit"]) {border: 1px solid red;}
+
+
+4.伪元素：
+    ::first-letter       将特殊ude样式添加到文本的首字母；
+    ::first-line         将特殊的样式添加到文本的首行；
+    ::before             在某元素之前插入某些内容；
+    ::last               在某元素之后添加某些内容；
+           *********** 常见的就是清除浮动：*******************
+                        .clearfix:before,
+                        .clearfix:after{
+                            content:'.';
+                            display:block;
+                            height:0;
+                            visibility:hidden;
+                        }
+                        .clearfix:after{
+                            clear:both;
+                        }
+                        .clearfix{
+                            zoom:1;
+                        }
+    ::selection     用来改变浏览器选中文的默认效果；
+            这个伪元素只能改变两个属性；一个是background ,另一个是color;
+               /*Webkit,Opera9.5+,Ie9+*/
+               ::selection {
+            	background: 颜色值；
+            	color:颜色值；
+               }
+               /*Mozilla Firefox*/
+               ::-moz-selection {
+            	background: 颜色值；
+            	color:颜色值；
+                }
+5.皮卡丘：
+
+                       ::
+                      :;J7, :,                        ::;7:
+                      ,ivYi, ,                       ;LLLFS:
+                      :iv7Yi                       :7ri;j5PL
+                     ,:ivYLvr                    ,ivrrirrY2X,
+                     :;r@Wwz.7r:                :ivu@kexianli.
+                    :iL7::,:::iiirii:ii;::::,,irvF7rvvLujL7ur
+                   ri::,:,::i:iiiiiii:i:irrv177JX7rYXqZEkvv17
+                ;i:, , ::::iirrririi:i:::iiir2XXvii;L8OGJr71i
+              :,, ,,:   ,::ir@mingyi.irii:i:::j1jri7ZBOS7ivv,
+                 ,::,    ::rv77iiiriii:iii:i::,rvLq@huhao.Li
+             ,,      ,, ,:ir7ir::,:::i;ir:::i:i::rSGGYri712:
+           :::  ,v7r:: ::rrv77:, ,, ,:i7rrii:::::, ir7ri7Lri
+          ,     2OBBOi,iiir;r::        ,irriiii::,, ,iv7Luur:
+        ,,     i78MBBi,:,:::,:,  :7FSL: ,iriii:::i::,,:rLqXv::
+        :      iuMMP: :,:::,:ii;2GY7OBB0viiii:i:iii:i:::iJqL;::
+       ,     ::::i   ,,,,, ::LuBBu BBBBBErii:i:i:i:i:i:i:r77ii
+      ,       :       , ,,:::rruBZ1MBBqi, :,,,:::,::::::iiriri:
+     ,               ,,,,::::i:  @arqiao.       ,:,, ,:::ii;i7:
+    :,       rjujLYLi   ,,:::::,:::::::::,,   ,:i,:,,,,,::i:iii
+    ::      BBBBBBBBB0,    ,,::: , ,:::::: ,      ,,,, ,,:::::::
+    i,  ,  ,8BMMBBBBBBi     ,,:,,     ,,, , ,   , , , :,::ii::i::
+    :      iZMOMOMBBM2::::::::::,,,,     ,,,,,,:,,,::::i:irr:i:::,
+    i   ,,:;u0MBMOG1L:::i::::::  ,,,::,   ,,, ::::::i:i:iirii:i:i:
+    :    ,iuUuuXUkFu7i:iii:i:::, :,:,: ::::::::i:i:::::iirr7iiri::
+    :     :rk@Yizero.i:::::, ,:ii:::::::i:::::i::,::::iirrriiiri::,
+     :      5BMBBBBBBSr:,::rv2kuii:::iii::,:i:,, , ,,:,:i@petermu.,
+          , :r50EZ8MBBBBGOBBBZP7::::i::,:::::,: :,:,::i;rrririiii::
+              :jujYY7LS0ujJL7r::,::i::,::::::::::::::iirirrrrrrr:ii:
+           ,:  :@kevensun.:,:,,,::::i:i:::::,,::::::iir;ii;7v77;ii;i,
+           ,,,     ,,:,::::::i:iiiii:i::::,, ::::iiiir@xingjief.r;7:i,
+        , , ,,,:,,::::::::iiiiiiiiii:,:,:::::::::iiir;ri7vL77rrirri::
+         :,, , ::::::::i:::i:::i:i::,,,,,:,::i:i:::iir;@Secbone.ii:::
+<h2>6.页面渲染：</h2>
+
+
+
+
+
+</body>
+</html>

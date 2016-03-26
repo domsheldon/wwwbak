@@ -1,0 +1,84 @@
+1.json;
+    json可以表示3种类型的值：简单值（不支持javascript中的undefined）；对象；数组；
+
+        javascript对象字面量表示法：
+        var box={
+            name:'lee,
+            age:100
+        };
+        json中的对象表示方法需要加上双引号；并且不存在复制运算符号和分号；
+        {
+            "name":"lee,
+            "age":100,
+            "male":male
+        }
+
+    数组：
+         jacascript中：
+         var arr=[100,'lee','male'];
+         而json中数组不存在变量赋值和分号；
+         [100,,'lee',male];
+
+     一般比较常用的复杂形势是数组结合对象的形式：
+        [
+            {
+                'title':'a',
+                "num":1
+            },
+            {
+                'title':'b',
+                "num":2
+            },
+            {
+                "title":"c",
+                "num":3
+            }
+        ]
+2.*********************************获取浏览器宽高**********************************************
+返回一个数组  ，数组有两个值，第一个值是屏幕的宽；第二个值是屏幕的高；
+        function bodywh(){
+            // arr = [];
+            var arr = new Array();
+            if(window.innerWidth){
+                winWidth = window.innerWidth;
+            }else if((document.body) && (document.body.clientWidth)){
+                winWidth = document.body.clientWidth;
+            }
+            //获取窗口高度
+            if(window.innerHeight){
+                winHeight = window.innerHeight;
+            }else if((document.body) && (document.body.clientHeight)){
+                winHeight = document.body.clientHeight;
+            }
+            // alert(winWidth);
+            arr[0] = winWidth;
+            arr[1] = winHeight;
+            return arr;
+        }
+        //调用；
+        $(window).resize(function(){
+            var wh=bodywh();
+        $('.bodystyle').css({width:wh[0]+"px",height:wh[1]+"px"});
+
+        })
+        var wh=bodywh();
+        $('.bodystyle').css({width:wh[0]+"px",height:wh[1]+"px"});
+3.在html内部添加onclick事件：
+    <!DOCTYPE html>
+    <html>
+    <head>
+    </head>
+    <body>
+    Field1: <input type="text" id="field1" value="Hello World!"><br>
+    Field2: <input type="text" id="field2"><br><br>
+    <button onclick="copyText()">复制文本</button>
+    <p>当按钮被单击时触发函数。此函数把文本从 Field1 复制到 Field2 中。</p>
+    </body>
+    <script>
+    function copyText()
+    {
+    document.getElementById("field2").value=document.getElementById("field1").value;
+    }
+    </script>
+    </html>
+    必须要将onclick后跟的函数放在页面加载之前，如果放在window.onload内部，会失效；

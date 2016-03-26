@@ -1,0 +1,200 @@
+/**
+ * Created by PhpStorm.
+ * User: win10
+ * Date: 2016-02-18
+ * Time: 0:43
+ *
+ * 用来记录sass的一些知识点
+ *
+ */
+ 1.sass跟scss的语法规则不同；
+    sass必须根据缩进来断定语法；
+        eg:
+            .container
+                width: $width
+        冒号的后面必须跟一个空格，要不然哦会报错；
+    scss和css的语法规则差不多，都是用大括号以及冒号分号来区分的；
+2.sass的一些基础语法：
+    定义变量：
+        $width: 300px
+3.scss的一些基础语法：
+    定义变量：
+        $width: 300px;
+    默认变量：
+    在普通的定义变量之后加上！default就可以将至设置成默认变量；
+    默认变量一般是用来设置默认值的，然后根据需求来覆盖的，在其前面重新声明变量就可以覆盖了；覆盖之后值就按照200px来定了；
+        $width: 200px;
+        $width: 300px !default;
+    变量的调用：
+        在scss中直接调用就可以了；
+    变量的作用域：在sass中可以使用局部变量和全局变量；
+        当在局部范围（选择器内，函数内，混合宏内。。。）声明一个已经存在于全局范围的变量是，局部变量就成为了全局变量的影子，基本上全局变量只会在局部范围内覆盖全局变量；
+    sass嵌套：
+        嵌套的层级越深没编译出来的css代码的选择器的层级也就越深；这是大家不愿意看到的；这正是现在被中多开发者滥用的；
+    sass中可以写属性嵌套:比如border-top/right/bottom/left,或者margin,padding,font.这些属性的前缀相同，只有后缀不相同；
+        可以使用属性嵌套：
+            .box{
+                font:{
+                    size:12px;
+                    weight:bold;
+                }
+            }
+    sass伪类嵌套：
+        .clearfix{
+            &:before,
+            &:after{
+                comtent:"";
+                display:hidden;
+            }
+            &:after{
+                clear:both;
+                over-flow:hidden;
+            }
+        }
+    编译后的css代码：
+        clearfix:before, .clearfix:after {
+            content: "";
+            display: table;
+        }
+        .clearfix:after {
+            clear: both;
+            overflow: hidden;
+        }
+    sass可以声明混合宏。
+        网页中有几处小样式，比如颜色，字体等，在sass可以使用变量统一处理。
+        当你的样式变得越来越复杂，需要使用大段的样式时，使用变量就无法达到我们所需的目的了。
+        sass中的混合宏可以实现这种需求。
+            1.声明变量宏：
+                在sass中 用“@mixin”来声明一个混合宏，如：
+                    @mixin border-radius{
+                        -webkit-border-radius:5px;
+                        border-radius:5px;
+                    }
+                带参数的混合宏：
+                    @mixin border-radius($radius:5px){
+                        -weblit-border-radius:$radius;
+                        border-radius:$radius;
+                    }
+                复杂的混合宏;可以在大括号内写上带有逻辑关系的代码；
+                    @mixin box-shadow($shadow...){
+                        @if length($shadow)>=1{
+                            @include prefixer(box-shadow,$shadow);
+                        }@else{
+                            $shadow:0 0 4px rgba(0,0,0,3);
+                            @include prefixer(box-shadow,$shadow);
+                        }
+                    }
+                        调用混合宏；关键词@include可以来调用声明好的混合宏
+                            button{
+                                    @include border-radius;
+                                }
+                        混合宏的参数:sass的混合宏有一个强大的功能，可以传参，冒号后面跟的是默认值。
+                            可以传多个参数，多个参数之间用都好隔开。
+                            @mixin border-radius($radius:3px){
+                                -webkit-border-radius:$radius;
+                                border-radius:$radius;
+                            }
+                        有一个特别的参数“...”，当混合宏传的参数过多的时候，可以使用参数“...”来代替。
+
+                    混合宏的不足之处：在不同的地方调用混合宏的时候，会产生大量的冗余代码，所以在调用混合红的时候并不能将相同的样式代码合并在一起，
+                    这是sass混合宏最不做的地方
+
+    扩展/继承
+        在sass中通过关键词“@extend”来继承已存在的类样式块，从而实现代码的继承；
+        在sass中的继承，可以继承类样式块中所有的样式代码，而且编译出来的css会将选择器合并在一起，形成组合选择器。
+
+    占位符：%placeholder
+        sass中的占位符%placeholder功能是一个很强大很实用的一个功能，可以取代以前css中的基类造成的代码冗余的情形，
+        因为%placeholder声明的代码，如果不被@extend调用的话，不会产生任何代码。
+            %mt5{
+                margin-top:5px;
+            }
+            %pt5{
+                padding-top:5px;
+            }
+            没有@extend被调用时不会产生任何代码块。
+
+混合宏/继承/占位符
+    混合宏可以传参数，但是可能会造成代码冗余；
+    继承可以合并生成css，但是被继承的代码块不论是否调用都会被编译；
+    占位符，只有在调用的时候才会被编译。不会产生冗余代码。
+插值
+    使用css预处理语言的一个主要原因是想使用sass获得一个更好的结构系统。
+        $properties:(margin,padding);
+        @mixin set-value($side,$value){
+            @each $prop in $properties{
+                #{$prop}-#{$side}:$value;
+            }
+        }
+        .login-box{
+            @include set-value(top,14px);
+        }
+        解释：循环数组，@value为循环出的子元素，#{}-#{}为插值；
+            @each @value in arr{
+
+            }
+
+注释：
+    /**/，可以在编译出来的css中显示出来；
+    //不会编译出来；
+数据类型：
+    数字：1，2，10px;
+    字符串：“foo”;
+    颜色：blue,#a10000,rgba(255,255,0,0);
+    布尔型：true,false;
+    空值：null;
+    值列表：用空格或者都好分开：1.5em 1em;Helbetica,Arial,sans-serif;
+
+
+    字符串：
+        有引号，无引号字符串；
+        在编译css文件是不会改变其类型，只有一种情况例外，使用#{}插值语句时，有引号字符串会被编译为无引号字符串，这样方便了在混合指令mixin中引用选择器名；
+
+    值列表
+
+4.运算
+    加法 +
+    对于携带不同类型的单位时，在sass中计算会报错，
+    减法 -
+    跟加法相似，符号要用空格跟字符串隔开；
+    乘法 *
+        乘法可以支持多种单位；
+        但是当一个单位同事声明两个值时会有问题；
+            eg:  .box{
+                width:10px * 20px;
+            }(会报错的)；
+        在不同类型的单位时也会报错，
+    除法 /
+        .box{
+            width:100px /2;
+        }(会报错
+            编译出来的代码为：
+                .box{
+                    width:100px / 2;
+                }
+            在sass外面加上一对括号就可以。
+        )
+        ”/  ”符号被当作除法运算符时有以下几种情况：
+
+        如果数值或它的任意部分是存储在一个变量中或是函数的返回值。
+        如果数值被圆括号包围。
+        如果数值是另一个数学表达式的一部分。
+
+    颜色也可以计算；
+
+字符串计算：
+    通过加法符号+来进行连接
+
+
+5.经验：
+    调用混合类的时候要注意参数值的类型，如果是字符串，要加上引号；
+        比如单个颜色值得时候是不用加引号的，如果加上也可以，但是多个参数的时候字符串必须加上引号；
+    如果是数字类型的话，就不需要加；
+
+
+
+
+
+
+
+

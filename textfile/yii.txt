@@ -1,0 +1,48 @@
+/**
+ * Created by PhpStorm.
+ * User: win10
+ * Date: 2016-01-23
+ * Time: 10:30
+ *
+ *
+ *Yii框架学习笔记
+ *
+ *
+ */
+
+1.在官网www.yiichina.com下载基础压缩文档，解压文档后打开requirement.php，这个问价是查看当前电脑环境配置是否达到yii所需要求；
+    然后，在打开web文件见下面的index.php，这是一个入口脚本；访问入口脚本后，第一次打开会显示CookieValidationkey没有被配置；打开config文件夹下面的web.php，将$config数组的cookieValidationKey内容随意填写一些数据；
+
+2.命名空间
+    在页面引入个相同名称de类，会提示引入多个相同的类名，
+    可以使用use来转换类的命名空间；
+    也可以使用$cate=new \Common\Model\Cate;
+    可以直接在命名空间后面直接添加类名来运行类；$cate=new \Common\Model\Cate\Cate();$cate->index();（调用cate类里面的index函数）；
+
+    可以用as来给命名空间重新定义一个新的名字；Eg：use　\Common\Admin\Cate\Cate as AdCate;调用的时候，$adCate=new AdCate();
+
+    没有指定命名空间的类默认是顶层的命名空间；也就是全局类，引用这种类的时候，在雷鸣钱加上\就可以指定为顶层的命名空间；
+
+3.控制器
+    yii控制器放在controller文件夹下面；
+    类内的函数名要跟一个action：eg:actionIndex(){};
+
+
+4.函数内调用；
+    (1)$request= \YII::$app->request;
+        //获取get内容,第二个参数为默认值，如果get值不存在的话；
+        echo $request->get('id',0);
+        //获取post值，第一个参数为post接受的值名，如果第一个参数不存在，就会默认为第二个参数的值；
+        echo  $request->post('name',333);
+        //判断是否是post值；或者是否是get值；
+        if($request->isGet){}/if($request->isPost{}
+        //获取用户ip地址：
+        echo $request->userIp;
+    (2)响应组件：
+        //YII全局类；YII：：$app应用主体；
+        $res= \YII::$app->response;
+        //设置状态码；
+        $res->statusCode="404";
+        $res
+
+

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<pre>
+1.开始是哦那个框架的时候调用框架，创建入口文件；
+    index.php:
+        <\?php
+            define('APP_DEBUG','True');
+    //开启调试模式；开发阶段建议开启，部署阶段设置为false；
+            define('APP_PATH','./App/');
+    //定义入口应用目录，定义之后，访问这个入口文件，就会将框架文件复制到应用目录下；
+            require('./ThinkPHP/ThinkPHP');
+    //引入框架文件；
+        ?>
+2.框架的目录结构
+    common:存放当前项目的公共函数；
+    Conf:存放当前项目的配置文件；
+    Lang:存放当前项目的语言包；
+    Lib:存放当前项目的控制器和模型；M C;
+        behaver:项目行为管理的目录。
+        model:项目的模型文件；
+    Runtime:存放当前项目
+        cache:模板的缓存；
+        data:数据的目录
+        logs:放日志
+        temp:数据缓存
+        run.php:编译后加载的文件；
+    Tpl:存放当前项目的模板文件；V
+3.自定义函数k库
+    thinkphp文件夹下的common文件夹下有一个functions.php,和common.php
+    如果要死定义函数，在复制过来的项目文件夹下，common文件下定义自己的函数；定义的文件名成必须要命名成common.php
+        在common.php内定义自己的函数；
+4.thinkphp 内部的函数
+    dump()函数；相当于p函数；框架内部的
+    $this->display();
+        调用相应的模板文件；
+    C();获取和设置配置参数 支持批量定义;config，定义自己的C('name');
+
+5.URL模式：url_model:
+    0：普通模式;
+        index.php?m=Index&a=user&cid=1;
+    1:默认模式;
+        index.php/Index/user/cid/1.html
+    2:重写模式;
+        Index/user/cid/1.html
+    3:兼容模式;
+        index.php?s=/Index/user/cid/1.html
+        兼容模式下不知道服务器是什么配置文件，什么apache的配置文件，不能去顶服务器是否能跑的起thinkphp，可以设定为3，
+    要改变URL_MODEL,在config文件夹下修改URL_MODEL的值；
+
+
+
+</pre>
+</body>
+</html>

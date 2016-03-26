@@ -1,0 +1,12 @@
+1.get()获取所有分类；
+2.
+    实例化数据库：
+        制定表名：Cate类下：protected $table="category";
+
+        自动验证：固定写法：
+                    protected $validate=array(
+                        //这是一个二维数组，可以传递多个参数；
+                        //array(字段名，验证方法，错误提示信息，验证条件，验证时间)，验证时间就是？？？？？
+                        array('cname','required','分类名不能为空',3,3);
+                    )
+3.cate表：
